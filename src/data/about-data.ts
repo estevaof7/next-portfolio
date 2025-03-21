@@ -1,7 +1,10 @@
 import { isPt } from '@/language';
 
 export const aboutData = {
-  imgPath: '/img/profile.jpg',
+  profileImg: {
+    src: '/img/profile-pic/profile-pic.JPG',
+    alt: 'Profile image'
+  },
   name: 'Estêvão Ferreira',
   title: isPt ? 'Desenvolvedor Front End' : 'Front End Developer',
   description: isPt
@@ -10,15 +13,18 @@ export const aboutData = {
   techStackTitle: 'Tech Stack',
   techStack: [
     {
-      imgPath: '',
+      src: '',
+      alt: '',
       progress: 0
     },
     {
-      imgPath: '',
+      src: '',
+      alt: '',
       progress: 0
     },
     {
-      imgPath: '',
+      src: '',
+      alt: '',
       progress: 0
     }
   ]
