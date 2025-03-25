@@ -2,10 +2,10 @@
 
 import Image from 'next/image';
 import { aboutData } from '@/data/about-data';
-import { Progress } from '@/components/ui/progress';
+import { TechCard } from './tech-card';
 
 export default function About() {
-  //tech-stack
+  //vou ter que ver no claude como colocar uma imagem dentro do chart
   //https://ui.shadcn.com/charts#area-chart
   //depois: mobile
 
@@ -29,7 +29,10 @@ export default function About() {
           <div>
             <p>{aboutData.techStackTitle}</p>
             <div>
-              <Progress value={33} />
+              <TechCard
+                progress={aboutData.techStack[0].progress}
+                iconPath={aboutData.techStack[0].src}
+              />
             </div>
           </div>
         </div>

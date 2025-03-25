@@ -13,9 +13,9 @@ export const aboutData = {
   techStackTitle: 'Tech Stack',
   techStack: [
     {
-      src: '',
+      src: '/img/tech/java-icon.svg',
       alt: '',
-      progress: 0
+      progress: 50
     },
     {
       src: '',
