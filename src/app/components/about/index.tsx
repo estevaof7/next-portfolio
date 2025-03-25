@@ -20,7 +20,7 @@ export default function About() {
           alt={aboutData.profileImg.alt}
           width={400}
           height={400}
-          className="rounded-full w-sm h-sm"
+          className="rounded-full h-4/5 w-4/5"
         />
         <div className="flex flex-col">
           <h1 className="text-4xl font-bold">{aboutData.name}</h1>
