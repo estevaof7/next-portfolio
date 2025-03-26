@@ -8,6 +8,7 @@ export default function About() {
   //vou ter que ver no claude como colocar uma imagem dentro do chart
   //https://ui.shadcn.com/charts#area-chart
   //depois: mobile
+  //pelo que estou vendo, o w/h da Image não pode ser proporcional ao elemento pai
 
   return (
     <section
