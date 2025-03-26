@@ -2,7 +2,8 @@ import { isPt } from '@/language';
 
 export const aboutData = {
   profileImg: {
-    src: '/img/profile-pic/profile-pic.JPG',
+    // src: '/img/profile-pic/profile-pic.JPG',
+    src: '/img/tech/angular-icon.svg',
     alt: 'Profile image'
   },
   name: 'Estêvão Ferreira',
@@ -10,22 +11,26 @@ export const aboutData = {
   description: isPt
     ? 'Olá, muito prazer! Meu nome é Estêvão, sou um Desenvolvedor Front End em busca de novos desafios. Desenvolvi este ambiente para estar apresentando alguns de meus projetos de maneira simplificada. Espero que goste!'
     : 'Hey! My name is Estêvão, I am a Front End Developer seeking new challenges. I have developed this environment to present some of my projects in a simplified way. I hope you like it!',
-  techStackTitle: 'Tech Stack',
-  techStack: [
-    {
-      src: '/img/tech/java-icon.svg',
-      alt: '',
-      progress: 50
-    },
-    {
-      src: '',
-      alt: '',
-      progress: 0
-    },
-    {
-      src: '',
-      alt: '',
-      progress: 0
-    }
-  ]
+  techStack: {
+    title: 'Tech Stack',
+    startAngle: 90, //0-360
+    clockWise: false,
+    cards: [
+      {
+        src: '/img/tech/java-icon.svg',
+        alt: '',
+        progress: 25
+      },
+      {
+        src: '',
+        alt: '',
+        progress: 0
+      },
+      {
+        src: '',
+        alt: '',
+        progress: 0
+      }
+    ]
+  }
 };

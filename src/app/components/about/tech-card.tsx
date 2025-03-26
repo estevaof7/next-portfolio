@@ -1,7 +1,6 @@
 'use client';
 
 import {
-  Label,
   PolarGrid,
   PolarRadiusAxis,
   RadialBar,
@@ -9,7 +8,7 @@ import {
 } from 'recharts';
 
 import { ChartConfig, ChartContainer } from '@/components/ui/chart';
-// import Image from 'next/image';
+import Image from 'next/image';
 
 const chartData = [
   { browser: 'safari', visitors: 1260, fill: 'var(--color-safari)' }
@@ -27,66 +26,51 @@ const chartConfig = {
 
 export function TechCard({
   progress,
-  iconPath
+  iconPath,
+  startAngle
+  // clockWise
 }: {
   progress: number;
   iconPath: string;
+  startAngle: number;
+  clockWise: boolean;
 }) {
   return (
-    <ChartContainer
-      config={chartConfig}
-      className="mx-auto aspect-square max-h-[250px]"
-    >
-      <RadialBarChart
-        data={chartData}
-        endAngle={(18 * progress) / 5 + 90}
-        startAngle={90}
-        innerRadius={80}
-        outerRadius={140}
+    <div className="relative">
+      <ChartContainer
+        config={chartConfig}
+        className="mx-auto aspect-square max-h-[250px]"
       >
-        <PolarGrid
-          gridType="circle"
-          radialLines={false}
-          stroke="none"
-          className="first:fill-muted last:fill-background"
-          polarRadius={[86, 74]}
-        />
-        <RadialBar dataKey="visitors" background />
-        <PolarRadiusAxis tick={false} tickLine={false} axisLine={false}>
-          <Label
-            content={({ viewBox }) => {
-              if (viewBox && 'cx' in viewBox && 'cy' in viewBox) {
-                // console.log('viewBox', viewBox);
-                return (
-                  <text
-                    x={viewBox.cx}
-                    y={viewBox.cy}
-                    textAnchor="middle"
-                    dominantBaseline="middle"
-                  >
-                    <tspan
-                      x={viewBox.cx}
-                      y={viewBox.cy}
-                      className="fill-foreground text-4xl font-bold"
-                    >
-                      {chartData[0].visitors.toLocaleString()}
-                      {iconPath}
-                    </tspan>
-                    <tspan
-                      x={viewBox.cx}
-                      y={(viewBox.cy || 0) + 24}
-                      className="fill-muted-foreground"
-                    >
-                      teste 2
-                    </tspan>
-                  </text>
-                );
-              }
-            }}
-            // <Image src={iconPath} alt="icon" width={100} height={100} />
+        <RadialBarChart
+          data={chartData}
+          endAngle={(18 * progress) / 5 + startAngle}
+          //TEM QUE FAZER A LÓGICA DO CLOCKWISE!!!!!!!!!
+          startAngle={startAngle}
+          innerRadius={80}
+          outerRadius={140}
+        >
+          <PolarGrid
+            gridType="circle"
+            radialLines={false}
+            stroke="none"
+            className="first:fill-muted last:fill-background"
+            polarRadius={[86, 74]}
           />
-        </PolarRadiusAxis>
-      </RadialBarChart>
-    </ChartContainer>
+          <RadialBar dataKey="visitors" background />
+          <PolarRadiusAxis
+            tick={false}
+            tickLine={false}
+            axisLine={false}
+          ></PolarRadiusAxis>
+        </RadialBarChart>
+      </ChartContainer>
+      <Image
+        src={iconPath}
+        alt="Icon"
+        width={100}
+        height={100}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+      />
+    </div>
   );
 }

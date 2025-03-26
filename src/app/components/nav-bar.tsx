@@ -14,7 +14,7 @@ import Link from 'next/link';
 
 export default function NavBar() {
   return (
-    <nav className="w-full bg-white border-b fixed">
+    <nav className="w-full bg-white border-b fixed z-10">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
         <div className="text-xl font-bold">Estêvão Ferreira</div>
