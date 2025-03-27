@@ -10,6 +10,17 @@ import {
 import { ChartConfig, ChartContainer } from '@/components/ui/chart';
 import Image from 'next/image';
 
+type TechCardProps = {
+  progress: number;
+  iconPath: string;
+  startAngle: number;
+  clockWise: boolean;
+  alt: string;
+};
+
+//ESTOU ACHANDO QUE VAI SER MAIS FÁCIL SE EU FAZER ESSE COMPONENTE DO ZERO!!!
+//adicionar tooltip com os nomes das tecnologias!
+
 const chartData = [
   { browser: 'safari', visitors: 1260, fill: 'var(--color-safari)' }
 ];
@@ -27,14 +38,10 @@ const chartConfig = {
 export function TechCard({
   progress,
   iconPath,
-  startAngle
-  // clockWise
-}: {
-  progress: number;
-  iconPath: string;
-  startAngle: number;
-  clockWise: boolean;
-}) {
+  startAngle,
+  clockWise,
+  alt
+}: TechCardProps) {
   return (
     <div className="relative">
       <ChartContainer
@@ -43,17 +50,17 @@ export function TechCard({
       >
         <RadialBarChart
           data={chartData}
-          endAngle={(18 * progress) / 5 + startAngle}
-          //TEM QUE FAZER A LÓGICA DO CLOCKWISE!!!!!!!!!
+          endAngle={((clockWise ? -1 : 1) * (18 * progress)) / 5 + startAngle}
           startAngle={startAngle}
           innerRadius={80}
           outerRadius={140}
+          className="w-20 h-20"
         >
           <PolarGrid
             gridType="circle"
             radialLines={false}
             stroke="none"
-            className="first:fill-muted last:fill-background"
+            className="w-20 h-20 first:fill-muted last:fill-background"
             polarRadius={[86, 74]}
           />
           <RadialBar dataKey="visitors" background />
@@ -61,14 +68,15 @@ export function TechCard({
             tick={false}
             tickLine={false}
             axisLine={false}
+            className="w-20 h-20"
           ></PolarRadiusAxis>
         </RadialBarChart>
       </ChartContainer>
       <Image
         src={iconPath}
-        alt="Icon"
-        width={100}
-        height={100}
+        alt={alt}
+        width={50}
+        height={50}
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
       />
     </div>

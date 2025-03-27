@@ -11,6 +11,8 @@ export default function About() {
   //depois: mobile
   //pelo que estou vendo, o w/h da Image não pode ser proporcional ao elemento pai
 
+  const cards = aboutData.techStack.cards;
+
   return (
     <section
       className="min-h-screen bg-[url(/img/background/bg.svg)] bg-cover flex"
@@ -22,7 +24,7 @@ export default function About() {
           alt={aboutData.profileImg.alt}
           width={400}
           height={400}
-          className="rounded-full h-24 w-24"
+          className="rounded-full h-60 w-60"
         />
         <div className="flex flex-col">
           <h1 className="text-4xl font-bold">{aboutData.name}</h1>
@@ -30,14 +32,17 @@ export default function About() {
           <p className="mt-8 mb-16 mx-0">{aboutData.description}</p>
           <div>
             <p>{aboutData.techStack.title}</p>
-            <div>
-              <TechCard
-                progress={aboutData.techStack.cards[0].progress}
-                iconPath={aboutData.techStack.cards[0].src}
-                startAngle={aboutData.techStack.startAngle}
-                clockWise={aboutData.techStack.clockWise} //TEM QUE ARRUMAR!!
-              />
-              {/* <div className="bg-red-500 absolute top-1/2 left-1/2 w-40 h-40"></div> */}
+            <div className="grid grid-cols-5">
+              {cards.map((card) => (
+                <TechCard
+                  key={card.src}
+                  progress={card.progress}
+                  iconPath={card.src}
+                  startAngle={aboutData.techStack.startAngle}
+                  clockWise={aboutData.techStack.clockWise}
+                  alt={card.alt}
+                />
+              ))}
             </div>
           </div>
         </div>
