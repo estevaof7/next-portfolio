@@ -2,7 +2,8 @@
 
 import Image from 'next/image';
 import { aboutData } from '@/data/about-data';
-import { TechCard } from './tech-card';
+// import { TechCard } from './tech-card';
+import { ProgressCircle } from './tech-card2';
 
 export default function About() {
   //ver se colocar para o outro lado o progresso
@@ -32,14 +33,20 @@ export default function About() {
           <p className="mt-8 mb-16 mx-0">{aboutData.description}</p>
           <div>
             <p>{aboutData.techStack.title}</p>
-            <div className="grid grid-cols-5">
+            <div className="grid grid-cols-5 gap-5 mt-3">
               {cards.map((card) => (
-                <TechCard
+                // <TechCard
+                //   key={card.src}
+                //   progress={card.progress}
+                //   iconPath={card.src}
+                //   startAngle={aboutData.techStack.startAngle}
+                //   clockWise={aboutData.techStack.clockWise}
+                //   alt={card.alt}
+                // />
+                <ProgressCircle
+                  value={card.progress}
                   key={card.src}
-                  progress={card.progress}
                   iconPath={card.src}
-                  startAngle={aboutData.techStack.startAngle}
-                  clockWise={aboutData.techStack.clockWise}
                   alt={card.alt}
                 />
               ))}
