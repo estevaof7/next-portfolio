@@ -12,7 +12,11 @@ export const aboutData = {
     : 'Hey! My name is Estêvão, I am a Front End Developer seeking new challenges. I have developed this environment to present some of my projects in a simplified way. I hope you like it!',
   techStack: {
     title: 'Tech Stack',
-    startAngle: 270, //0-360
+    startAngle: 90,
+    //0 - 3h
+    //90 - 6h
+    //180 - 9h
+    //270 - 12h
     clockWise: true,
     cards: [
       {
@@ -41,14 +45,19 @@ export const aboutData = {
         progress: 90
       },
       {
+        src: '/img/tech/nodejs-icon.svg',
+        alt: 'NodeJS logo',
+        progress: 80
+      },
+      {
         src: '/img/tech/angular-icon.svg',
         alt: 'Angular logo',
         progress: 60
       },
       {
-        src: '/img/tech/nodejs-icon.svg',
-        alt: 'NodeJS logo',
-        progress: 80
+        src: '/img/tech/mongodb-icon.svg',
+        alt: 'MongoDB logo',
+        progress: 50
       },
       {
         src: '/img/tech/java-icon.svg',
@@ -59,12 +68,23 @@ export const aboutData = {
         src: '/img/tech/mysql-icon.svg',
         alt: 'MySql logo',
         progress: 25
-      },
-      {
-        src: '/img/tech/mongodb-icon.svg',
-        alt: 'MongoDB logo',
-        progress: 50
       }
     ]
   }
 };
+
+//Para restringir o range de número
+// type Enumerate<
+//   N extends number,
+//   Acc extends number[] = []
+// > = Acc['length'] extends N
+//   ? Acc[number]
+//   : Enumerate<N, [...Acc, Acc['length']]>;
+
+// type IntRange<F extends number, T extends number> = Exclude<
+//   Enumerate<T>,
+//   Enumerate<F>
+// >;
+
+// type Progress = IntRange<0, 100>;
+// type Angle = IntRange<0, 360>;

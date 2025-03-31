@@ -1,77 +1,74 @@
-'use client';
-
-import {
-  PolarGrid,
-  PolarRadiusAxis,
-  RadialBar,
-  RadialBarChart
-} from 'recharts';
-
-import { ChartConfig, ChartContainer } from '@/components/ui/chart';
 import Image from 'next/image';
+import type React from 'react';
 
-type TechCardProps = {
-  progress: number;
+//peguei desse site: https://github.com/shadcn-ui/ui/issues/697 (último comentário)
+
+export interface ProgressCircleProps extends React.ComponentProps<'svg'> {
+  value: number;
+  className?: string;
   iconPath: string;
+  alt: string;
   startAngle: number;
   clockWise: boolean;
-  alt: string;
-};
+}
 
-//ESTOU ACHANDO QUE VAI SER MAIS FÁCIL SE EU FAZER ESSE COMPONENTE DO ZERO!!!
-//adicionar tooltip com os nomes das tecnologias!
+function clamp(input: number, a: number, b: number): number {
+  return Math.max(Math.min(input, Math.max(a, b)), Math.min(a, b));
+}
 
-const chartData = [
-  { browser: 'safari', visitors: 1260, fill: 'var(--color-safari)' }
-];
+const size = 24;
+const strokeWidth = 2;
 
-const chartConfig = {
-  visitors: {
-    label: 'Visitors'
-  },
-  safari: {
-    label: 'Safari',
-    color: 'hsl(var(--chart-2))'
-  }
-} satisfies ChartConfig;
+const total = 100;
 
-export function TechCard({
-  progress,
+export const ProgressCircle = ({
+  value,
+  className,
   iconPath,
+  alt,
   startAngle,
   clockWise,
-  alt
-}: TechCardProps) {
+  ...restSvgProps
+}: ProgressCircleProps) => {
+  const normalizedValue = clamp(value, 0, total);
+
+  const radius = (size - strokeWidth) / 2;
+  const circumference = 2 * Math.PI * radius;
+  const progress = (normalizedValue / total) * circumference;
+  const halfSize = size / 2;
+
+  const commonParams = {
+    cx: halfSize,
+    cy: halfSize,
+    r: radius,
+    fill: 'none',
+    strokeWidth
+  };
+
   return (
-    <div className="relative">
-      <ChartContainer
-        config={chartConfig}
-        className="mx-auto aspect-square max-h-[250px]"
+    <div className="relative aspect-square">
+      <svg
+        role="progressbar"
+        viewBox={`0 0 ${size} ${size}`}
+        className={`w-full h-full text-primary ${className}`}
+        aria-valuenow={normalizedValue}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        {...restSvgProps}
       >
-        <RadialBarChart
-          data={chartData}
-          endAngle={((clockWise ? -1 : 1) * (18 * progress)) / 5 + startAngle}
-          startAngle={startAngle}
-          innerRadius={80}
-          outerRadius={140}
-          className="w-20 h-20"
-        >
-          <PolarGrid
-            gridType="circle"
-            radialLines={false}
-            stroke="none"
-            className="w-20 h-20 first:fill-muted last:fill-background"
-            polarRadius={[86, 74]}
-          />
-          <RadialBar dataKey="visitors" background />
-          <PolarRadiusAxis
-            tick={false}
-            tickLine={false}
-            axisLine={false}
-            className="w-20 h-20"
-          ></PolarRadiusAxis>
-        </RadialBarChart>
-      </ChartContainer>
+        <circle {...commonParams} className="stroke-current/25" />
+        <circle
+          {...commonParams}
+          stroke="currentColor"
+          strokeDasharray={circumference}
+          strokeDashoffset={
+            clockWise ? circumference - progress : circumference + progress
+          }
+          strokeLinecap="round"
+          transform={`rotate(${startAngle} ${halfSize} ${halfSize})`}
+          className="stroke-current"
+        />
+      </svg>
       <Image
         src={iconPath}
         alt={alt}
@@ -81,4 +78,4 @@ export function TechCard({
       />
     </div>
   );
-}
+};
