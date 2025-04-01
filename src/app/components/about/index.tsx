@@ -5,36 +5,38 @@ import { aboutData } from '@/data/about-data';
 import { ProgressCircle } from './tech-card';
 
 export default function About() {
-  //estou criando a tipagem que limita o range...
-  //criar tipo do aboutData
-  //colocar chave zoom nos cards ... para o mysql ... verificar se colocar em todos ou só nele ... quando colocar, basta fazer uma condicional com o width e height da Image
-  //tem que ver o que está rolando com a foto de perfil... não está ficando redonda
-  //pelo que estou vendo, o w/h da Image não pode ser proporcional ao elemento pai
-  //responsividade (testar nas duas telas)
-  //mobile
-
   const cards = aboutData.techStack.cards;
+
+  //ESTÁ FALTANDO O ANTES DO SM QUE O TECH STACK NÃO ESTÁ BOM
 
   return (
     <section
-      className="min-h-screen bg-[url(/img/background/bg.svg)] bg-cover flex"
+      className="min-h-screen bg-[url(/img/background/bg.svg)] bg-cover flex py-32 px-10 md:py-28 md:px-12 lg:py-16"
       id="about"
     >
-      <div className="flex max-w-6xl my-auto mx-auto gap-40">
+      <div className="flex flex-col md:flex-row max-w-6xl w-full my-auto mx-auto gap-8 md:gap-12 lg:gap-16 items-center md:items-start">
         <Image
           src={aboutData.profileImg.src}
           alt={aboutData.profileImg.alt}
           width={400}
           height={400}
-          className="rounded-full h-60 w-60"
+          className="rounded-full h-48 w-48 sm:h-64 sm:w-64 md:h-72 md:w-72 lg:h-80 lg:w-80 object-cover"
         />
-        <div className="flex flex-col">
-          <h1 className="text-5xl font-bold">{aboutData.name}</h1>
-          <h2 className="text-3xl font-bold">{aboutData.title}</h2>
-          <p className="mt-8 mb-16 mx-0">{aboutData.description}</p>
+        <div className="flex flex-col mt-6 md:mt-0 text-center md:text-left">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
+            {aboutData.name}
+          </h1>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold">
+            {aboutData.title}
+          </h2>
+          <p className="mt-4 mb-8 sm:mt-6 sm:mb-10 md:mt-8 md:mb-12 lg:mb-16 mx-0">
+            {aboutData.description}
+          </p>
           <div className="flex flex-col space-y-3">
-            <p className="text-xl font-bold">{aboutData.techStack.title}</p>
-            <div className="grid grid-cols-5 gap-10 mt-3">
+            <p className="text-lg sm:text-xl font-bold">
+              {aboutData.techStack.title}
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-10 mt-3">
               {cards.map((card) => (
                 <ProgressCircle
                   value={card.progress}
@@ -43,6 +45,7 @@ export default function About() {
                   alt={card.alt}
                   startAngle={aboutData.techStack.startAngle}
                   clockWise={aboutData.techStack.clockWise}
+                  zoom={card.zoom || 1}
                 />
               ))}
             </div>

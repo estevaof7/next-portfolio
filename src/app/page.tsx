@@ -10,6 +10,7 @@ export default function Home() {
   //PRÓXIMAS FEATURES (depois de lançar)
   //tooltip nos cards de tecnologias
   //cards de tecnologia serem clicados e abrem um modal com o projeto que eu utilizei e como eu utilizei
+  //tipagem dos dados ... no about eu vou fazer um range
   return (
     <main className="text-md">
       <NavBar />

@@ -10,6 +10,7 @@ export interface ProgressCircleProps extends React.ComponentProps<'svg'> {
   alt: string;
   startAngle: number;
   clockWise: boolean;
+  zoom: number;
 }
 
 function clamp(input: number, a: number, b: number): number {
@@ -28,6 +29,7 @@ export const ProgressCircle = ({
   alt,
   startAngle,
   clockWise,
+  zoom,
   ...restSvgProps
 }: ProgressCircleProps) => {
   const normalizedValue = clamp(value, 0, total);
@@ -72,9 +74,9 @@ export const ProgressCircle = ({
       <Image
         src={iconPath}
         alt={alt}
-        width={50}
-        height={50}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        width={50 * zoom}
+        height={50 * zoom}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 xl:scale-100 md:scale-90"
       />
     </div>
   );

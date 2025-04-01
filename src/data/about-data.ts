@@ -67,7 +67,10 @@ export const aboutData = {
       {
         src: '/img/tech/mysql-icon.svg',
         alt: 'MySql logo',
-        progress: 25
+        progress: 25,
+        zoom: 1.7
+        // 1- normal
+        // 2 dobro
       }
     ]
   }
