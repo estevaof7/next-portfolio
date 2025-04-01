@@ -11,6 +11,7 @@ export default function Home() {
   //tooltip nos cards de tecnologias
   //cards de tecnologia serem clicados e abrem um modal com o projeto que eu utilizei e como eu utilizei
   //tipagem dos dados ... no about eu vou fazer um range
+  //problema hidratação
   return (
     <main className="text-md">
       <NavBar />
