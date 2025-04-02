@@ -7,8 +7,6 @@ import { ProgressCircle } from './tech-card';
 export default function About() {
   const cards = aboutData.techStack.cards;
 
-  //ESTÁ FALTANDO O ANTES DO SM QUE O TECH STACK NÃO ESTÁ BOM
-
   return (
     <section
       className="min-h-screen bg-[url(/img/background/bg.svg)] bg-cover flex py-32 px-10 md:py-28 md:px-12 lg:py-16"
