@@ -3,7 +3,8 @@
 import { projectsData } from '@/data/projects-data';
 
 export default function Session2() {
-  //data: array com objeto e chaves title, gif, description, botão opcional, tecnologias utilizadas, etc.
+  //falta gif coffee chop e projetos profissionais
+  //preciso entrar no app do sesc para fazer a captura de tela
 
   return (
     <section className="min-h-screen bg-black text-white">
