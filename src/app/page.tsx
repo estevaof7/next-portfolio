@@ -13,7 +13,7 @@ export default function Home() {
   //tipagem dos dados ... no about eu vou fazer um range
   //no meu celular... menu lateral não está rolando ... cor do progress não está rolando
   //melhorar visual... pegar referências
-
+  //problema hidratação
   return (
     <main className="text-md">
       <NavBar />
