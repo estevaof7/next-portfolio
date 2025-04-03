@@ -7,7 +7,7 @@ export const projectsData = {
       {
         title: isPt ? 'Tribanco' : 'Banking website',
         description: 'verificar',
-        gifPath: 'img/project-gif/',
+        gifPath: 'img/project-gif/tribanco.gif',
         alt: isPt ? 'Projeto tribanco' : 'Banking project'
       },
       {
@@ -15,7 +15,7 @@ export const projectsData = {
           ? 'Gerenciador de ingressos e eventos'
           : 'Ticket and event manager',
         description: 'verificar',
-        gifPath: 'img/project-gif/',
+        gifPath: 'img/project-gif/ingresso.gif',
         alt: isPt ? 'Projeto ingressos' : 'Ticket project'
       }
     ]
@@ -26,7 +26,7 @@ export const projectsData = {
       {
         title: 'Coffeshop',
         description: 'verificar',
-        gifPath: 'img/project-gif/',
+        gifPath: 'img/project-gif/coffeeshop.gif',
         alt: isPt ? 'Projeto coffeshop' : 'Coffeshop project',
         links: {
           repo: 'https://github.com/estevaof7/coffee-shop',
@@ -77,35 +77,34 @@ export const projectsData = {
       },
       {
         title: 'My First Landing Page',
-        description: 'verificar ************* PAREI AQUI *************',
-        gifPath: 'img/project-gif/',
-        alt: 'Projeto tribanco',
+        description: 'verificar',
+        gifPath: 'img/project-gif/landing-page.gif',
+        alt: isPt ? 'Projeto landing page' : 'Landing page project',
         links: {
-          repo: '',
-          demo: '',
-          youtube: ''
+          repo: 'https://github.com/estevaof7/my-first-landing-page',
+          demo: 'https://estevaof7.github.io/my-first-landing-page/'
         }
       },
       {
-        title: isPt ? 'Tribanco com Next.js' : ' with Next.js',
+        title: isPt ? 'Equação do Segundo Grau' : 'Quadratic Equation',
         description: 'verificar',
-        gifPath: 'img/project-gif/',
-        alt: 'Projeto tribanco',
+        gifPath: 'img/project-gif/eq2grau.gif',
+        alt: isPt
+          ? 'Projeto equação do segundo grau'
+          : 'Quadratic equation project',
         links: {
-          repo: '',
-          demo: '',
-          youtube: ''
+          repo: 'https://github.com/estevaof7/equacao2grau',
+          demo: 'https://estevaof7.github.io/equacao2grau/'
         }
       },
       {
-        title: isPt ? 'Tribanco com Next.js' : ' with Next.js',
+        title: 'Tabs CSS',
         description: 'verificar',
-        gifPath: 'img/project-gif/',
-        alt: 'Projeto tribanco',
+        gifPath: 'img/project-gif/tabs.gif',
+        alt: isPt ? 'Projeto tabs' : 'Tabs project',
         links: {
-          repo: '',
-          demo: '',
-          youtube: ''
+          repo: 'https://github.com/estevaof7/tabs',
+          demo: 'https://estevaof7.github.io/tabs/'
         }
       }
     ]
