@@ -1,13 +1,15 @@
 import { isPt } from '@/language';
+import { VideoStartsOn } from '@/models/projects-model';
 
 export const projectsData = {
+  videoStarts: VideoStartsOn.RIGHT,
   professional: {
     title: isPt ? 'Projetos profissionais' : 'Professional projects',
     projects: [
       {
         title: isPt ? 'Tribanco' : 'Banking website',
         description: 'verificar',
-        gifPath: 'img/project-gif/tribanco.gif',
+        gifPath: '/img/project-gif/tribanco.gif',
         alt: isPt ? 'Projeto tribanco' : 'Banking project'
       },
       {
@@ -15,7 +17,7 @@ export const projectsData = {
           ? 'Gerenciador de ingressos e eventos'
           : 'Ticket and event manager',
         description: 'verificar',
-        gifPath: 'img/project-gif/ingresso.gif',
+        gifPath: '/img/project-gif/ingresso.gif',
         alt: isPt ? 'Projeto ingressos' : 'Ticket project'
       }
     ]
@@ -26,7 +28,7 @@ export const projectsData = {
       {
         title: 'Coffeshop',
         description: 'verificar',
-        gifPath: 'img/project-gif/coffeeshop.gif',
+        gifPath: '/img/project-gif/coffeeshop.gif',
         alt: isPt ? 'Projeto coffeshop' : 'Coffeshop project',
         links: {
           repo: 'https://github.com/estevaof7/coffee-shop',
@@ -36,7 +38,7 @@ export const projectsData = {
       {
         title: 'My first React project',
         description: 'verificar',
-        gifPath: 'img/project-gif/react1.gif',
+        gifPath: '/img/project-gif/react1.gif',
         alt: isPt ? 'Projeto react' : 'React project',
         links: {
           repo: 'https://github.com/estevaof7/react-project-1',
@@ -46,7 +48,7 @@ export const projectsData = {
       {
         title: 'CineJava',
         description: 'verificar',
-        gifPath: 'img/project-gif/cinejava.gif',
+        gifPath: '/img/project-gif/cinejava.gif',
         alt: isPt ? 'Projeto cinejava' : 'Cinejava project',
         links: {
           repo: 'https://github.com/estevaof7/cinejava',
@@ -57,7 +59,7 @@ export const projectsData = {
       {
         title: isPt ? 'Agenda Express/MongoDB' : 'Contacts Express/MongoDB',
         description: 'verificar',
-        gifPath: 'img/project-gif/agenda.gif',
+        gifPath: '/img/project-gif/agenda.gif',
         alt: isPt ? 'Projeto agenda' : 'Contacts project',
         links: {
           repo: 'https://github.com/estevaof7/agenda',
@@ -67,7 +69,7 @@ export const projectsData = {
       {
         title: 'Easy Carousel',
         description: 'verificar',
-        gifPath: 'img/project-gif/carrossel.gif',
+        gifPath: '/img/project-gif/carrossel.gif',
         alt: 'Projeto tribanco',
         links: {
           repo: 'https://github.com/estevaof7/carousel',
@@ -78,7 +80,7 @@ export const projectsData = {
       {
         title: 'My First Landing Page',
         description: 'verificar',
-        gifPath: 'img/project-gif/landing-page.gif',
+        gifPath: '/img/project-gif/landing-page.gif',
         alt: isPt ? 'Projeto landing page' : 'Landing page project',
         links: {
           repo: 'https://github.com/estevaof7/my-first-landing-page',
@@ -88,7 +90,7 @@ export const projectsData = {
       {
         title: isPt ? 'Equação do Segundo Grau' : 'Quadratic Equation',
         description: 'verificar',
-        gifPath: 'img/project-gif/eq2grau.gif',
+        gifPath: '/img/project-gif/eq2grau.gif',
         alt: isPt
           ? 'Projeto equação do segundo grau'
           : 'Quadratic equation project',
@@ -100,7 +102,7 @@ export const projectsData = {
       {
         title: 'Tabs CSS',
         description: 'verificar',
-        gifPath: 'img/project-gif/tabs.gif',
+        gifPath: '/img/project-gif/tabs.gif',
         alt: isPt ? 'Projeto tabs' : 'Tabs project',
         links: {
           repo: 'https://github.com/estevaof7/tabs',
