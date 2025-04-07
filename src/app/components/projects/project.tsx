@@ -5,23 +5,26 @@ export function Project({ index, data }: { index: number; data: any }) {
   const position = index % 2 === 0 ? Position.EVEN : Position.ODD;
 
   return (
-    <div>
-      <Title title={data.title} />
-      <Description description={data.description} />
+    <div
+      className={`flex justify-between ${position === Position.EVEN ? '' : 'flex-row-reverse'}`}
+    >
+      <div>
+        <Title title={data.title} />
+        <Description description={data.description} />
+      </div>
       <Gif gifPath={data.gifPath} alt={data.alt} />
-      <p>{position}</p>
     </div>
   );
 }
 
 function Title({ title }: { title: string }) {
-  return <h1>{title}</h1>;
+  return <h1 className="text-4xl">{title}</h1>;
 }
 function Description({ description }: { description: string }) {
-  return <h1>{description}</h1>;
+  return <p>{description}</p>;
 }
 function Gif({ gifPath, alt }: { gifPath: string; alt: string }) {
-  return <Image src={gifPath} alt={alt} width={500} height={500} />;
+  return <Image src={gifPath} alt={alt} width={500} height={500} unoptimized />;
 }
 
 enum Position {

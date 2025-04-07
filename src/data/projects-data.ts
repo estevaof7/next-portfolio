@@ -2,7 +2,7 @@ import { isPt } from '@/language';
 import { VideoStartsOn } from '@/models/projects-model';
 
 export const projectsData = {
-  videoStarts: VideoStartsOn.RIGHT,
+  videoStarts: VideoStartsOn.LEFT,
   professional: {
     title: isPt ? 'Projetos profissionais' : 'Professional projects',
     projects: [
@@ -28,7 +28,7 @@ export const projectsData = {
       {
         title: 'Coffeshop',
         description: 'verificar',
-        gifPath: '/img/project-gif/coffeeshop.gif',
+        gifPath: '/img/project-gif/coffeshop.gif',
         alt: isPt ? 'Projeto coffeshop' : 'Coffeshop project',
         links: {
           repo: 'https://github.com/estevaof7/coffee-shop',
