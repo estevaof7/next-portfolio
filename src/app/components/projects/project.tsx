@@ -4,6 +4,7 @@ import { JSX } from 'react';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function Project({ index, data }: { index: number; data: any }) {
   //anotei no projects-data como vou pedir para o gpt ... começar a elaborar as descrições
+  //colocar data
 
   const position = index % 2 === 0 ? Position.EVEN : Position.ODD;
 

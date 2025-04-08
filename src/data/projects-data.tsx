@@ -10,7 +10,9 @@ export const projectsData = {
         title: isPt ? 'Tribanco' : 'Banking website',
         description: () => <p>descrição</p>,
         gifPath: '/img/project-gif/tribanco.gif',
-        alt: isPt ? 'Projeto tribanco' : 'Banking project'
+        alt: isPt ? 'Projeto tribanco' : 'Banking project',
+        start: { month: 1, year: 2025 },
+        end: { month: 3, year: 2025 }
       },
       {
         title: isPt
@@ -18,7 +20,9 @@ export const projectsData = {
           : 'Ticket and event manager',
         description: () => <p>descrição</p>,
         gifPath: '/img/project-gif/ingresso.gif',
-        alt: isPt ? 'Projeto ingressos' : 'Ticket project'
+        alt: isPt ? 'Projeto ingressos' : 'Ticket project',
+        start: { month: 3, year: 2025 }
+        // end: { month: 3, year: 2025 } VERIFICAR O QUE O CLAUDE FALOU ... TALVEZ O MELHOR SEJA TIPO DATE E O QUE ESTIVER ACONTECENDO ATUALMENTE, COLOCAR new Date()
       }
     ]
   },
@@ -33,7 +37,8 @@ export const projectsData = {
         links: {
           repo: 'https://github.com/estevaof7/coffee-shop',
           demo: 'https://coffee-shopf7.netlify.app/'
-        }
+        },
+        end: { month: 1, year: 2025 }
       },
       {
         title: 'My first React project',
@@ -43,7 +48,8 @@ export const projectsData = {
         links: {
           repo: 'https://github.com/estevaof7/react-project-1',
           demo: 'https://spectacular-daifuku-50a414.netlify.app/'
-        }
+        },
+        end: { month: 12, year: 2024 }
       },
       {
         title: 'CineJava',
@@ -54,7 +60,8 @@ export const projectsData = {
           repo: 'https://github.com/estevaof7/cinejava',
           youtube:
             'https://www.youtube.com/watch?v=DiwVSQ6t_Ps&feature=youtu.be'
-        }
+        },
+        end: { month: 12, year: 2023 }
       },
       {
         title: isPt ? 'Agenda Express/MongoDB' : 'Contacts Express/MongoDB',
@@ -64,7 +71,8 @@ export const projectsData = {
         links: {
           repo: 'https://github.com/estevaof7/agenda',
           youtube: 'https://www.youtube.com/watch?v=aG6yPrYZAs4'
-        }
+        },
+        end: { month: 5, year: 2024 }
       },
       {
         title: 'Easy Carousel',
@@ -75,7 +83,8 @@ export const projectsData = {
           repo: 'https://github.com/estevaof7/carousel',
           demo: 'https://estevaof7.github.io/carousel/',
           youtube: 'https://www.youtube.com/watch?v=twr7BSXEBL8'
-        }
+        },
+        end: { month: 10, year: 2024 }
       },
       {
         title: 'My First Landing Page',
@@ -85,7 +94,8 @@ export const projectsData = {
         links: {
           repo: 'https://github.com/estevaof7/my-first-landing-page',
           demo: 'https://estevaof7.github.io/my-first-landing-page/'
-        }
+        },
+        end: { month: 3, year: 2023 }
       },
       {
         title: isPt ? 'Equação do Segundo Grau' : 'Quadratic Equation',
@@ -97,7 +107,8 @@ export const projectsData = {
         links: {
           repo: 'https://github.com/estevaof7/equacao2grau',
           demo: 'https://estevaof7.github.io/equacao2grau/'
-        }
+        },
+        end: { month: 5, year: 2023 }
       },
       {
         title: 'Tabs CSS',
@@ -113,12 +124,14 @@ export const projectsData = {
         links: {
           repo: 'https://github.com/estevaof7/tabs',
           demo: 'https://estevaof7.github.io/tabs/'
-        }
+        },
+        end: { month: 7, year: 2023 }
       }
     ]
   }
 };
 
-//Olá! Sou um desenvolvedor frontend e estou criando meu portfólio. Nesse portfólio, eu estou colocando os projetos que já desenvolvi e uma descrição breve de cada. Me ajude a elaborar a descrição deste primeiro... até agora, está assim:
-
-//projects2: tab
+export type MonthYear = {
+  month: number; // 1-12, dependendo da sua preferência
+  year: number;
+};
