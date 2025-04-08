@@ -25,6 +25,11 @@ export const aboutData = {
         progress: 100
       },
       {
+        src: '/img/tech/typescript-icon.svg',
+        alt: 'TS logo',
+        progress: 100
+      },
+      {
         src: '/img/tech/html-icon.svg',
         alt: 'Html logo',
         progress: 100
@@ -47,7 +52,8 @@ export const aboutData = {
       {
         src: '/img/tech/nodejs-icon.svg',
         alt: 'NodeJS logo',
-        progress: 80
+        progress: 80,
+        zoom: 1.2
       },
       {
         src: '/img/tech/angular-icon.svg',
@@ -71,6 +77,18 @@ export const aboutData = {
         zoom: 1.7
         // 1- normal
         // 2 dobro
+      },
+      {
+        src: '/img/tech/tailwind-icon.svg',
+        alt: 'Tailwind logo',
+        progress: 100,
+        zoom: 1.1
+      },
+      {
+        src: '/img/tech/bootstrap-icon.svg',
+        alt: 'Bootstrap logo',
+        progress: 100,
+        zoom: 1
       }
     ]
   }

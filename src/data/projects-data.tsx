@@ -2,13 +2,13 @@ import { isPt } from '@/language';
 import { VideoStartsOn } from '@/models/projects-model';
 
 export const projectsData = {
-  videoStarts: VideoStartsOn.LEFT,
+  videoStarts: VideoStartsOn.RIGHT,
   professional: {
     title: isPt ? 'Projetos profissionais' : 'Professional projects',
     projects: [
       {
         title: isPt ? 'Tribanco' : 'Banking website',
-        description: 'verificar',
+        description: () => <p>descrição</p>,
         gifPath: '/img/project-gif/tribanco.gif',
         alt: isPt ? 'Projeto tribanco' : 'Banking project'
       },
@@ -16,7 +16,7 @@ export const projectsData = {
         title: isPt
           ? 'Gerenciador de ingressos e eventos'
           : 'Ticket and event manager',
-        description: 'verificar',
+        description: () => <p>descrição</p>,
         gifPath: '/img/project-gif/ingresso.gif',
         alt: isPt ? 'Projeto ingressos' : 'Ticket project'
       }
@@ -27,7 +27,7 @@ export const projectsData = {
     projects: [
       {
         title: 'Coffeshop',
-        description: 'verificar',
+        description: () => <p>descrição</p>,
         gifPath: '/img/project-gif/coffeshop.gif',
         alt: isPt ? 'Projeto coffeshop' : 'Coffeshop project',
         links: {
@@ -37,7 +37,7 @@ export const projectsData = {
       },
       {
         title: 'My first React project',
-        description: 'verificar',
+        description: () => <p>descrição</p>,
         gifPath: '/img/project-gif/react1.gif',
         alt: isPt ? 'Projeto react' : 'React project',
         links: {
@@ -47,7 +47,7 @@ export const projectsData = {
       },
       {
         title: 'CineJava',
-        description: 'verificar',
+        description: () => <p>descrição</p>,
         gifPath: '/img/project-gif/cinejava.gif',
         alt: isPt ? 'Projeto cinejava' : 'Cinejava project',
         links: {
@@ -58,7 +58,7 @@ export const projectsData = {
       },
       {
         title: isPt ? 'Agenda Express/MongoDB' : 'Contacts Express/MongoDB',
-        description: 'verificar',
+        description: () => <p>descrição</p>,
         gifPath: '/img/project-gif/agenda.gif',
         alt: isPt ? 'Projeto agenda' : 'Contacts project',
         links: {
@@ -68,7 +68,7 @@ export const projectsData = {
       },
       {
         title: 'Easy Carousel',
-        description: 'verificar',
+        description: () => <p>descrição</p>,
         gifPath: '/img/project-gif/carrossel.gif',
         alt: 'Projeto tribanco',
         links: {
@@ -79,7 +79,7 @@ export const projectsData = {
       },
       {
         title: 'My First Landing Page',
-        description: 'verificar',
+        description: () => <p>descrição</p>,
         gifPath: '/img/project-gif/landing-page.gif',
         alt: isPt ? 'Projeto landing page' : 'Landing page project',
         links: {
@@ -89,7 +89,7 @@ export const projectsData = {
       },
       {
         title: isPt ? 'Equação do Segundo Grau' : 'Quadratic Equation',
-        description: 'verificar',
+        description: () => <p>descrição</p>,
         gifPath: '/img/project-gif/eq2grau.gif',
         alt: isPt
           ? 'Projeto equação do segundo grau'
@@ -101,7 +101,13 @@ export const projectsData = {
       },
       {
         title: 'Tabs CSS',
-        description: 'verificar',
+        description: () => (
+          <p>
+            {isPt
+              ? 'Estilização de "abas" feita com manipulações entre CSS e JS quando eu estava praticando essa interação. Um projeto simples que me ajudou a praticar essa conversa que há entre JS, HTML e CSS.'
+              : ''}
+          </p>
+        ),
         gifPath: '/img/project-gif/tabs.gif',
         alt: isPt ? 'Projeto tabs' : 'Tabs project',
         links: {
@@ -112,3 +118,7 @@ export const projectsData = {
     ]
   }
 };
+
+//Olá! Sou um desenvolvedor frontend e estou criando meu portfólio. Nesse portfólio, eu estou colocando os projetos que já desenvolvi e uma descrição breve de cada. Me ajude a elaborar a descrição deste primeiro... até agora, está assim:
+
+//projects2: tab
