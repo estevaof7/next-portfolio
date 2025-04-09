@@ -12,6 +12,10 @@ export default function Projects() {
   const personalProjects = projectsData.personal.projects;
   const videoStarts = projectsData.videoStarts;
 
+  // const teste = professionalProjects[0].start;
+  // teste.getFullYear()
+  // teste.getMonth()
+
   return (
     <section className="min-h-screen bg-black text-white">
       <div className="max-w-6xl mx-auto py-20 space-y-20">
