@@ -12,11 +12,13 @@ export function Project({ index, data }: { index: number; data: any }) {
     <div
       className={`flex justify-between gap-10 ${position === Position.EVEN ? '' : 'flex-row-reverse'}`}
     >
-      <div className="space-y-4">
+      <div className="space-y-4 w-3/5">
         <Title title={data.title} />
         <Description description={data.description} />
       </div>
-      <Gif gifPath={data.gifPath} alt={data.alt} />
+      <div className="w-2/5">
+        <Gif gifPath={data.gifPath} alt={data.alt} />
+      </div>
     </div>
   );
 }
