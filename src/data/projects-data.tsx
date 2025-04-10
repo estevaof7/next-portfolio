@@ -1,20 +1,22 @@
 import { isPt } from '@/language';
 import { VideoStartsOn } from '@/models/projects-model';
 
-enum Month {
-  JANUARY = 0,
-  FEBRUARY = 1,
-  MARCH = 2,
-  APRIL = 3,
-  MAY = 4,
-  JUNE = 5,
-  JULY = 6,
-  AUGUST = 7,
-  SEPTEMBER = 8,
-  OCTOBER = 9,
-  NOVEMBER = 10,
-  DECEMBER = 11
-}
+const months: string[] = [
+  isPt ? 'janeiro' : 'january',
+  isPt ? 'fevereiro' : 'february',
+  isPt ? 'março' : 'march',
+  isPt ? 'abril' : 'april',
+  isPt ? 'maio' : 'may',
+  isPt ? 'junho' : 'june',
+  isPt ? 'julho' : 'july',
+  isPt ? 'agosto' : 'august',
+  isPt ? 'setembro' : 'september',
+  isPt ? 'outubro' : 'october',
+  isPt ? 'novembro' : 'november',
+  isPt ? 'dezembro' : 'december'
+];
+
+const currentDate = `${months[new Date().getMonth()]} ${new Date().getFullYear()}`;
 
 export const projectsData = {
   videoStarts: VideoStartsOn.RIGHT,
@@ -51,15 +53,36 @@ export const projectsData = {
             </>
           ) : (
             <>
-              Project description en
+              I contributed to the development of Tribanco’s institutional
+              website using Next.js, React, TypeScript, Tailwind CSS, and the
+              ShadCN component library.
               <br />
+              <br />
+              I was responsible for the complete implementation of three main
+              pages:
+              <br />
+              <br />
+              <ul className="list-disc pl-4">
+                <li>Annual Debt Clearance Statement</li>
+                <li>Bearer Limit</li>
+                <li>Tariff Summary</li>
+              </ul>
+              <br />
+              I also collaborated on the development of other pages, such as
+              Income Report and User Management.
+              <br />
+              <br />
+              The API integration was done by consuming the endpoints provided
+              by the backend, following the MVVM (Model - View - ViewModel)
+              architecture. In addition, the entire development process was
+              supported by unit testing using Vitest.
             </>
           );
         },
         gifPath: '/img/project-gif/tribanco.gif',
         alt: isPt ? 'Projeto tribanco' : 'Banking project',
-        start: new Date(2025, Month.JANUARY),
-        end: new Date(2025, Month.MARCH)
+        start: (isPt ? 'janeiro' : 'january') + ' 2025',
+        end: (isPt ? 'março' : 'march') + ' 2025'
       },
       {
         title: isPt
@@ -81,15 +104,60 @@ export const projectsData = {
             </>
           ) : (
             <>
-              Project description en
+              Ticket management system project developed with Angular 16. The
+              platform allows event organizers to create events with different
+              variants and ticket lots, while participants can log in and
+              purchase tickets through their user accounts.
               <br />
+              <br />I joined the team after the main screens were already built,
+              and since then, I&apos;ve been working on bug fixes, interface
+              improvements, and the implementation of new features.
             </>
           );
         },
         gifPath: '/img/project-gif/ingresso.gif',
         alt: isPt ? 'Projeto ingressos' : 'Ticket project',
-        start: new Date(2025, Month.MARCH),
-        end: new Date()
+        start: (isPt ? 'março' : 'march') + ' 2025',
+        end: currentDate
+      },
+      {
+        title: isPt ? 'Leitor QR Code SESC' : 'QR code reader for SESC',
+        description: () => {
+          return isPt ? (
+            <>
+              Projeto desenvolvido para o Sesc utilizando Angular 19 (mobile).
+              <br />
+              <br />
+              Atuei na construção de uma aplicação mobile de leitura de QR Code,
+              voltada para o controle de acesso nas catracas das unidades.
+              Funcionários utilizam o app para escanear os QR Codes apresentados
+              por clientes ou visitantes, e a aplicação retorna os dados da
+              pessoa, indicando se a entrada está liberada ou bloqueada.
+              <br />
+              <br />O sistema é integrado à plataforma principal, garantindo
+              segurança e agilidade no processo de validação de acesso.
+            </>
+          ) : (
+            <>
+              Project developed for a sports club using Angular 19 (mobile).
+              <br />
+              <br />
+              I worked on building a mobile QR code reader application designed
+              for access control at the club entrances. Staff members use the
+              app to scan QR codes presented by clients or visitors, and the
+              system returns the person’s information, indicating whether access
+              is authorized or blocked.
+              <br />
+              <br />
+              The app is integrated with the main platform, ensuring secure and
+              efficient entry validation.
+            </>
+          );
+        },
+        gifPath: '/img/project-gif/ingresso.gif', //TROCAR!
+        alt: isPt ? 'Projeto ingressos' : 'Ticket project',
+        start: (isPt ? 'março' : 'march') + ' 2025',
+        end: currentDate
       }
     ]
   },
@@ -126,7 +194,7 @@ export const projectsData = {
           repo: 'https://github.com/estevaof7/coffee-shop',
           demo: 'https://coffee-shopf7.netlify.app/'
         },
-        end: new Date(2025, Month.JANUARY)
+        end: (isPt ? 'janeiro' : 'january') + ' 2025'
       },
       {
         title: 'CineJava',
@@ -167,7 +235,7 @@ export const projectsData = {
           youtube:
             'https://www.youtube.com/watch?v=DiwVSQ6t_Ps&feature=youtu.be'
         },
-        end: new Date(2023, Month.DECEMBER)
+        end: (isPt ? 'dezembro' : 'december') + ' 2023'
       },
       {
         title: 'My first React project',
@@ -194,7 +262,7 @@ export const projectsData = {
           repo: 'https://github.com/estevaof7/react-project-1',
           demo: 'https://spectacular-daifuku-50a414.netlify.app/'
         },
-        end: new Date(2024, Month.DECEMBER)
+        end: (isPt ? 'dezembro' : 'december') + ' 2024'
       },
 
       {
@@ -225,7 +293,7 @@ export const projectsData = {
           repo: 'https://github.com/estevaof7/agenda',
           youtube: 'https://www.youtube.com/watch?v=aG6yPrYZAs4'
         },
-        end: new Date(2024, Month.MAY)
+        end: (isPt ? 'maio' : 'may') + ' 2024'
       },
       {
         title: 'Easy Carousel',
@@ -258,7 +326,7 @@ export const projectsData = {
           demo: 'https://estevaof7.github.io/carousel/',
           youtube: 'https://www.youtube.com/watch?v=twr7BSXEBL8'
         },
-        end: new Date(2024, Month.OCTOBER)
+        end: (isPt ? 'outubro' : 'october') + ' 2024'
       },
       {
         title: 'My First Landing Page',
@@ -283,7 +351,7 @@ export const projectsData = {
           repo: 'https://github.com/estevaof7/my-first-landing-page',
           demo: 'https://estevaof7.github.io/my-first-landing-page/'
         },
-        end: new Date(2023, Month.MARCH)
+        end: (isPt ? 'março' : 'march') + ' 2023'
       },
       {
         title: isPt ? 'Equação do Segundo Grau' : 'Quadratic Equation',
@@ -319,7 +387,7 @@ export const projectsData = {
           repo: 'https://github.com/estevaof7/equacao2grau',
           demo: 'https://estevaof7.github.io/equacao2grau/'
         },
-        end: new Date(2023, Month.MAY)
+        end: (isPt ? 'maio' : 'may') + ' 2023'
       },
       {
         title: 'Tabs CSS',
@@ -352,7 +420,7 @@ export const projectsData = {
           repo: 'https://github.com/estevaof7/tabs',
           demo: 'https://estevaof7.github.io/tabs/'
         },
-        end: new Date(2023, Month.JULY)
+        end: (isPt ? 'julho' : 'july') + ' 2023'
       }
     ]
   }

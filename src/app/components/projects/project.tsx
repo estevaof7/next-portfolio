@@ -3,8 +3,8 @@ import { JSX } from 'react';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function Project({ index, data }: { index: number; data: any }) {
-  //anotei no projects-data como vou pedir para o gpt ... começar a elaborar as descrições
   //colocar data
+  //verificar se o bg-gray do Image funcionou para quando estiver carregando
 
   const position = index % 2 === 0 ? Position.EVEN : Position.ODD;
 
@@ -37,7 +37,7 @@ function Gif({ gifPath, alt }: { gifPath: string; alt: string }) {
       width={500}
       height={500}
       unoptimized
-      className="rounded-xl"
+      className="rounded-xl bg-gray-400"
     />
   );
 }
