@@ -13,8 +13,18 @@ export function Project({ index, data }: { index: number; data: any }) {
       className={`flex justify-between gap-10 ${position === Position.EVEN ? '' : 'flex-row-reverse'}`}
     >
       <div className="space-y-4 w-3/5">
-        <Title title={data.title} />
+        <div>
+          <Title title={data.title} />
+          <h2 className="text-gray-400 mt-1">
+            {(data.start ? data.start + ' - ' : '') + data.end}
+          </h2>
+        </div>
         <Description description={data.description} />
+        <div className="flex space-x-4">
+          <div className="rounded-full w-12 h-12 bg-gray-300"></div>
+          <div className="rounded-full w-12 h-12 bg-gray-300"></div>
+          <div className="rounded-full w-12 h-12 bg-gray-300"></div>
+        </div>
       </div>
       <div className="w-2/5">
         <Gif gifPath={data.gifPath} alt={data.alt} />
@@ -24,21 +34,23 @@ export function Project({ index, data }: { index: number; data: any }) {
 }
 
 function Title({ title }: { title: string }) {
-  return <h1 className="text-4xl">{title}</h1>;
+  return <h1 className="text-4xl font-medium">{title}</h1>;
 }
 function Description({ description }: { description: () => JSX.Element }) {
   return <div>{description()}</div>;
 }
 function Gif({ gifPath, alt }: { gifPath: string; alt: string }) {
   return (
-    <Image
-      src={gifPath}
-      alt={alt}
-      width={500}
-      height={500}
-      unoptimized
-      className="rounded-xl bg-gray-400"
-    />
+    <div className="w-full h-auto rounded-2xl bg-gray-300">
+      <Image
+        src={gifPath}
+        alt={alt}
+        width={500}
+        height={500}
+        unoptimized
+        className="rounded-xl"
+      />
+    </div>
   );
 }
 

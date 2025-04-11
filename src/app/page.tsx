@@ -10,6 +10,7 @@ export default function Home() {
   //adicionar typescript ... tailwind ... bootstrap ... ver se separa em categorias
 
   //PRÓXIMAS FEATURES (depois de lançar)
+  //animação ao carregar elementos igual no tribanco
   //tooltip nos cards de tecnologias
   //cards de tecnologia serem clicados e abrem um modal com o projeto que eu utilizei e como eu utilizei
   //tipagem dos dados ... no about eu vou fazer um range ... nos projetos, colocar tipagem no project
