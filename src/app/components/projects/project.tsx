@@ -3,8 +3,7 @@ import { JSX } from 'react';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function Project({ index, data }: { index: number; data: any }) {
-  //colocar data
-  //verificar se o bg-gray do Image funcionou para quando estiver carregando
+  //PASSEI O TECH PARA OUTRO ARQUIVO E ESTOU COLOCANDO NA CHAVE tech DE CADA PROJETO ... FAZER A MESMA COISA COM O ABOUT ... VERIFICAR SE ESSE É O MELHOR JEITO
 
   const position = index % 2 === 0 ? Position.EVEN : Position.ODD;
 

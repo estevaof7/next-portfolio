@@ -1,5 +1,7 @@
 import { isPt } from '@/language';
 import { VideoStartsOn } from '@/models/projects-model';
+import { techData } from './tech-data';
+import { Tech } from '@/models/tech-model';
 
 const months: string[] = [
   isPt ? 'janeiro' : 'january',
@@ -82,7 +84,13 @@ export const projectsData = {
         gifPath: '/img/project-gif/tribanco.gif',
         alt: isPt ? 'Projeto tribanco' : 'Banking project',
         start: (isPt ? 'janeiro' : 'january') + ' 2025',
-        end: (isPt ? 'março' : 'march') + ' 2025'
+        end: (isPt ? 'março' : 'march') + ' 2025',
+        tech: [
+          techData[Tech.NEXT],
+          techData[Tech.REACT],
+          techData[Tech.TS],
+          techData[Tech.TAILWIND]
+        ]
       },
       {
         title: isPt
@@ -118,7 +126,12 @@ export const projectsData = {
         gifPath: '/img/project-gif/ingresso.gif',
         alt: isPt ? 'Projeto ingressos' : 'Ticket project',
         start: (isPt ? 'março' : 'march') + ' 2025',
-        end: currentDate
+        end: currentDate,
+        tech: [
+          techData[Tech.ANGULAR],
+          techData[Tech.TS],
+          techData[Tech.BOOTSTRAP]
+        ]
       },
       {
         title: isPt ? 'Leitor QR Code SESC' : 'QR code reader for SESC',
@@ -157,7 +170,12 @@ export const projectsData = {
         gifPath: '/img/project-gif/ingresso.gif', //TROCAR!
         alt: isPt ? 'Projeto ingressos' : 'Ticket project',
         start: (isPt ? 'março' : 'march') + ' 2025',
-        end: currentDate
+        end: currentDate,
+        tech: [
+          techData[Tech.ANGULAR],
+          techData[Tech.TS],
+          techData[Tech.BOOTSTRAP]
+        ]
       }
     ]
   },
@@ -194,7 +212,8 @@ export const projectsData = {
           repo: 'https://github.com/estevaof7/coffee-shop',
           demo: 'https://coffee-shopf7.netlify.app/'
         },
-        end: (isPt ? 'janeiro' : 'january') + ' 2025'
+        end: (isPt ? 'janeiro' : 'january') + ' 2025',
+        tech: []
       },
       {
         title: 'CineJava',
@@ -235,7 +254,8 @@ export const projectsData = {
           youtube:
             'https://www.youtube.com/watch?v=DiwVSQ6t_Ps&feature=youtu.be'
         },
-        end: (isPt ? 'dezembro' : 'december') + ' 2023'
+        end: (isPt ? 'dezembro' : 'december') + ' 2023',
+        tech: []
       },
       {
         title: 'My first React project',
@@ -262,7 +282,8 @@ export const projectsData = {
           repo: 'https://github.com/estevaof7/react-project-1',
           demo: 'https://spectacular-daifuku-50a414.netlify.app/'
         },
-        end: (isPt ? 'dezembro' : 'december') + ' 2024'
+        end: (isPt ? 'dezembro' : 'december') + ' 2024',
+        tech: []
       },
 
       {
@@ -293,7 +314,8 @@ export const projectsData = {
           repo: 'https://github.com/estevaof7/agenda',
           youtube: 'https://www.youtube.com/watch?v=aG6yPrYZAs4'
         },
-        end: (isPt ? 'maio' : 'may') + ' 2024'
+        end: (isPt ? 'maio' : 'may') + ' 2024',
+        tech: []
       },
       {
         title: 'Easy Carousel',
@@ -326,7 +348,8 @@ export const projectsData = {
           demo: 'https://estevaof7.github.io/carousel/',
           youtube: 'https://www.youtube.com/watch?v=twr7BSXEBL8'
         },
-        end: (isPt ? 'outubro' : 'october') + ' 2024'
+        end: (isPt ? 'outubro' : 'october') + ' 2024',
+        tech: []
       },
       {
         title: 'My First Landing Page',
@@ -351,7 +374,8 @@ export const projectsData = {
           repo: 'https://github.com/estevaof7/my-first-landing-page',
           demo: 'https://estevaof7.github.io/my-first-landing-page/'
         },
-        end: (isPt ? 'março' : 'march') + ' 2023'
+        end: (isPt ? 'março' : 'march') + ' 2023',
+        tech: []
       },
       {
         title: isPt ? 'Equação do Segundo Grau' : 'Quadratic Equation',
@@ -387,7 +411,8 @@ export const projectsData = {
           repo: 'https://github.com/estevaof7/equacao2grau',
           demo: 'https://estevaof7.github.io/equacao2grau/'
         },
-        end: (isPt ? 'maio' : 'may') + ' 2023'
+        end: (isPt ? 'maio' : 'may') + ' 2023',
+        tech: []
       },
       {
         title: 'Tabs CSS',
@@ -420,7 +445,8 @@ export const projectsData = {
           repo: 'https://github.com/estevaof7/tabs',
           demo: 'https://estevaof7.github.io/tabs/'
         },
-        end: (isPt ? 'julho' : 'july') + ' 2023'
+        end: (isPt ? 'julho' : 'july') + ' 2023',
+        tech: []
       }
     ]
   }

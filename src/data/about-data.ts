@@ -87,8 +87,7 @@ export const aboutData = {
       {
         src: '/img/tech/bootstrap-icon.svg',
         alt: 'Bootstrap logo',
-        progress: 100,
-        zoom: 1
+        progress: 100
       }
     ]
   }
