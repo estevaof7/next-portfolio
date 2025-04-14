@@ -1,5 +1,5 @@
 import { isPt } from '@/language';
-import { VideoStartsOn } from '@/models/projects-model';
+import { Projects, VideoStartsOn } from '@/models/projects-model';
 import { techData } from './tech-data';
 import { Tech } from '@/models/tech-model';
 
@@ -20,7 +20,7 @@ const months: string[] = [
 
 const currentDate = `${months[new Date().getMonth()]} ${new Date().getFullYear()}`;
 
-export const projectsData = {
+export const projectsData: Projects = {
   videoStarts: VideoStartsOn.RIGHT,
   professional: {
     title: isPt ? 'Projetos profissionais' : 'Professional projects',
@@ -167,7 +167,7 @@ export const projectsData = {
             </>
           );
         },
-        gifPath: '/img/project-gif/ingresso.gif', //TROCAR!
+        gifPath: '/img/project-gif/ingresso.gif',
         alt: isPt ? 'Projeto ingressos' : 'Ticket project',
         start: (isPt ? 'março' : 'march') + ' 2025',
         end: currentDate,
@@ -213,7 +213,12 @@ export const projectsData = {
           demo: 'https://coffee-shopf7.netlify.app/'
         },
         end: (isPt ? 'janeiro' : 'january') + ' 2025',
-        tech: []
+        tech: [
+          techData[Tech.REACT],
+          techData[Tech.JS],
+          techData[Tech.CSS],
+          techData[Tech.BOOTSTRAP]
+        ]
       },
       {
         title: 'CineJava',
@@ -255,7 +260,7 @@ export const projectsData = {
             'https://www.youtube.com/watch?v=DiwVSQ6t_Ps&feature=youtu.be'
         },
         end: (isPt ? 'dezembro' : 'december') + ' 2023',
-        tech: []
+        tech: [techData[Tech.JAVA], techData[Tech.MYSQL]]
       },
       {
         title: 'My first React project',
@@ -283,7 +288,7 @@ export const projectsData = {
           demo: 'https://spectacular-daifuku-50a414.netlify.app/'
         },
         end: (isPt ? 'dezembro' : 'december') + ' 2024',
-        tech: []
+        tech: [techData[Tech.REACT], techData[Tech.JS], techData[Tech.CSS]]
       },
 
       {
@@ -315,7 +320,12 @@ export const projectsData = {
           youtube: 'https://www.youtube.com/watch?v=aG6yPrYZAs4'
         },
         end: (isPt ? 'maio' : 'may') + ' 2024',
-        tech: []
+        tech: [
+          techData[Tech.NODE],
+          techData[Tech.MONGODB],
+          techData[Tech.JS],
+          techData[Tech.BOOTSTRAP]
+        ]
       },
       {
         title: 'Easy Carousel',
@@ -342,14 +352,19 @@ export const projectsData = {
           );
         },
         gifPath: '/img/project-gif/carrossel.gif',
-        alt: 'Projeto tribanco',
+        alt: isPt ? 'Projeto carrossel' : 'Carousel project',
         links: {
           repo: 'https://github.com/estevaof7/carousel',
           demo: 'https://estevaof7.github.io/carousel/',
           youtube: 'https://www.youtube.com/watch?v=twr7BSXEBL8'
         },
         end: (isPt ? 'outubro' : 'october') + ' 2024',
-        tech: []
+        tech: [
+          techData[Tech.JS],
+          techData[Tech.CSS],
+          techData[Tech.BOOTSTRAP],
+          techData[Tech.HTML]
+        ]
       },
       {
         title: 'My First Landing Page',
@@ -375,7 +390,7 @@ export const projectsData = {
           demo: 'https://estevaof7.github.io/my-first-landing-page/'
         },
         end: (isPt ? 'março' : 'march') + ' 2023',
-        tech: []
+        tech: [techData[Tech.HTML], techData[Tech.CSS], techData[Tech.JS]]
       },
       {
         title: isPt ? 'Equação do Segundo Grau' : 'Quadratic Equation',
@@ -412,7 +427,7 @@ export const projectsData = {
           demo: 'https://estevaof7.github.io/equacao2grau/'
         },
         end: (isPt ? 'maio' : 'may') + ' 2023',
-        tech: []
+        tech: [techData[Tech.JS], techData[Tech.HTML], techData[Tech.CSS]]
       },
       {
         title: 'Tabs CSS',
@@ -446,7 +461,7 @@ export const projectsData = {
           demo: 'https://estevaof7.github.io/tabs/'
         },
         end: (isPt ? 'julho' : 'july') + ' 2023',
-        tech: []
+        tech: [techData[Tech.JS], techData[Tech.CSS], techData[Tech.HTML]]
       }
     ]
   }

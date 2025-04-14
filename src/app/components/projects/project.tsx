@@ -1,12 +1,16 @@
+import { TechData } from '@/models/tech-model';
 import Image from 'next/image';
-import { JSX } from 'react';
+
+enum Position {
+  EVEN = 'even',
+  ODD = 'odd'
+}
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function Project({ index, data }: { index: number; data: any }) {
-  //verificar se deu certo o about
-  //terminar a parte tech no projects-data
+  //testar as tecnologiar de cada projeto
   //verificar aquea tipagem de intervalo para dar certo de colocar 0 e 100, pois ele está verificando que tem que ser menor que 100 e não menor/igual
-  //verificar se esse jeito que eu fiz com as logos de tecnologias é a melhor maneira
+  //gif sesc
 
   const position = index % 2 === 0 ? Position.EVEN : Position.ODD;
 
@@ -16,16 +20,19 @@ export function Project({ index, data }: { index: number; data: any }) {
     >
       <div className="space-y-4 w-3/5">
         <div>
-          <Title title={data.title} />
+          <h1 className="text-4xl font-medium">{data.title}</h1>
           <h2 className="text-gray-400 mt-1">
             {(data.start ? data.start + ' - ' : '') + data.end}
           </h2>
         </div>
-        <Description description={data.description} />
+        <div>{data.description()}</div>
         <div className="flex space-x-4">
+          {data.tech.map((item: TechData) => (
+            <TechCard key={item.name} src={item.src} alt={item.name} />
+          ))}
+          {/* <div className="rounded-full w-12 h-12 bg-gray-300"></div>
           <div className="rounded-full w-12 h-12 bg-gray-300"></div>
-          <div className="rounded-full w-12 h-12 bg-gray-300"></div>
-          <div className="rounded-full w-12 h-12 bg-gray-300"></div>
+          <div className="rounded-full w-12 h-12 bg-gray-300"></div> */}
         </div>
       </div>
       <div className="w-2/5">
@@ -33,13 +40,6 @@ export function Project({ index, data }: { index: number; data: any }) {
       </div>
     </div>
   );
-}
-
-function Title({ title }: { title: string }) {
-  return <h1 className="text-4xl font-medium">{title}</h1>;
-}
-function Description({ description }: { description: () => JSX.Element }) {
-  return <div>{description()}</div>;
 }
 function Gif({ gifPath, alt }: { gifPath: string; alt: string }) {
   return (
@@ -56,7 +56,10 @@ function Gif({ gifPath, alt }: { gifPath: string; alt: string }) {
   );
 }
 
-enum Position {
-  EVEN = 'even',
-  ODD = 'odd'
+function TechCard({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="rounded-full w-12 h-12 bg-gray-300">
+      <Image src={src} alt={alt} />
+    </div>
+  );
 }

@@ -7,7 +7,7 @@ export const techData: TechData[] = [
   },
   {
     name: 'TS logo',
-    src: '/img/tech/ts-icon.svg'
+    src: '/img/tech/typescript-icon.svg'
   },
   {
     name: 'HTML logo',

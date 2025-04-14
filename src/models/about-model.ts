@@ -34,5 +34,5 @@ type IntRange<F extends number, T extends number> = Exclude<
   Enumerate<F>
 >;
 
-type Progress = IntRange<0, 101>;
-type Angle = IntRange<0, 361>;
+type Progress = IntRange<0, 100>;
+type Angle = IntRange<0, 360>;
