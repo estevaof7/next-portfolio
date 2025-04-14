@@ -7,7 +7,8 @@ import { BreakPointView } from './components/breakpoint-view';
 export default function Home() {
   //QUANDO ALGO NÃO DER CERTO, VERIFICA SE PELO MENOS UM BG-RED-500 ESTÁ SENDO APLICADO.
 
-  //adicionar typescript ... tailwind ... bootstrap ... ver se separa em categorias
+  //adicionar sesc
+  // ver se separa em categorias o tech stack
 
   //PRÓXIMAS FEATURES (depois de lançar)
   //animação ao carregar elementos igual no tribanco

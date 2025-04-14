@@ -40,7 +40,7 @@ export default function About() {
                   value={card.progress}
                   key={card.src}
                   iconPath={card.src}
-                  alt={card.alt}
+                  alt={card.name}
                   startAngle={aboutData.techStack.startAngle}
                   clockWise={aboutData.techStack.clockWise}
                   zoom={card.zoom || 1}

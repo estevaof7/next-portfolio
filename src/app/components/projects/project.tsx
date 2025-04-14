@@ -3,7 +3,10 @@ import { JSX } from 'react';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function Project({ index, data }: { index: number; data: any }) {
-  //PASSEI O TECH PARA OUTRO ARQUIVO E ESTOU COLOCANDO NA CHAVE tech DE CADA PROJETO ... FAZER A MESMA COISA COM O ABOUT ... VERIFICAR SE ESSE É O MELHOR JEITO
+  //verificar se deu certo o about
+  //terminar a parte tech no projects-data
+  //verificar aquea tipagem de intervalo para dar certo de colocar 0 e 100, pois ele está verificando que tem que ser menor que 100 e não menor/igual
+  //verificar se esse jeito que eu fiz com as logos de tecnologias é a melhor maneira
 
   const position = index % 2 === 0 ? Position.EVEN : Position.ODD;
 

@@ -45,6 +45,8 @@ export const techData: TechData[] = [
     name: 'MySql logo',
     src: '/img/tech/mysql-icon.svg',
     zoom: 1.7
+    // 1- normal
+    // 2 dobro
   },
   {
     name: 'Tailwind logo',

@@ -1,6 +1,9 @@
 import { isPt } from '@/language';
+import { About } from '@/models/about-model';
+import { techData } from './tech-data';
+import { Tech } from '@/models/tech-model';
 
-export const aboutData = {
+export const aboutData: About = {
   profileImg: {
     src: '/img/profile-pic/profile-pic.JPG',
     alt: 'Profile image'
@@ -20,91 +23,57 @@ export const aboutData = {
     clockWise: true,
     cards: [
       {
-        src: '/img/tech/js-icon.svg',
-        alt: 'JS logo',
+        ...techData[Tech.JS],
         progress: 100
       },
       {
-        src: '/img/tech/typescript-icon.svg',
-        alt: 'TS logo',
+        ...techData[Tech.TS],
         progress: 100
       },
       {
-        src: '/img/tech/html-icon.svg',
-        alt: 'Html logo',
+        ...techData[Tech.HTML],
         progress: 100
       },
       {
-        src: '/img/tech/css-icon.svg',
-        alt: 'Css logo',
+        ...techData[Tech.CSS],
         progress: 100
       },
       {
-        src: '/img/tech/react-icon.svg',
-        alt: 'React logo',
+        ...techData[Tech.REACT],
         progress: 90
       },
       {
-        src: '/img/tech/next-icon.svg',
-        alt: 'Next logo',
+        ...techData[Tech.NEXT],
         progress: 90
       },
       {
-        src: '/img/tech/nodejs-icon.svg',
-        alt: 'NodeJS logo',
-        progress: 80,
-        zoom: 1.2
+        ...techData[Tech.NODE],
+        progress: 80
       },
       {
-        src: '/img/tech/angular-icon.svg',
-        alt: 'Angular logo',
+        ...techData[Tech.ANGULAR],
         progress: 60
       },
       {
-        src: '/img/tech/mongodb-icon.svg',
-        alt: 'MongoDB logo',
+        ...techData[Tech.MONGODB],
         progress: 50
       },
       {
-        src: '/img/tech/java-icon.svg',
-        alt: 'Java logo',
+        ...techData[Tech.JAVA],
         progress: 25
       },
       {
-        src: '/img/tech/mysql-icon.svg',
-        alt: 'MySql logo',
-        progress: 25,
-        zoom: 1.7
-        // 1- normal
-        // 2 dobro
+        ...techData[Tech.MYSQL],
+        progress: 25
       },
       {
-        src: '/img/tech/tailwind-icon.svg',
-        alt: 'Tailwind logo',
-        progress: 100,
-        zoom: 1.1
+        ...techData[Tech.TAILWIND],
+        progress: 100
       },
       {
-        src: '/img/tech/bootstrap-icon.svg',
-        alt: 'Bootstrap logo',
+        ...techData[Tech.BOOTSTRAP],
         progress: 100
       }
     ]
   }
 };
-
-//Para restringir o range de número
-// type Enumerate<
-//   N extends number,
-//   Acc extends number[] = []
-// > = Acc['length'] extends N
-//   ? Acc[number]
-//   : Enumerate<N, [...Acc, Acc['length']]>;
-
-// type IntRange<F extends number, T extends number> = Exclude<
-//   Enumerate<T>,
-//   Enumerate<F>
-// >;
-
-// type Progress = IntRange<0, 100>;
-// type Angle = IntRange<0, 360>;

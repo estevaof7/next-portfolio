@@ -5,16 +5,11 @@ import { Project } from './project';
 import { VideoStartsOn } from '@/models/projects-model';
 
 export default function Projects() {
-  //preciso entrar no app do sesc para fazer a captura de tela
   const professionalProjects = projectsData.professional.projects;
   const professionalLength = professionalProjects.length;
   const profLengthIsOdd = professionalLength % 2 !== 0;
   const personalProjects = projectsData.personal.projects;
   const videoStarts = projectsData.videoStarts;
-
-  // const teste = professionalProjects[0].start;
-  // teste.getFullYear()
-  // teste.getMonth()
 
   return (
     <section className="min-h-screen bg-black text-white">
