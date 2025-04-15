@@ -208,10 +208,16 @@ export const projectsData: Projects = {
         },
         gifPath: '/img/project-gif/coffeshop.gif',
         alt: isPt ? 'Projeto coffeshop' : 'Coffeshop project',
-        links: {
-          repo: 'https://github.com/estevaof7/coffee-shop',
-          demo: 'https://coffee-shopf7.netlify.app/'
-        },
+        buttons: [
+          {
+            text: isPt ? 'Repositório' : 'Repository',
+            link: 'https://github.com/estevaof7/coffee-shop'
+          },
+          {
+            text: 'Demo',
+            link: 'https://coffee-shopf7.netlify.app/'
+          }
+        ],
         end: (isPt ? 'janeiro' : 'january') + ' 2025',
         tech: [
           techData[Tech.REACT],
@@ -254,11 +260,16 @@ export const projectsData: Projects = {
         },
         gifPath: '/img/project-gif/cinejava.gif',
         alt: isPt ? 'Projeto cinejava' : 'Cinejava project',
-        links: {
-          repo: 'https://github.com/estevaof7/cinejava',
-          youtube:
-            'https://www.youtube.com/watch?v=DiwVSQ6t_Ps&feature=youtu.be'
-        },
+        buttons: [
+          {
+            text: isPt ? 'Repositório' : 'Repository',
+            link: 'https://github.com/estevaof7/cinejava'
+          },
+          {
+            text: isPt ? 'Vídeo' : 'Video',
+            link: 'https://www.youtube.com/watch?v=DiwVSQ6t_Ps&feature=youtu.be'
+          }
+        ],
         end: (isPt ? 'dezembro' : 'december') + ' 2023',
         tech: [techData[Tech.JAVA], techData[Tech.MYSQL]]
       },
@@ -283,10 +294,16 @@ export const projectsData: Projects = {
         },
         gifPath: '/img/project-gif/react1.gif',
         alt: isPt ? 'Projeto react' : 'React project',
-        links: {
-          repo: 'https://github.com/estevaof7/react-project-1',
-          demo: 'https://spectacular-daifuku-50a414.netlify.app/'
-        },
+        buttons: [
+          {
+            text: isPt ? 'Repositório' : 'Repository',
+            link: 'https://github.com/estevaof7/react-project-1'
+          },
+          {
+            text: 'Demo',
+            link: 'https://spectacular-daifuku-50a414.netlify.app/'
+          }
+        ],
         end: (isPt ? 'dezembro' : 'december') + ' 2024',
         tech: [techData[Tech.REACT], techData[Tech.JS], techData[Tech.CSS]]
       },
@@ -315,10 +332,16 @@ export const projectsData: Projects = {
         },
         gifPath: '/img/project-gif/agenda.gif',
         alt: isPt ? 'Projeto agenda' : 'Contacts project',
-        links: {
-          repo: 'https://github.com/estevaof7/agenda',
-          youtube: 'https://www.youtube.com/watch?v=aG6yPrYZAs4'
-        },
+        buttons: [
+          {
+            text: isPt ? 'Repositório' : 'Repository',
+            link: 'https://github.com/estevaof7/agenda'
+          },
+          {
+            text: isPt ? 'Vídeo' : 'Video',
+            link: 'https://www.youtube.com/watch?v=aG6yPrYZAs4'
+          }
+        ],
         end: (isPt ? 'maio' : 'may') + ' 2024',
         tech: [
           techData[Tech.NODE],
@@ -353,11 +376,20 @@ export const projectsData: Projects = {
         },
         gifPath: '/img/project-gif/carrossel.gif',
         alt: isPt ? 'Projeto carrossel' : 'Carousel project',
-        links: {
-          repo: 'https://github.com/estevaof7/carousel',
-          demo: 'https://estevaof7.github.io/carousel/',
-          youtube: 'https://www.youtube.com/watch?v=twr7BSXEBL8'
-        },
+        buttons: [
+          {
+            text: isPt ? 'Repositório' : 'Repository',
+            link: 'https://github.com/estevaof7/carousel'
+          },
+          {
+            text: 'Demo',
+            link: 'https://estevaof7.github.io/carousel/'
+          },
+          {
+            text: isPt ? 'Vídeo' : 'Video',
+            link: 'https://www.youtube.com/watch?v=twr7BSXEBL8'
+          }
+        ],
         end: (isPt ? 'outubro' : 'october') + ' 2024',
         tech: [
           techData[Tech.JS],
@@ -385,10 +417,16 @@ export const projectsData: Projects = {
         },
         gifPath: '/img/project-gif/landing-page.gif',
         alt: isPt ? 'Projeto landing page' : 'Landing page project',
-        links: {
-          repo: 'https://github.com/estevaof7/my-first-landing-page',
-          demo: 'https://estevaof7.github.io/my-first-landing-page/'
-        },
+        buttons: [
+          {
+            text: isPt ? 'Repositório' : 'Repository',
+            link: 'https://github.com/estevaof7/my-first-landing-page'
+          },
+          {
+            text: 'Demo',
+            link: 'https://estevaof7.github.io/my-first-landing-page/'
+          }
+        ],
         end: (isPt ? 'março' : 'march') + ' 2023',
         tech: [techData[Tech.HTML], techData[Tech.CSS], techData[Tech.JS]]
       },
@@ -422,10 +460,16 @@ export const projectsData: Projects = {
         alt: isPt
           ? 'Projeto equação do segundo grau'
           : 'Quadratic equation project',
-        links: {
-          repo: 'https://github.com/estevaof7/equacao2grau',
-          demo: 'https://estevaof7.github.io/equacao2grau/'
-        },
+        buttons: [
+          {
+            text: isPt ? 'Repositório' : 'Repository',
+            link: 'https://github.com/estevaof7/equacao2grau'
+          },
+          {
+            text: 'Demo',
+            link: 'https://estevaof7.github.io/equacao2grau/'
+          }
+        ],
         end: (isPt ? 'maio' : 'may') + ' 2023',
         tech: [techData[Tech.JS], techData[Tech.HTML], techData[Tech.CSS]]
       },
@@ -456,10 +500,16 @@ export const projectsData: Projects = {
         },
         gifPath: '/img/project-gif/tabs.gif',
         alt: isPt ? 'Projeto tabs' : 'Tabs project',
-        links: {
-          repo: 'https://github.com/estevaof7/tabs',
-          demo: 'https://estevaof7.github.io/tabs/'
-        },
+        buttons: [
+          {
+            text: isPt ? 'Repositório' : 'Repository',
+            link: 'https://github.com/estevaof7/tabs'
+          },
+          {
+            text: 'Demo',
+            link: 'https://estevaof7.github.io/tabs/'
+          }
+        ],
         end: (isPt ? 'julho' : 'july') + ' 2023',
         tech: [techData[Tech.JS], techData[Tech.CSS], techData[Tech.HTML]]
       }

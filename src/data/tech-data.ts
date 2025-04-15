@@ -3,11 +3,13 @@ import { TechData } from '@/models/tech-model';
 export const techData: TechData[] = [
   {
     name: 'JS logo',
-    src: '/img/tech/js-icon.svg'
+    src: '/img/tech/js-icon.svg',
+    zoom: 0.8
   },
   {
     name: 'TS logo',
-    src: '/img/tech/typescript-icon.svg'
+    src: '/img/tech/typescript-icon.svg',
+    zoom: 0.8
   },
   {
     name: 'HTML logo',

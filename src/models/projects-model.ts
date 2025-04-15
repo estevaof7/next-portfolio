@@ -10,24 +10,23 @@ export type Projects = {
   videoStarts: VideoStartsOn;
   professional: {
     title: string;
-    projects: Project[];
+    projects: ProjectCard[];
   };
   personal: {
     title: string;
-    projects: Project[];
+    projects: ProjectCard[];
   };
 };
 
-type Project = {
+export type ProjectCard = {
   title: string;
   description: () => JSX.Element;
   gifPath: string;
   alt: string;
-  links?: {
-    repo?: string;
-    demo?: string;
-    youtube?: string;
-  };
+  buttons?: {
+    text: string;
+    link: string;
+  }[];
   start?: string;
   end: string;
   tech: TechData[];

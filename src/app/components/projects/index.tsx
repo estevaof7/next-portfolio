@@ -4,6 +4,14 @@ import { projectsData } from '@/data/projects-data';
 import { Project } from './project';
 import { VideoStartsOn } from '@/models/projects-model';
 
+// enum Responsividade {
+//   EU = 'eu',
+//   CLAUDE = 'claude',
+//   GPT = 'gpt'
+// }
+
+// const responsividade: Responsividade = Responsividade.EU;
+
 export default function Projects() {
   const professionalProjects = projectsData.professional.projects;
   const professionalLength = professionalProjects.length;
