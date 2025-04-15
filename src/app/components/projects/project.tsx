@@ -51,7 +51,9 @@ export function Project({ index, data }: { index: number; data: ProjectCard }) {
 }
 function Gif({ gifPath, alt }: { gifPath: string; alt: string }) {
   return (
-    <div className="w-full h-auto rounded-2xl bg-gray-300">
+    <div
+      className={`w-full h-auto rounded-2xl bg-gray-300 ${gifPath.includes('sesc') && 'border-2'}`}
+    >
       <Image
         src={gifPath}
         alt={alt}

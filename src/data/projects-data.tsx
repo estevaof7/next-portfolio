@@ -167,8 +167,8 @@ export const projectsData: Projects = {
             </>
           );
         },
-        gifPath: '/img/project-gif/ingresso.gif',
-        alt: isPt ? 'Projeto ingressos' : 'Ticket project',
+        gifPath: '/img/project-gif/sesc.gif',
+        alt: isPt ? 'Projeto sesc' : 'Ticket sesc',
         start: (isPt ? 'março' : 'march') + ' 2025',
         end: currentDate,
         tech: [
