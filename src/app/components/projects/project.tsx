@@ -3,6 +3,7 @@ import { ProjectCard } from '@/models/projects-model';
 import { TechData } from '@/models/tech-model';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Responsividade, responsividade } from '.';
 
 enum Position {
   EVEN = 'even',
@@ -14,10 +15,30 @@ export function Project({ index, data }: { index: number; data: ProjectCard }) {
 
   return (
     <div
-      className={`flex justify-between gap-10 ${position === Position.EVEN ? '' : 'flex-row-reverse'}`}
+      className={
+        ' ' +
+        (responsividade === Responsividade.EU &&
+          `flex justify-between gap-10 ${position === Position.EVEN ? '' : 'flex-row-reverse'}`) +
+        (responsividade === Responsividade.CLAUDE &&
+          `flex flex-col gap-6 md:gap-8 lg:gap-10
+                  md:flex-row md:justify-between
+                  ${position === Position.EVEN ? '' : 'md:flex-row-reverse'}`) +
+        (responsividade === Responsividade.GPT &&
+          `flex flex-col-reverse md:flex-row justify-between gap-10 ${position === Position.EVEN ? '' : 'md:flex-row-reverse'}`)
+      }
     >
-      <div className="space-y-4 w-3/5">
+      {/* depois mudar essa lógica para usar && ao invés de ? : */}
+      <div
+        className={
+          ' ' +
+          (responsividade === Responsividade.EU && 'space-y-4 w-3/5') +
+          (responsividade === Responsividade.CLAUDE &&
+            'space-y-4 w-full md:w-1/2 lg:w-3/5') +
+          (responsividade === Responsividade.GPT && 'space-y-4 w-full md:w-3/5')
+        }
+      >
         <div>
+          {/* PAREI AQUI ****************************************** */}
           <h1 className="text-4xl font-medium">{data.title}</h1>
           <h2 className="text-gray-400 mt-1">
             {(data.start ? data.start + ' - ' : '') + data.end}
