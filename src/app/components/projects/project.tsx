@@ -10,8 +10,6 @@ enum Position {
 }
 
 export function Project({ index, data }: { index: number; data: ProjectCard }) {
-  //gif sesc
-
   const position = index % 2 === 0 ? Position.EVEN : Position.ODD;
 
   return (
