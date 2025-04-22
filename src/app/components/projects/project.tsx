@@ -4,7 +4,7 @@ import { ProjectCard } from '@/models/projects-model';
 import { TechData } from '@/models/tech-model';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRef } from 'react';
+// import { useEffect, useRef, useState } from 'react';
 
 enum Position {
   EVEN = 'even',
@@ -15,9 +15,19 @@ export function Project({ index, data }: { index: number; data: ProjectCard }) {
   const position = index % 2 === 0 ? Position.EVEN : Position.ODD;
   const isMobile = useIsMobile();
 
-  const divPai = useRef(null);
-  //divPai.current.clientWidth
-  //divPai.current.offsetWidth
+  // const techAndButtons = useRef<HTMLDivElement>(null);
+  // const [client, setClient] = useState<number>(0);
+  // const [offset, setOffset] = useState<number>(0);
+
+  // useEffect(() => {
+  //   if (techAndButtons.current) {
+  //     setClient(techAndButtons.current.clientWidth);
+  //     setOffset(techAndButtons.current.offsetWidth);
+  //   }
+  //   // console.log('useEffect');
+  //   // console.log('client', client);
+  //   // console.log('offset', offset);
+  // }, [techAndButtons.current?.clientWidth]);
 
   return (
     <div
@@ -37,7 +47,7 @@ export function Project({ index, data }: { index: number; data: ProjectCard }) {
             <div>{data.description()}</div>
             <div
               className="flex flex-row justify-between items-center gap-4"
-              ref={divPai}
+              // ref={techAndButtons}
             >
               <div className="flex space-x-4 overflow-x-auto">
                 {data.tech.map((item: TechData) => (
@@ -50,6 +60,10 @@ export function Project({ index, data }: { index: number; data: ProjectCard }) {
                     key={button.text}
                     className="text-base"
                     variant={'secondary'}
+                    // onClick={() => {
+                    //   console.log('client', client);
+                    //   console.log('offset', offset);
+                    // }}
                   >
                     <Link href={button.link} target="_blank">
                       {button.text}
