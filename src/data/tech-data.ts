@@ -7,7 +7,7 @@ export const techData: TechData[] = [
     zoom: 0.8
   },
   {
-    name: 'JavaScript logo',
+    name: 'TypeScript logo',
     src: '/img/tech/typescript-icon.svg',
     zoom: 0.8
   },
