@@ -3,6 +3,12 @@
 import Image from 'next/image';
 import { aboutData } from '@/data/about-data';
 import { ProgressCircle } from './tech-card';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger
+} from '@/components/ui/tooltip';
 
 export default function About() {
   const cards = aboutData.techStack.cards;
@@ -36,15 +42,23 @@ export default function About() {
             </p>
             <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-12 mt-3">
               {cards.map((card) => (
-                <ProgressCircle
-                  value={card.progress}
-                  key={card.src}
-                  iconPath={card.src}
-                  alt={card.name}
-                  startAngle={aboutData.techStack.startAngle}
-                  clockWise={aboutData.techStack.clockWise}
-                  zoom={card.zoom || 1}
-                />
+                <TooltipProvider key={card.src}>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <ProgressCircle
+                        value={card.progress}
+                        iconPath={card.src}
+                        alt={card.name}
+                        startAngle={aboutData.techStack.startAngle}
+                        clockWise={aboutData.techStack.clockWise}
+                        zoom={card.zoom || 1}
+                      />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      {card.name.replace(' logo', '')}
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               ))}
             </div>
           </div>

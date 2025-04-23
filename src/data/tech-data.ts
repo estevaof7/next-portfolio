@@ -2,12 +2,12 @@ import { TechData } from '@/models/tech-model';
 
 export const techData: TechData[] = [
   {
-    name: 'JS logo',
+    name: 'JavaScript logo',
     src: '/img/tech/js-icon.svg',
     zoom: 0.8
   },
   {
-    name: 'TS logo',
+    name: 'JavaScript logo',
     src: '/img/tech/typescript-icon.svg',
     zoom: 0.8
   },
