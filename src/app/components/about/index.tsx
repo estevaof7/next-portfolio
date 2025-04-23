@@ -34,7 +34,7 @@ export default function About() {
             <p className="text-lg sm:text-xl font-bold">
               {aboutData.techStack.title}
             </p>
-            <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-10 mt-3">
+            <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-12 mt-3">
               {cards.map((card) => (
                 <ProgressCircle
                   value={card.progress}

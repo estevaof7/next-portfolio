@@ -4,7 +4,7 @@ import { ProjectCard } from '@/models/projects-model';
 import { TechData } from '@/models/tech-model';
 import Image from 'next/image';
 import Link from 'next/link';
-// import { useEffect, useRef, useState } from 'react';
+// import { useEffect, useRef, useState } from 'react'; //RESPONSIVIDADE DIV CARDS/BOTÕES
 
 enum Position {
   EVEN = 'even',
@@ -15,6 +15,7 @@ export function Project({ index, data }: { index: number; data: ProjectCard }) {
   const position = index % 2 === 0 ? Position.EVEN : Position.ODD;
   const isMobile = useIsMobile();
 
+  //RESPONSIVIDADE DIV CARDS/BOTÕES
   // const techAndButtons = useRef<HTMLDivElement>(null);
   // const [client, setClient] = useState<number>(0);
   // const [offset, setOffset] = useState<number>(0);
@@ -31,13 +32,13 @@ export function Project({ index, data }: { index: number; data: ProjectCard }) {
 
   return (
     <div
-      className={`flex flex-col gap-6 md:gap-8 lg:gap-10
+      className={`flex flex-col gap-6 md:gap-8 lg:gap-14
                   md:flex-row md:justify-between
                   ${position === Position.EVEN ? '' : 'md:flex-row-reverse'}`}
     >
       {!isMobile ? (
         <>
-          <div className="space-y-4 w-full md:w-1/2 lg:w-3/5">
+          <div className="space-y-7 w-full md:w-1/2 lg:w-3/5">
             <div>
               <h1 className="text-3xl lg:text-4xl font-medium">{data.title}</h1>
               <h2 className="text-gray-400 mt-1">
@@ -47,7 +48,7 @@ export function Project({ index, data }: { index: number; data: ProjectCard }) {
             <div>{data.description()}</div>
             <div
               className="flex flex-row justify-between items-center gap-4"
-              // ref={techAndButtons}
+              // ref={techAndButtons} //RESPONSIVIDADE DIV CARDS/BOTÕES
             >
               <div className="flex space-x-4 overflow-x-auto">
                 {data.tech.map((item: TechData) => (
@@ -60,7 +61,7 @@ export function Project({ index, data }: { index: number; data: ProjectCard }) {
                     key={button.text}
                     className="text-base"
                     variant={'secondary'}
-                    // onClick={() => {
+                    // onClick={() => { //RESPONSIVIDADE DIV CARDS/BOTÕES
                     //   console.log('client', client);
                     //   console.log('offset', offset);
                     // }}
@@ -68,7 +69,6 @@ export function Project({ index, data }: { index: number; data: ProjectCard }) {
                     <Link href={button.link} target="_blank">
                       {button.text}
                     </Link>
-                    teste!
                   </Button>
                 ))}
               </div>
@@ -91,7 +91,8 @@ export function Project({ index, data }: { index: number; data: ProjectCard }) {
           </div>
           <div className="space-y-4 w-full">
             <div>{data.description()}</div>
-            <div className="flex flex-row justify-between items-center gap-4">
+            {/* <div className="flex flex-row justify-between items-center gap-4"> //RESPONSIVIDADE DIV CARDS/BOTÕES */}
+            <div className="flex flex-col justify-between items-start gap-4 pt-4">
               <div className="flex space-x-3 overflow-x-auto pb-2">
                 {data.tech.map((item: TechData) => (
                   <TechCard key={item.name} card={item} size="mobile" />

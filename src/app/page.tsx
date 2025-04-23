@@ -11,6 +11,8 @@ export default function Home() {
   // ver se separa em categorias o tech stack
 
   //PRÓXIMAS FEATURES (depois de lançar)
+  //mobile: projetos > div com as tecnologias e botões > ver alguma maneira de usar o useRef para que quando a soma da width dos cards e da width dos botões for maior ou igual à width da div pai, para que haja a quebra
+  //footer: whatsApp com link para abrir o whatsapp web / campos input para enviar email
   //animação ao carregar elementos igual no tribanco
   //tooltip nos cards de tecnologias
   //cards de tecnologia serem clicados e abrem um modal com o projeto que eu utilizei e como eu utilizei
