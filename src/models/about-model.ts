@@ -1,6 +1,6 @@
-import { TechData } from './tech-model';
+import { TechModel } from './tech-model';
 
-export type About = {
+export type AboutModel = {
   profileImg: {
     src: string;
     alt: string;
@@ -8,15 +8,15 @@ export type About = {
   name: string;
   title: string;
   description: string;
-  techStack: TechStack;
+  techStack: TechStackModel;
 };
 
-type TechStack = {
+type TechStackModel = {
   title: string;
   startAngle: Angle;
   clockWise: boolean;
   cards: Array<
-    TechData & {
+    TechModel & {
       progress: Progress;
     }
   >;
@@ -34,5 +34,5 @@ type IntRange<F extends number, T extends number> = Exclude<
   Enumerate<F>
 >;
 
-type Progress = IntRange<0, 101>;
+export type Progress = IntRange<0, 101>;
 type Angle = IntRange<0, 361>;

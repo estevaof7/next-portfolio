@@ -2,7 +2,7 @@
 
 import { projectsData } from '@/data/projects-data';
 import { Project } from './project';
-import { VideoStartsOn } from '@/models/projects-model';
+import { ProjectCardModel, VideoStartsOn } from '@/models/projects-model';
 
 export default function Projects() {
   const professionalProjects = projectsData.professional.projects;
@@ -21,13 +21,15 @@ export default function Projects() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl border-b-2 pb-2 sm:pb-4">
             {projectsData.professional.title}
           </h1>
-          {professionalProjects.map((project, index) => (
-            <Project
-              key={project.title}
-              data={project}
-              index={videoStarts === VideoStartsOn.LEFT ? index + 1 : index}
-            />
-          ))}
+          {professionalProjects.map(
+            (project: ProjectCardModel, index: number) => (
+              <Project
+                key={project.title}
+                data={project}
+                index={videoStarts === VideoStartsOn.LEFT ? index + 1 : index}
+              />
+            )
+          )}
         </div>
         <div
           id="personal-projects"
@@ -36,7 +38,7 @@ export default function Projects() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl border-b-2 pb-2 sm:pb-4">
             {projectsData.personal.title}
           </h1>
-          {personalProjects.map((project, index) => (
+          {personalProjects.map((project: ProjectCardModel, index: number) => (
             <Project
               key={project.title}
               data={project}

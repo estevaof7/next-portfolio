@@ -1,7 +1,6 @@
-export type Footer = {
+import { LinkModel } from './link-model';
+
+export type FooterItemModel = {
   logoPath: string;
-  link: {
-    href: string;
-    text: string;
-  };
-}[];
+  link: LinkModel;
+};

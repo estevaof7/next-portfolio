@@ -14,8 +14,9 @@ export enum Tech {
   BOOTSTRAP = 12
 }
 
-export type TechData = {
+export type TechModel = {
   name: string;
+  alt: string;
   src: string;
   zoom?: number;
 };

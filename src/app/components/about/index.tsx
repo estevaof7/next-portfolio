@@ -9,6 +9,8 @@ import {
   TooltipProvider,
   TooltipTrigger
 } from '@/components/ui/tooltip';
+import { TechModel } from '@/models/tech-model';
+import { Progress } from '@/models/about-model';
 
 export default function About() {
   const cards = aboutData.techStack.cards;
@@ -41,25 +43,29 @@ export default function About() {
               {aboutData.techStack.title}
             </p>
             <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-12 mt-3">
-              {cards.map((card) => (
-                <TooltipProvider key={card.src}>
-                  <Tooltip>
-                    <TooltipTrigger>
-                      <ProgressCircle
-                        value={card.progress}
-                        iconPath={card.src}
-                        alt={card.name}
-                        startAngle={aboutData.techStack.startAngle}
-                        clockWise={aboutData.techStack.clockWise}
-                        zoom={card.zoom || 1}
-                      />
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      {card.name.replace(' logo', '')}
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              ))}
+              {cards.map(
+                (
+                  card: TechModel & {
+                    progress: Progress;
+                  }
+                ) => (
+                  <TooltipProvider key={card.src}>
+                    <Tooltip>
+                      <TooltipTrigger>
+                        <ProgressCircle
+                          value={card.progress}
+                          iconPath={card.src}
+                          alt={card.alt}
+                          startAngle={aboutData.techStack.startAngle}
+                          clockWise={aboutData.techStack.clockWise}
+                          zoom={card.zoom || 1}
+                        />
+                      </TooltipTrigger>
+                      <TooltipContent>{card.name}</TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                )
+              )}
             </div>
           </div>
         </div>

@@ -1,62 +1,75 @@
-import { TechData } from '@/models/tech-model';
+import { TechModel } from '@/models/tech-model';
 
-export const techData: TechData[] = [
+export const techData: TechModel[] = [
   {
-    name: 'JavaScript logo',
+    name: 'JavaScript',
+    alt: 'JavaScript logo',
     src: '/img/tech/js-icon.svg',
     zoom: 0.8
   },
   {
-    name: 'TypeScript logo',
+    name: 'TypeScript',
+    alt: 'TypeScript logo',
     src: '/img/tech/typescript-icon.svg',
     zoom: 0.8
   },
   {
-    name: 'HTML logo',
+    name: 'HTML',
+    alt: 'HTML logo',
     src: '/img/tech/html-icon.svg'
   },
   {
-    name: 'CSS logo',
+    name: 'CSS',
+    alt: 'CSS logo',
     src: '/img/tech/css-icon.svg'
   },
   {
-    name: 'React logo',
+    name: 'React',
+    alt: 'React logo',
     src: '/img/tech/react-icon.svg'
   },
   {
-    name: 'Next logo',
+    name: 'Next,js',
+    alt: 'Next logo',
     src: '/img/tech/next-icon.svg'
   },
   {
-    name: 'NodeJS logo',
+    name: 'Node',
+    alt: 'Node logo',
     src: '/img/tech/nodejs-icon.svg'
   },
   {
-    name: 'Angular logo',
+    name: 'Angular',
+    alt: 'Angular logo',
     src: '/img/tech/angular-icon.svg'
   },
   {
-    name: 'MongoDB logo',
+    name: 'Mongo DB',
+    alt: 'MongoDB logo',
     src: '/img/tech/mongodb-icon.svg'
   },
   {
-    name: 'Java logo',
+    name: 'Java',
+    alt: 'Java logo',
     src: '/img/tech/java-icon.svg'
   },
   {
-    name: 'MySql logo',
+    name: 'MySql',
+    alt: 'MySql logo',
     src: '/img/tech/mysql-icon.svg',
     zoom: 1.7
     // 1- normal
     // 2 dobro
   },
   {
-    name: 'Tailwind logo',
+    name: 'Tailwind',
+    alt: 'Tailwind logo',
     src: '/img/tech/tailwind-icon.svg',
     zoom: 1.1
   },
   {
-    name: 'Bootstrap logo',
+    name: 'Bootstrap',
+    alt: 'Bootstrap logo',
     src: '/img/tech/bootstrap-icon.svg'
   }
 ];

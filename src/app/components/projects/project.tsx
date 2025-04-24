@@ -1,9 +1,15 @@
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { ProjectCard } from '@/models/projects-model';
-import { TechData } from '@/models/tech-model';
+import { ProjectCardModel } from '@/models/projects-model';
+import { TechModel } from '@/models/tech-model';
 import Image from 'next/image';
 import Link from 'next/link';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger
+} from '@/components/ui/tooltip';
 // import { useEffect, useRef, useState } from 'react'; //RESPONSIVIDADE DIV CARDS/BOTÕES
 
 enum Position {
@@ -11,7 +17,13 @@ enum Position {
   ODD = 'odd'
 }
 
-export function Project({ index, data }: { index: number; data: ProjectCard }) {
+export function Project({
+  index,
+  data
+}: {
+  index: number;
+  data: ProjectCardModel;
+}) {
   const position = index % 2 === 0 ? Position.EVEN : Position.ODD;
   const isMobile = useIsMobile();
 
@@ -51,8 +63,15 @@ export function Project({ index, data }: { index: number; data: ProjectCard }) {
               // ref={techAndButtons} //RESPONSIVIDADE DIV CARDS/BOTÕES
             >
               <div className="flex space-x-4 overflow-x-auto">
-                {data.tech.map((item: TechData) => (
-                  <TechCard key={item.name} card={item} size="desktop" />
+                {data.tech.map((item: TechModel) => (
+                  <TooltipProvider key={item.src}>
+                    <Tooltip>
+                      <TooltipTrigger>
+                        <TechCard card={item} size="desktop" />
+                      </TooltipTrigger>
+                      <TooltipContent>{item.name}</TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
                 ))}
               </div>
               <div className="flex space-x-4">
@@ -66,7 +85,7 @@ export function Project({ index, data }: { index: number; data: ProjectCard }) {
                     //   console.log('offset', offset);
                     // }}
                   >
-                    <Link href={button.link} target="_blank">
+                    <Link href={button.href} target="_blank">
                       {button.text}
                     </Link>
                   </Button>
@@ -94,7 +113,7 @@ export function Project({ index, data }: { index: number; data: ProjectCard }) {
             {/* <div className="flex flex-row justify-between items-center gap-4"> //RESPONSIVIDADE DIV CARDS/BOTÕES */}
             <div className="flex flex-col justify-between items-start gap-4 pt-4">
               <div className="flex space-x-3 overflow-x-auto pb-2">
-                {data.tech.map((item: TechData) => (
+                {data.tech.map((item: TechModel) => (
                   <TechCard key={item.name} card={item} size="mobile" />
                 ))}
               </div>
@@ -105,7 +124,7 @@ export function Project({ index, data }: { index: number; data: ProjectCard }) {
                     className="text-sm"
                     variant={'secondary'}
                   >
-                    <Link href={button.link} target="_blank">
+                    <Link href={button.href} target="_blank">
                       {button.text}
                     </Link>
                   </Button>
@@ -147,7 +166,7 @@ function TechCard({
   card,
   size
 }: {
-  card: TechData;
+  card: TechModel;
   size: 'mobile' | 'desktop';
 }) {
   return (

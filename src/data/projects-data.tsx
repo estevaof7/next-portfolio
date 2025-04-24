@@ -1,5 +1,5 @@
 import { isPt } from '@/language';
-import { Projects, VideoStartsOn } from '@/models/projects-model';
+import { ProjectsModel, VideoStartsOn } from '@/models/projects-model';
 import { techData } from './tech-data';
 import { Tech } from '@/models/tech-model';
 
@@ -20,7 +20,7 @@ const months: string[] = [
 
 const currentDate = `${months[new Date().getMonth()]} ${new Date().getFullYear()}`;
 
-export const projectsData: Projects = {
+export const projectsData: ProjectsModel = {
   videoStarts: VideoStartsOn.RIGHT,
   professional: {
     title: isPt ? 'Projetos profissionais' : 'Professional projects',
@@ -211,11 +211,11 @@ export const projectsData: Projects = {
         buttons: [
           {
             text: isPt ? 'Repositório' : 'Repository',
-            link: 'https://github.com/estevaof7/coffee-shop'
+            href: 'https://github.com/estevaof7/coffee-shop'
           },
           {
             text: 'Demo',
-            link: 'https://coffee-shopf7.netlify.app/'
+            href: 'https://coffee-shopf7.netlify.app/'
           }
         ],
         end: (isPt ? 'janeiro' : 'january') + ' 2025',
@@ -263,11 +263,11 @@ export const projectsData: Projects = {
         buttons: [
           {
             text: isPt ? 'Repositório' : 'Repository',
-            link: 'https://github.com/estevaof7/cinejava'
+            href: 'https://github.com/estevaof7/cinejava'
           },
           {
             text: isPt ? 'Vídeo' : 'Video',
-            link: 'https://www.youtube.com/watch?v=DiwVSQ6t_Ps&feature=youtu.be'
+            href: 'https://www.youtube.com/watch?v=DiwVSQ6t_Ps&feature=youtu.be'
           }
         ],
         end: (isPt ? 'dezembro' : 'december') + ' 2023',
@@ -297,11 +297,11 @@ export const projectsData: Projects = {
         buttons: [
           {
             text: isPt ? 'Repositório' : 'Repository',
-            link: 'https://github.com/estevaof7/react-project-1'
+            href: 'https://github.com/estevaof7/react-project-1'
           },
           {
             text: 'Demo',
-            link: 'https://spectacular-daifuku-50a414.netlify.app/'
+            href: 'https://spectacular-daifuku-50a414.netlify.app/'
           }
         ],
         end: (isPt ? 'dezembro' : 'december') + ' 2024',
@@ -335,11 +335,11 @@ export const projectsData: Projects = {
         buttons: [
           {
             text: isPt ? 'Repositório' : 'Repository',
-            link: 'https://github.com/estevaof7/agenda'
+            href: 'https://github.com/estevaof7/agenda'
           },
           {
             text: isPt ? 'Vídeo' : 'Video',
-            link: 'https://www.youtube.com/watch?v=aG6yPrYZAs4'
+            href: 'https://www.youtube.com/watch?v=aG6yPrYZAs4'
           }
         ],
         end: (isPt ? 'maio' : 'may') + ' 2024',
@@ -379,15 +379,15 @@ export const projectsData: Projects = {
         buttons: [
           {
             text: isPt ? 'Repositório' : 'Repository',
-            link: 'https://github.com/estevaof7/carousel'
+            href: 'https://github.com/estevaof7/carousel'
           },
           {
             text: 'Demo',
-            link: 'https://estevaof7.github.io/carousel/'
+            href: 'https://estevaof7.github.io/carousel/'
           },
           {
             text: isPt ? 'Vídeo' : 'Video',
-            link: 'https://www.youtube.com/watch?v=twr7BSXEBL8'
+            href: 'https://www.youtube.com/watch?v=twr7BSXEBL8'
           }
         ],
         end: (isPt ? 'outubro' : 'october') + ' 2024',
@@ -420,11 +420,11 @@ export const projectsData: Projects = {
         buttons: [
           {
             text: isPt ? 'Repositório' : 'Repository',
-            link: 'https://github.com/estevaof7/my-first-landing-page'
+            href: 'https://github.com/estevaof7/my-first-landing-page'
           },
           {
             text: 'Demo',
-            link: 'https://estevaof7.github.io/my-first-landing-page/'
+            href: 'https://estevaof7.github.io/my-first-landing-page/'
           }
         ],
         end: (isPt ? 'março' : 'march') + ' 2023',
@@ -463,11 +463,11 @@ export const projectsData: Projects = {
         buttons: [
           {
             text: isPt ? 'Repositório' : 'Repository',
-            link: 'https://github.com/estevaof7/equacao2grau'
+            href: 'https://github.com/estevaof7/equacao2grau'
           },
           {
             text: 'Demo',
-            link: 'https://estevaof7.github.io/equacao2grau/'
+            href: 'https://estevaof7.github.io/equacao2grau/'
           }
         ],
         end: (isPt ? 'maio' : 'may') + ' 2023',
@@ -503,11 +503,11 @@ export const projectsData: Projects = {
         buttons: [
           {
             text: isPt ? 'Repositório' : 'Repository',
-            link: 'https://github.com/estevaof7/tabs'
+            href: 'https://github.com/estevaof7/tabs'
           },
           {
             text: 'Demo',
-            link: 'https://estevaof7.github.io/tabs/'
+            href: 'https://estevaof7.github.io/tabs/'
           }
         ],
         end: (isPt ? 'julho' : 'july') + ' 2023',

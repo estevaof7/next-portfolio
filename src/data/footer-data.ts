@@ -1,6 +1,6 @@
-import { Footer } from '@/models/footer-model';
+import { FooterItemModel } from '@/models/footer-model';
 
-export const footerData: Footer = [
+export const footerData: FooterItemModel[] = [
   {
     logoPath: '/img/footer-icons/linkedin.svg',
     link: {

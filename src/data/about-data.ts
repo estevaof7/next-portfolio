@@ -1,9 +1,9 @@
 import { isPt } from '@/language';
-import { About } from '@/models/about-model';
+import { AboutModel } from '@/models/about-model';
 import { techData } from './tech-data';
 import { Tech } from '@/models/tech-model';
 
-export const aboutData: About = {
+export const aboutData: AboutModel = {
   profileImg: {
     src: '/img/profile-pic/profile-pic.JPG',
     alt: 'Profile image'

@@ -1,33 +1,31 @@
 import { JSX } from 'react';
-import { TechData } from './tech-model';
+import { TechModel } from './tech-model';
+import { LinkModel } from './link-model';
 
 export enum VideoStartsOn {
   RIGHT = 'right',
   LEFT = 'left'
 }
 
-export type Projects = {
+export type ProjectsModel = {
   videoStarts: VideoStartsOn;
   professional: {
     title: string;
-    projects: ProjectCard[];
+    projects: ProjectCardModel[];
   };
   personal: {
     title: string;
-    projects: ProjectCard[];
+    projects: ProjectCardModel[];
   };
 };
 
-export type ProjectCard = {
+export type ProjectCardModel = {
   title: string;
   description: () => JSX.Element;
   gifPath: string;
   alt: string;
-  buttons?: {
-    text: string;
-    link: string;
-  }[];
+  buttons?: Array<LinkModel>;
   start?: string;
   end: string;
-  tech: TechData[];
+  tech: TechModel[];
 };

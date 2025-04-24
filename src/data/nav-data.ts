@@ -1,14 +1,21 @@
 import { isPt } from '@/language';
+import { NavModel } from '@/models/nav-model';
 
-export const navData = [
-  { href: '#about', label: isPt ? 'Sobre' : 'About' },
-  {
-    href: '#professional-projects',
-    label: isPt ? 'Projetos profissionais' : 'Professional projects'
+export const navData: NavModel = {
+  logo: {
+    href: '#about',
+    text: 'Estêvão Ferreira'
   },
-  {
-    href: '#personal-projects',
-    label: isPt ? 'Projetos pessoais' : 'Personal projects'
-  },
-  { href: '#contact', label: isPt ? 'Contato' : 'Contact' }
-];
+  links: [
+    { href: '#about', text: isPt ? 'Sobre' : 'About' },
+    {
+      href: '#professional-projects',
+      text: isPt ? 'Projetos profissionais' : 'Professional projects'
+    },
+    {
+      href: '#personal-projects',
+      text: isPt ? 'Projetos pessoais' : 'Personal projects'
+    },
+    { href: '#contact', text: isPt ? 'Contato' : 'Contact' }
+  ]
+};
