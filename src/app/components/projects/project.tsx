@@ -148,15 +148,18 @@ function Gif({
 }) {
   return (
     <div
-      className={`w-full h-auto ${size === 'desktop' ? 'rounded-2xl' : 'rounded-lg'} bg-gray-300 ${gifPath.includes('sesc') && 'border-2'}`}
+      className={`relative w-full h-auto max-h-2/3 ${size === 'desktop' ? 'rounded-2xl' : 'rounded-lg'}  ${gifPath.includes('sesc') && 'border-2'}`}
     >
+      <div
+        className={`${size === 'desktop' ? 'rounded-2xl' : 'rounded-xl'} absolute w-full h-full animate-pulse bg-gray-200`}
+      ></div>
       <Image
         src={gifPath}
         alt={alt}
         width={500}
         height={500}
         unoptimized
-        className={`${size === 'desktop' ? 'rounded-xl' : 'rounded-lg'} w-full h-auto`}
+        className={`${size === 'desktop' ? 'rounded-xl' : 'rounded-lg'} w-full h-auto relative`}
       />
     </div>
   );
