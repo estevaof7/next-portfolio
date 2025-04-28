@@ -8,13 +8,10 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer id="contact" className="bg-black text-gray-300">
-      <div className="max-w-6xl mx-auto pt-10 sm:pt-16 lg:pt-20 pb-8 sm:pb-10 px-4 md:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row sm:justify-between gap-6 sm:gap-4">
+      <div className="max-w-6xl mx-auto pt-10 md:pt-16 lg:pt-20 pb-8 md:pb-10 px-4 md:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-6 lg:gap-4">
           {footerData.map((item: FooterItemModel, index: number) => (
-            <div
-              key={index}
-              className="flex items-center justify-center sm:justify-start"
-            >
+            <div key={index} className="flex items-center justify-center">
               {item.link.href ? (
                 <Link
                   href={item.link.href}

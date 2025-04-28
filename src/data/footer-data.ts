@@ -21,5 +21,12 @@ export const footerData: FooterItemModel[] = [
       href: '',
       text: 'estevaofset@hotmail.com'
     }
+  },
+  {
+    logoPath: '/img/footer-icons/whatsapp.svg',
+    link: {
+      href: 'https://wa.me/5534997970132',
+      text: '+55 (34) 9 9797-0132'
+    }
   }
 ];
