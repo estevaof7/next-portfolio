@@ -17,7 +17,7 @@ export default function About() {
 
   return (
     <section
-      className="min-h-screen bg-[url(/img/background/bg.svg)] bg-cover flex py-32 px-10 md:px-12 2xl:py-16"
+      className="min-h-screen bg-[url(/img/background/bg.svg)] bg-cover flex py-32 px-10 md:px-12 2xl:py-24"
       id="about"
     >
       <div className="flex flex-col md:flex-row max-w-6xl w-full my-auto mx-auto gap-8 md:gap-12 lg:gap-16 items-center md:items-start">
