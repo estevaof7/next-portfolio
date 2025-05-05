@@ -44,6 +44,53 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+@theme {
+  --animate-slide-from-left: slideFromLeft 0.7s ease-out;
+  --animate-slide-from-right: slideFromRight 0.7s ease-out;
+  --animate-slide-from-top: slideFromTop 0.7s ease-out;
+  --animate-slide-from-bottom: slideFromBottom 0.7s ease-out;
+  @keyframes slideFromLeft {
+    0% {
+      opacity: 0.5;
+      transform: translateX(-30%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes slideFromRight {
+    0% {
+      opacity: 0.5;
+      transform: translateX(30%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes slideFromTop {
+    0% {
+      opacity: 0;
+      transform: translateY(-30%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes slideFromBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(10%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);

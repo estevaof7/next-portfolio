@@ -27,10 +27,6 @@ export const aboutData: AboutModel = {
         progress: 100
       },
       {
-        ...techData[Tech.TS],
-        progress: 100
-      },
-      {
         ...techData[Tech.HTML],
         progress: 100
       },
@@ -39,20 +35,24 @@ export const aboutData: AboutModel = {
         progress: 100
       },
       {
+        ...techData[Tech.TS],
+        progress: 95
+      },
+      {
         ...techData[Tech.REACT],
         progress: 90
       },
       {
         ...techData[Tech.NEXT],
-        progress: 90
+        progress: 85
       },
       {
         ...techData[Tech.NODE],
-        progress: 80
+        progress: 60
       },
       {
         ...techData[Tech.ANGULAR],
-        progress: 60
+        progress: 80
       },
       {
         ...techData[Tech.MONGODB],
@@ -60,7 +60,7 @@ export const aboutData: AboutModel = {
       },
       {
         ...techData[Tech.JAVA],
-        progress: 25
+        progress: 20
       },
       {
         ...techData[Tech.MYSQL],

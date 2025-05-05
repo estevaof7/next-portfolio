@@ -20,7 +20,7 @@ export default function About() {
       className="min-h-screen bg-[url(/img/background/bg.svg)] bg-cover flex py-32 px-10 md:px-12 2xl:py-16"
       id="about"
     >
-      <div className="flex flex-col md:flex-row max-w-6xl w-full my-auto mx-auto gap-8 md:gap-12 lg:gap-16 items-center md:items-start">
+      <div className="flex flex-col md:flex-row max-w-6xl w-full my-auto mx-auto gap-8 md:gap-12 lg:gap-16 items-center md:items-start animate-slide-from-bottom">
         <Image
           src={aboutData.profileImg.src}
           alt={aboutData.profileImg.alt}

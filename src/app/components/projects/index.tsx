@@ -13,7 +13,7 @@ export default function Projects() {
 
   return (
     <section className="min-h-screen bg-black text-white">
-      <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-10 sm:py-16 lg:py-20 space-y-10 sm:space-y-16 lg:space-y-20">
+      <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-10 sm:py-16 lg:py-20 space-y-10 sm:space-y-16 lg:space-y-20 animate-slide-from-bottom">
         <div
           id="professional-projects"
           className="space-y-10 sm:space-y-16 lg:space-y-20"
