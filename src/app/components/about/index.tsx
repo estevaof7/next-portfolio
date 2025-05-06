@@ -12,6 +12,18 @@ import {
 import { TechModel } from '@/models/tech-model';
 import { Progress } from '@/models/about-model';
 
+import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogClose,
+  DialogTrigger
+} from '@/components/ui/dialog';
+
 export default function About() {
   const cards = aboutData.techStack.cards;
 
@@ -38,6 +50,31 @@ export default function About() {
           <p className="mt-4 mb-8 sm:mt-6 sm:mb-10 md:mt-8 md:mb-12 lg:mb-16 mx-0">
             {aboutData.description}
           </p>
+          <Dialog>
+            {/* VER COMO DEIXAR MAIOR */}
+            <DialogTrigger asChild>
+              <Button variant="outline">Edit Profile</Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[425px]">
+              <DialogHeader>
+                <DialogTitle>teste</DialogTitle>
+                <DialogDescription>
+                  Make changes to your profile here. Click save when youre done.
+                </DialogDescription>
+              </DialogHeader>
+              <div className="grid gap-4 py-4">
+                <div className="grid grid-cols-4 items-center gap-4">teste</div>
+                <div className="grid grid-cols-4 items-center gap-4">teste</div>
+              </div>
+              <DialogFooter>
+                <DialogClose asChild>
+                  <Button type="button" variant="secondary">
+                    Close
+                  </Button>
+                </DialogClose>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
           <div className="flex flex-col space-y-3">
             <p className="text-lg sm:text-xl font-bold">
               {aboutData.techStack.title}

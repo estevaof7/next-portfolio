@@ -12,7 +12,7 @@
     "test:ci": "jest --runInBand"
   },
   "dependencies": {
-    "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-dialog": "^1.1.13",
     "@radix-ui/react-navigation-menu": "^1.2.5",
     "@radix-ui/react-progress": "^1.1.2",
     "@radix-ui/react-slot": "^1.1.2",
