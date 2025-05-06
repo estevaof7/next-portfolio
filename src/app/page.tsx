@@ -9,6 +9,7 @@ export default function Home() {
 
   //SHADCN: DIALOG
 
+  //currículo: passar sessão projetos para cima ?
   //footer: campos input para enviar email
   //ver se separa em categorias o tech stack ...
   //adicionar this.portfolio
@@ -17,6 +18,7 @@ export default function Home() {
   //melhorar visual... pegar referências
   //problema hidratação
   //elementos carregar e disparar animação a medida que for fazendo o scroll?
+  //soft skills em baixo do tech stack em um acordeon ? elton disse que seria legal ter as soft skills no postfólio
   return (
     <main className="text-md">
       <NavBar />
