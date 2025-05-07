@@ -23,6 +23,7 @@ import {
   DialogClose,
   DialogTrigger
 } from '@/components/ui/dialog';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 export default function About() {
   const cards = aboutData.techStack.cards;
@@ -89,14 +90,41 @@ export default function About() {
                           youre done.
                         </DialogDescription>
                       </DialogHeader>
-                      <div className="grid gap-4 py-4">
-                        <div className="grid grid-cols-4 items-center gap-4">
-                          teste
+                      <ScrollArea className="h-72 w-full rounded-md">
+                        <div className="grid gap-4 py-4">
+                          Lorem, ipsum dolor sit amet consectetur adipisicing
+                          elit. Nulla odit quaerat incidunt? Nobis, aspernatur
+                          fugit porro quibusdam alias vitae cumque aut officia
+                          laboriosam vel obcaecati tempora a consectetur ex
+                          dolorem dignissimos consequatur Lorem ipsum dolor sit
+                          amet consectetur adipisicing elit. Minus ratione quia
+                          natus assumenda, nostrum nam eveniet perferendis
+                          praesentium nemo non? Lorem ipsum dolor sit amet
+                          consectetur, adipisicing elit. Alias facilis sunt
+                          totam libero ipsam optio exercitationem maxime qui
+                          praesentium repudiandae, et voluptates nisi dolorem
+                          velit consequatur ab itaque, enim tempore deserunt
+                          amet distinctio obcaecati dignissimos, culpa iure?
+                          Doloremque amet enim esse officia, dolores unde soluta
+                          voluptates, vitae eius incidunt placeat! Lorem ipsum,
+                          dolor sit amet consectetur adipisicing elit. Adipisci,
+                          alias. Repellendus amet libero ducimus quo, enim
+                          reiciendis debitis quaerat, necessitatibus optio
+                          laborum fugit nemo odio ipsum itaque ipsam voluptate
+                          nesciunt maiores ex impedit esse architecto eius.
+                          Corrupti repellendus amet voluptate, laborum error a
+                          ipsam provident consectetur ducimus minima maiores
+                          optio inventore magni neque aliquid eveniet doloremque
+                          tenetur earum, itaque eos quasi eius quas
+                          voluptatibus. Eos modi nobis maiores laboriosam, iste
+                          nihil error ea vel asperiores sunt a ducimus optio
+                          minima necessitatibus enim dolorum repellat tempora
+                          nesciunt autem rem. Itaque animi voluptatibus
+                          assumenda accusamus architecto, magnam eaque possimus
+                          aliquid quaerat nobis?
                         </div>
-                        <div className="grid grid-cols-4 items-center gap-4">
-                          teste
-                        </div>
-                      </div>
+                      </ScrollArea>
+
                       <DialogFooter>
                         <DialogClose asChild>
                           <Button type="button" variant="secondary">
