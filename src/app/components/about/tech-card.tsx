@@ -48,11 +48,11 @@ export const ProgressCircle = ({
   };
 
   return (
-    <div className="relative aspect-square">
+    <>
       <svg
         role="progressbar"
         viewBox={`0 0 ${size} ${size}`}
-        className={`w-full h-full text-primary ${className}`}
+        className={`w-full h-full text-primary z-20 ${className}`}
         aria-valuenow={normalizedValue}
         aria-valuemin={0}
         aria-valuemax={100}
@@ -78,6 +78,6 @@ export const ProgressCircle = ({
         height={50 * zoom}
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 xl:scale-100 md:scale-90"
       />
-    </div>
+    </>
   );
 };

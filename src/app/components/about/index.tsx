@@ -50,31 +50,6 @@ export default function About() {
           <p className="mt-4 mb-8 sm:mt-6 sm:mb-10 md:mt-8 md:mb-12 lg:mb-16 mx-0">
             {aboutData.description}
           </p>
-          <Dialog>
-            {/* VER COMO DEIXAR MAIOR */}
-            <DialogTrigger asChild>
-              <Button variant="outline">Edit Profile</Button>
-            </DialogTrigger>
-            <DialogContent className="sm:max-w-[425px]">
-              <DialogHeader>
-                <DialogTitle>teste</DialogTitle>
-                <DialogDescription>
-                  Make changes to your profile here. Click save when youre done.
-                </DialogDescription>
-              </DialogHeader>
-              <div className="grid gap-4 py-4">
-                <div className="grid grid-cols-4 items-center gap-4">teste</div>
-                <div className="grid grid-cols-4 items-center gap-4">teste</div>
-              </div>
-              <DialogFooter>
-                <DialogClose asChild>
-                  <Button type="button" variant="secondary">
-                    Close
-                  </Button>
-                </DialogClose>
-              </DialogFooter>
-            </DialogContent>
-          </Dialog>
           <div className="flex flex-col space-y-3">
             <p className="text-lg sm:text-xl font-bold">
               {aboutData.techStack.title}
@@ -86,21 +61,51 @@ export default function About() {
                     progress: Progress;
                   }
                 ) => (
-                  <TooltipProvider key={card.src}>
-                    <Tooltip>
-                      <TooltipTrigger>
-                        <ProgressCircle
-                          value={card.progress}
-                          iconPath={card.src}
-                          alt={card.alt}
-                          startAngle={aboutData.techStack.startAngle}
-                          clockWise={aboutData.techStack.clockWise}
-                          zoom={card.zoom || 1}
-                        />
-                      </TooltipTrigger>
-                      <TooltipContent>{card.name}</TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
+                  <Dialog key={card.src}>
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger>
+                          <DialogTrigger asChild>
+                            <div className="relative aspect-square cursor-pointer hover:scale-110 transition-all">
+                              <ProgressCircle
+                                value={card.progress}
+                                iconPath={card.src}
+                                alt={card.alt}
+                                startAngle={aboutData.techStack.startAngle}
+                                clockWise={aboutData.techStack.clockWise}
+                                zoom={card.zoom || 1}
+                              />
+                            </div>
+                          </DialogTrigger>
+                        </TooltipTrigger>
+                        <TooltipContent>{card.name}</TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                    <DialogContent className="sm:max-w-[425px] md:min-w-2xl">
+                      <DialogHeader>
+                        <DialogTitle>teste</DialogTitle>
+                        <DialogDescription>
+                          Make changes to your profile here. Click save when
+                          youre done.
+                        </DialogDescription>
+                      </DialogHeader>
+                      <div className="grid gap-4 py-4">
+                        <div className="grid grid-cols-4 items-center gap-4">
+                          teste
+                        </div>
+                        <div className="grid grid-cols-4 items-center gap-4">
+                          teste
+                        </div>
+                      </div>
+                      <DialogFooter>
+                        <DialogClose asChild>
+                          <Button type="button" variant="secondary">
+                            Close
+                          </Button>
+                        </DialogClose>
+                      </DialogFooter>
+                    </DialogContent>
+                  </Dialog>
                 )
               )}
             </div>

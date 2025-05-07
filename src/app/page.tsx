@@ -2,6 +2,7 @@ import NavBar from './components/nav-bar';
 import About from './components/about';
 import Projects from './components/projects';
 import Footer from './components/footer';
+import { BreakPointView } from './components/breakpoint-view';
 // import { BreakPointView } from './components/breakpoint-view';
 
 export default function Home() {
@@ -25,7 +26,7 @@ export default function Home() {
       <About />
       <Projects />
       <Footer />
-      {/* <BreakPointView /> */}
+      <BreakPointView />
     </main>
   );
 }
