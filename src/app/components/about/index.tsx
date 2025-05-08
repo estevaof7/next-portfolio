@@ -3,27 +3,27 @@
 import Image from 'next/image';
 import { aboutData } from '@/data/about-data';
 import { ProgressCircle } from './tech-card';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger
-} from '@/components/ui/tooltip';
+// import {
+//   Tooltip,
+//   TooltipContent,
+//   TooltipProvider,
+//   TooltipTrigger
+// } from '@/components/ui/tooltip';
 import { TechModel } from '@/models/tech-model';
 import { Progress } from '@/models/about-model';
 
-import { Button } from '@/components/ui/button';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogClose,
-  DialogTrigger
-} from '@/components/ui/dialog';
-import { ScrollArea } from '@/components/ui/scroll-area';
+// import { Button } from '@/components/ui/button';
+// import {
+//   Dialog,
+//   DialogContent,
+//   DialogDescription,
+//   DialogFooter,
+//   DialogHeader,
+//   DialogTitle,
+//   DialogClose,
+//   DialogTrigger
+// } from '@/components/ui/dialog';
+// import { ScrollArea } from '@/components/ui/scroll-area';
 
 export default function About() {
   const cards = aboutData.techStack.cards;
@@ -62,78 +62,64 @@ export default function About() {
                     progress: Progress;
                   }
                 ) => (
-                  <Dialog key={card.src}>
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger>
-                          <DialogTrigger asChild>
-                            <div className="relative aspect-square cursor-pointer hover:scale-110 transition-all">
-                              <ProgressCircle
-                                value={card.progress}
-                                iconPath={card.src}
-                                alt={card.alt}
-                                startAngle={aboutData.techStack.startAngle}
-                                clockWise={aboutData.techStack.clockWise}
-                                zoom={card.zoom || 1}
-                              />
-                            </div>
-                          </DialogTrigger>
-                        </TooltipTrigger>
-                        <TooltipContent>{card.name}</TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                    <DialogContent className="sm:max-w-[425px] md:min-w-2xl">
-                      <DialogHeader>
-                        <DialogTitle>teste</DialogTitle>
-                        <DialogDescription>
-                          Make changes to your profile here. Click save when
-                          youre done.
-                        </DialogDescription>
-                      </DialogHeader>
-                      <ScrollArea className="h-72 w-full rounded-md">
-                        <div className="grid gap-4 py-4">
-                          Lorem, ipsum dolor sit amet consectetur adipisicing
-                          elit. Nulla odit quaerat incidunt? Nobis, aspernatur
-                          fugit porro quibusdam alias vitae cumque aut officia
-                          laboriosam vel obcaecati tempora a consectetur ex
-                          dolorem dignissimos consequatur Lorem ipsum dolor sit
-                          amet consectetur adipisicing elit. Minus ratione quia
-                          natus assumenda, nostrum nam eveniet perferendis
-                          praesentium nemo non? Lorem ipsum dolor sit amet
-                          consectetur, adipisicing elit. Alias facilis sunt
-                          totam libero ipsam optio exercitationem maxime qui
-                          praesentium repudiandae, et voluptates nisi dolorem
-                          velit consequatur ab itaque, enim tempore deserunt
-                          amet distinctio obcaecati dignissimos, culpa iure?
-                          Doloremque amet enim esse officia, dolores unde soluta
-                          voluptates, vitae eius incidunt placeat! Lorem ipsum,
-                          dolor sit amet consectetur adipisicing elit. Adipisci,
-                          alias. Repellendus amet libero ducimus quo, enim
-                          reiciendis debitis quaerat, necessitatibus optio
-                          laborum fugit nemo odio ipsum itaque ipsam voluptate
-                          nesciunt maiores ex impedit esse architecto eius.
-                          Corrupti repellendus amet voluptate, laborum error a
-                          ipsam provident consectetur ducimus minima maiores
-                          optio inventore magni neque aliquid eveniet doloremque
-                          tenetur earum, itaque eos quasi eius quas
-                          voluptatibus. Eos modi nobis maiores laboriosam, iste
-                          nihil error ea vel asperiores sunt a ducimus optio
-                          minima necessitatibus enim dolorum repellat tempora
-                          nesciunt autem rem. Itaque animi voluptatibus
-                          assumenda accusamus architecto, magnam eaque possimus
-                          aliquid quaerat nobis?
-                        </div>
-                      </ScrollArea>
+                  // <Dialog key={card.src}>
+                  //   <TooltipProvider>
+                  //     <Tooltip>
+                  //       <TooltipTrigger>
+                  //         <DialogTrigger asChild>
+                  //           <div className="relative aspect-square cursor-pointer hover:scale-110 transition-all">
+                  <ProgressCircle
+                    // COLOCAR COMO PROPS O CARD INTEIRO E LÁ NO TECH-CARD EU PEGO OS VALORES
+                    //PRINCIPALEMNTE PORQUE VOU PRECISAR DO CARD.NAME PARA O TOOLTIP
+                    key={card.src}
+                    className="w-full h-full"
+                    value={card.progress}
+                    iconPath={card.src}
+                    alt={card.alt}
+                    startAngle={aboutData.techStack.startAngle}
+                    clockWise={aboutData.techStack.clockWise}
+                    zoom={card.zoom || 1}
+                  />
+                  //           </div>
+                  //         </DialogTrigger>
+                  //       </TooltipTrigger>
+                  //       <TooltipContent>{card.name}</TooltipContent>
+                  //     </Tooltip>
+                  //   </TooltipProvider>
+                  //   <DialogContent className="sm:max-w-[425px] md:min-w-2xl">
+                  //     <DialogHeader>
+                  //       <DialogTitle>teste</DialogTitle>
+                  //       <DialogDescription>
+                  //         Make changes to your profile here. Click save when
+                  //         youre done.
+                  //       </DialogDescription>
+                  //     </DialogHeader>
+                  //     <ScrollArea className="h-72 w-full rounded-md">
+                  //       <div className="grid gap-4 py-4">
+                  //         Lorem, ipsum dolor sit amet consectetur adipisicing
+                  //         elit. Nulla odit quaerat incidunt? Nobis, aspernatur
+                  //         fugit porro quibusdam alias vitae cumque aut officia
+                  //         laboriosam vel obcaecati tempora a consectetur ex
+                  //         dolorem dignissimos consequatur Lorem ipsum dolor sit
+                  //         amet consectetur adipisicing elit. Minus ratione quia
+                  //         natus assumenda, nostrum nam eveniet perferendis
+                  //         praesentium nemo non? Lorem ipsum dolor sit amet
+                  //         consectetur, adipisicing elit. Alias facilis sunt
+                  //         totam libero ipsam optio exercitationem maxime qui
+                  //         praesentium repudiandae, et voluptates nisi dolorem
+                  //         velit consequatur ab itaque, enim tempore deserunt
+                  //       </div>
+                  //     </ScrollArea>
 
-                      <DialogFooter>
-                        <DialogClose asChild>
-                          <Button type="button" variant="secondary">
-                            Close
-                          </Button>
-                        </DialogClose>
-                      </DialogFooter>
-                    </DialogContent>
-                  </Dialog>
+                  //     <DialogFooter>
+                  //       <DialogClose asChild>
+                  //         <Button type="button" variant="secondary">
+                  //           Close
+                  //         </Button>
+                  //       </DialogClose>
+                  //     </DialogFooter>
+                  //   </DialogContent>
+                  // </Dialog>
                 )
               )}
             </div>
