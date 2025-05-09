@@ -3,27 +3,8 @@
 import Image from 'next/image';
 import { aboutData } from '@/data/about-data';
 import { ProgressCircle } from './tech-card';
-// import {
-//   Tooltip,
-//   TooltipContent,
-//   TooltipProvider,
-//   TooltipTrigger
-// } from '@/components/ui/tooltip';
 import { TechModel } from '@/models/tech-model';
 import { Progress } from '@/models/about-model';
-
-// import { Button } from '@/components/ui/button';
-// import {
-//   Dialog,
-//   DialogContent,
-//   DialogDescription,
-//   DialogFooter,
-//   DialogHeader,
-//   DialogTitle,
-//   DialogClose,
-//   DialogTrigger
-// } from '@/components/ui/dialog';
-// import { ScrollArea } from '@/components/ui/scroll-area';
 
 export default function About() {
   const cards = aboutData.techStack.cards;
@@ -62,12 +43,6 @@ export default function About() {
                     progress: Progress;
                   }
                 ) => (
-                  // <Dialog key={card.src}>
-                  //   <TooltipProvider>
-                  //     <Tooltip>
-                  //       <TooltipTrigger>
-                  //         <DialogTrigger asChild>
-                  //           <div className="relative aspect-square cursor-pointer hover:scale-110 transition-all">
                   <ProgressCircle
                     // COLOCAR COMO PROPS O CARD INTEIRO E LÁ NO TECH-CARD EU PEGO OS VALORES
                     //PRINCIPALEMNTE PORQUE VOU PRECISAR DO CARD.NAME PARA O TOOLTIP
@@ -80,46 +55,6 @@ export default function About() {
                     clockWise={aboutData.techStack.clockWise}
                     zoom={card.zoom || 1}
                   />
-                  //           </div>
-                  //         </DialogTrigger>
-                  //       </TooltipTrigger>
-                  //       <TooltipContent>{card.name}</TooltipContent>
-                  //     </Tooltip>
-                  //   </TooltipProvider>
-                  //   <DialogContent className="sm:max-w-[425px] md:min-w-2xl">
-                  //     <DialogHeader>
-                  //       <DialogTitle>teste</DialogTitle>
-                  //       <DialogDescription>
-                  //         Make changes to your profile here. Click save when
-                  //         youre done.
-                  //       </DialogDescription>
-                  //     </DialogHeader>
-                  //     <ScrollArea className="h-72 w-full rounded-md">
-                  //       <div className="grid gap-4 py-4">
-                  //         Lorem, ipsum dolor sit amet consectetur adipisicing
-                  //         elit. Nulla odit quaerat incidunt? Nobis, aspernatur
-                  //         fugit porro quibusdam alias vitae cumque aut officia
-                  //         laboriosam vel obcaecati tempora a consectetur ex
-                  //         dolorem dignissimos consequatur Lorem ipsum dolor sit
-                  //         amet consectetur adipisicing elit. Minus ratione quia
-                  //         natus assumenda, nostrum nam eveniet perferendis
-                  //         praesentium nemo non? Lorem ipsum dolor sit amet
-                  //         consectetur, adipisicing elit. Alias facilis sunt
-                  //         totam libero ipsam optio exercitationem maxime qui
-                  //         praesentium repudiandae, et voluptates nisi dolorem
-                  //         velit consequatur ab itaque, enim tempore deserunt
-                  //       </div>
-                  //     </ScrollArea>
-
-                  //     <DialogFooter>
-                  //       <DialogClose asChild>
-                  //         <Button type="button" variant="secondary">
-                  //           Close
-                  //         </Button>
-                  //       </DialogClose>
-                  //     </DialogFooter>
-                  //   </DialogContent>
-                  // </Dialog>
                 )
               )}
             </div>
