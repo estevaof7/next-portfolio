@@ -15,6 +15,11 @@ type TechStackModel = {
   title: string;
   startAngle: Angle;
   clockWise: boolean;
+  modal: {
+    title: string;
+    description: string;
+    buttonLabel: string;
+  };
   cards: Array<
     TechModel & {
       progress: Progress;

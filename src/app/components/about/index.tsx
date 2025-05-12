@@ -8,6 +8,7 @@ import { Progress } from '@/models/about-model';
 
 export default function About() {
   const cards = aboutData.techStack.cards;
+  const modal = aboutData.techStack.modal;
 
   return (
     <section
@@ -44,16 +45,12 @@ export default function About() {
                   }
                 ) => (
                   <ProgressCircle
-                    // COLOCAR COMO PROPS O CARD INTEIRO E LÁ NO TECH-CARD EU PEGO OS VALORES
-                    //PRINCIPALEMNTE PORQUE VOU PRECISAR DO CARD.NAME PARA O TOOLTIP
                     key={card.src}
+                    card={card}
                     className="w-full h-full"
-                    value={card.progress}
-                    iconPath={card.src}
-                    alt={card.alt}
                     startAngle={aboutData.techStack.startAngle}
                     clockWise={aboutData.techStack.clockWise}
-                    zoom={card.zoom || 1}
+                    modal={modal}
                   />
                 )
               )}

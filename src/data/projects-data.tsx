@@ -170,7 +170,7 @@ export const projectsData: ProjectsModel = {
         gifPath: '/img/project-gif/sesc.gif',
         alt: isPt ? 'Projeto sesc' : 'Ticket sesc',
         start: (isPt ? 'março' : 'march') + ' 2025',
-        end: currentDate,
+        end: (isPt ? 'abril' : 'april') + ' 2025',
         tech: [
           techData[Tech.ANGULAR],
           techData[Tech.TS],

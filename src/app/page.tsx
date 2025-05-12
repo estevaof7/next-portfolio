@@ -7,8 +7,7 @@ import { BreakPointView } from './components/breakpoint-view';
 
 export default function Home() {
   //cards de tecnologia serem clicados e abrem um modal com o projeto que eu utilizei e como eu utilizei
-
-  //SHADCN: DIALOG
+  //meses project-data ... fazer enum
 
   //currículo: passar sessão projetos para cima ?
   //footer: campos input para enviar email
