@@ -23,7 +23,9 @@ export const aboutData: AboutModel = {
     clockWise: true,
     modal: {
       title: isPt ? 'Projetos em que usei...' : 'Projects I used...',
-      description: isPt ? 'Aqui estão alguns projetos em que eu utilizei a tecnologia' : 'Here are some projects where I used the technology',
+      description: isPt
+        ? 'Aqui estão alguns projetos em que eu utilizei a tecnologia'
+        : 'Here are some projects where I used the technology',
       buttonLabel: isPt ? 'Fechar' : 'Close'
     },
     cards: [

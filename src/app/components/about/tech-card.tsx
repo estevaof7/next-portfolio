@@ -8,19 +8,8 @@ import {
   TooltipTrigger
 } from '@/components/ui/tooltip';
 
-import { Button } from '@/components/ui/button';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogClose,
-  DialogTrigger
-} from '@/components/ui/dialog';
-import { ScrollArea } from '@/components/ui/scroll-area';
-import { TechModel } from '@/models/tech-model';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { Tech, TechModel } from '@/models/tech-model';
 import { Progress } from '@/models/about-model';
 import { TechModal } from './tech-modal';
 
@@ -30,13 +19,15 @@ export interface ProgressCircleProps extends React.ComponentProps<'svg'> {
   card: TechModel & {
     progress: Progress;
   };
+  tech: Tech;
   className?: string;
   startAngle: number;
   clockWise: boolean;
   modal: {
     title: string;
+    description: string;
     buttonLabel: string;
-  }
+  };
 }
 
 function clamp(input: number, a: number, b: number): number {
@@ -50,6 +41,7 @@ const total = 100;
 
 export const ProgressCircle = ({
   card,
+  tech,
   className,
   startAngle,
   clockWise,
@@ -116,7 +108,12 @@ export const ProgressCircle = ({
         </Tooltip>
       </TooltipProvider>
       <DialogContent className="sm:max-w-[425px] md:min-w-2xl">
-        <TechModal title={modal.title} description={modal.description} buttonLabel={modal.buttonLabel} tech={card.name} />
+        <TechModal
+          title={modal.title}
+          description={modal.description}
+          buttonLabel={modal.buttonLabel}
+          tech={tech}
+        />
       </DialogContent>
     </Dialog>
   );
