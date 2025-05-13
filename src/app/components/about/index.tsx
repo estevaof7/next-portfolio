@@ -3,7 +3,8 @@
 import Image from 'next/image';
 import { aboutData } from '@/data/about-data';
 import { ProgressCircle } from './tech-card';
-import { Tech, TechModel } from '@/models/tech-model';
+import { TechModel } from '@/models/tech-model';
+import { Tech } from '@/data/tech-data';
 import { Progress } from '@/models/about-model';
 
 export default function About() {

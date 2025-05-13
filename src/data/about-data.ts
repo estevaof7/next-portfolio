@@ -1,7 +1,6 @@
 import { isPt } from '@/language';
 import { AboutModel } from '@/models/about-model';
-import { techData } from './tech-data';
-import { Tech } from '@/models/tech-model';
+import { getTech, Tech2 } from './tech-data';
 
 export const aboutData: AboutModel = {
   profileImg: {
@@ -30,55 +29,55 @@ export const aboutData: AboutModel = {
     },
     cards: [
       {
-        ...techData[Tech.JS],
+        ...getTech(Tech2.JS),
         progress: 100
       },
       {
-        ...techData[Tech.HTML],
+        ...getTech(Tech2.HTML),
         progress: 100
       },
       {
-        ...techData[Tech.CSS],
+        ...getTech(Tech2.CSS),
         progress: 100
       },
       {
-        ...techData[Tech.TS],
+        ...getTech(Tech2.TS),
         progress: 95
       },
       {
-        ...techData[Tech.REACT],
+        ...getTech(Tech2.REACT),
         progress: 90
       },
       {
-        ...techData[Tech.NEXT],
+        ...getTech(Tech2.NEXT),
         progress: 85
       },
       {
-        ...techData[Tech.NODE],
+        ...getTech(Tech2.NODE),
         progress: 60
       },
       {
-        ...techData[Tech.ANGULAR],
+        ...getTech(Tech2.ANGULAR),
         progress: 80
       },
       {
-        ...techData[Tech.MONGODB],
+        ...getTech(Tech2.MONGODB),
         progress: 50
       },
       {
-        ...techData[Tech.JAVA],
+        ...getTech(Tech2.JAVA),
         progress: 20
       },
       {
-        ...techData[Tech.MYSQL],
+        ...getTech(Tech2.MYSQL),
         progress: 25
       },
       {
-        ...techData[Tech.TAILWIND],
+        ...getTech(Tech2.TAILWIND),
         progress: 100
       },
       {
-        ...techData[Tech.BOOTSTRAP],
+        ...getTech(Tech2.BOOTSTRAP),
         progress: 100
       }
     ]

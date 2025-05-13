@@ -1,7 +1,7 @@
 import { isPt } from '@/language';
 import { ProjectsModel, VideoStartsOn } from '@/models/projects-model';
 import { techData } from './tech-data';
-import { Tech } from '@/models/tech-model';
+import { Tech } from './tech-data';
 
 const months: string[] = [
   isPt ? 'janeiro' : 'january',
