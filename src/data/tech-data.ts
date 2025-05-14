@@ -36,9 +36,7 @@ export const getTech = (tech: Tech2): TechModel => {
   return techData.find((t) => t.name === tech) as TechModel;
 };
 
-// FALTA MUDAR O PROJECTS E TIRAR O EXPORT DO TECHDATA
-
-export const techData: TechModel[] = [
+const techData: TechModel[] = [
   {
     name: Tech2.JS,
     alt: Tech2.JS + ' logo',

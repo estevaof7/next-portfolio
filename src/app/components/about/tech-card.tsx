@@ -9,9 +9,10 @@ import {
 } from '@/components/ui/tooltip';
 
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
-import { Tech, TechModel } from '@/models/tech-model';
+import { TechModel } from '@/models/tech-model';
 import { Progress } from '@/models/about-model';
 import { TechModal } from './tech-modal';
+import { Tech2 } from '@/data/tech-data';
 
 //peguei desse site: https://github.com/shadcn-ui/ui/issues/697 (último comentário)
 
@@ -19,7 +20,7 @@ export interface ProgressCircleProps extends React.ComponentProps<'svg'> {
   card: TechModel & {
     progress: Progress;
   };
-  tech: Tech;
+  tech: Tech2;
   className?: string;
   startAngle: number;
   clockWise: boolean;

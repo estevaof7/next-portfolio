@@ -1,7 +1,6 @@
 import { isPt } from '@/language';
 import { ProjectsModel, VideoStartsOn } from '@/models/projects-model';
-import { techData } from './tech-data';
-import { Tech } from './tech-data';
+import { getTech, Tech2 } from './tech-data';
 
 const months: string[] = [
   isPt ? 'janeiro' : 'january',
@@ -86,10 +85,10 @@ export const projectsData: ProjectsModel = {
         start: (isPt ? 'janeiro' : 'january') + ' 2025',
         end: (isPt ? 'março' : 'march') + ' 2025',
         tech: [
-          techData[Tech.NEXT],
-          techData[Tech.REACT],
-          techData[Tech.TS],
-          techData[Tech.TAILWIND]
+          getTech(Tech2.NEXT),
+          getTech(Tech2.REACT),
+          getTech(Tech2.TS),
+          getTech(Tech2.TAILWIND)
         ]
       },
       {
@@ -128,9 +127,9 @@ export const projectsData: ProjectsModel = {
         start: (isPt ? 'março' : 'march') + ' 2025',
         end: currentDate,
         tech: [
-          techData[Tech.ANGULAR],
-          techData[Tech.TS],
-          techData[Tech.BOOTSTRAP]
+          getTech(Tech2.ANGULAR),
+          getTech(Tech2.TS),
+          getTech(Tech2.BOOTSTRAP)
         ]
       },
       {
@@ -172,9 +171,9 @@ export const projectsData: ProjectsModel = {
         start: (isPt ? 'março' : 'march') + ' 2025',
         end: (isPt ? 'abril' : 'april') + ' 2025',
         tech: [
-          techData[Tech.ANGULAR],
-          techData[Tech.TS],
-          techData[Tech.BOOTSTRAP]
+          getTech(Tech2.ANGULAR),
+          getTech(Tech2.TS),
+          getTech(Tech2.BOOTSTRAP)
         ]
       }
     ]
@@ -220,10 +219,10 @@ export const projectsData: ProjectsModel = {
         ],
         end: (isPt ? 'janeiro' : 'january') + ' 2025',
         tech: [
-          techData[Tech.REACT],
-          techData[Tech.JS],
-          techData[Tech.CSS],
-          techData[Tech.BOOTSTRAP]
+          getTech(Tech2.REACT),
+          getTech(Tech2.JS),
+          getTech(Tech2.CSS),
+          getTech(Tech2.BOOTSTRAP)
         ]
       },
       {
@@ -271,7 +270,7 @@ export const projectsData: ProjectsModel = {
           }
         ],
         end: (isPt ? 'dezembro' : 'december') + ' 2023',
-        tech: [techData[Tech.JAVA], techData[Tech.MYSQL]]
+        tech: [getTech(Tech2.JAVA), getTech(Tech2.MYSQL)]
       },
       {
         title: 'My first React project',
@@ -305,7 +304,7 @@ export const projectsData: ProjectsModel = {
           }
         ],
         end: (isPt ? 'dezembro' : 'december') + ' 2024',
-        tech: [techData[Tech.REACT], techData[Tech.JS], techData[Tech.CSS]]
+        tech: [getTech(Tech2.REACT), getTech(Tech2.JS), getTech(Tech2.CSS)]
       },
 
       {
@@ -344,10 +343,10 @@ export const projectsData: ProjectsModel = {
         ],
         end: (isPt ? 'maio' : 'may') + ' 2024',
         tech: [
-          techData[Tech.NODE],
-          techData[Tech.MONGODB],
-          techData[Tech.JS],
-          techData[Tech.BOOTSTRAP]
+          getTech(Tech2.NODE),
+          getTech(Tech2.MONGODB),
+          getTech(Tech2.JS),
+          getTech(Tech2.BOOTSTRAP)
         ]
       },
       {
@@ -392,10 +391,10 @@ export const projectsData: ProjectsModel = {
         ],
         end: (isPt ? 'outubro' : 'october') + ' 2024',
         tech: [
-          techData[Tech.JS],
-          techData[Tech.CSS],
-          techData[Tech.BOOTSTRAP],
-          techData[Tech.HTML]
+          getTech(Tech2.JS),
+          getTech(Tech2.CSS),
+          getTech(Tech2.BOOTSTRAP),
+          getTech(Tech2.HTML)
         ]
       },
       {
@@ -428,7 +427,7 @@ export const projectsData: ProjectsModel = {
           }
         ],
         end: (isPt ? 'março' : 'march') + ' 2023',
-        tech: [techData[Tech.HTML], techData[Tech.CSS], techData[Tech.JS]]
+        tech: [getTech(Tech2.HTML), getTech(Tech2.CSS), getTech(Tech2.JS)]
       },
       {
         title: isPt ? 'Equação do Segundo Grau' : 'Quadratic Equation',
@@ -471,7 +470,7 @@ export const projectsData: ProjectsModel = {
           }
         ],
         end: (isPt ? 'maio' : 'may') + ' 2023',
-        tech: [techData[Tech.JS], techData[Tech.HTML], techData[Tech.CSS]]
+        tech: [getTech(Tech2.JS), getTech(Tech2.HTML), getTech(Tech2.CSS)]
       },
       {
         title: 'Tabs CSS',
@@ -511,7 +510,7 @@ export const projectsData: ProjectsModel = {
           }
         ],
         end: (isPt ? 'julho' : 'july') + ' 2023',
-        tech: [techData[Tech.JS], techData[Tech.CSS], techData[Tech.HTML]]
+        tech: [getTech(Tech2.JS), getTech(Tech2.CSS), getTech(Tech2.HTML)]
       }
     ]
   }

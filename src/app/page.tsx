@@ -6,7 +6,7 @@ import { BreakPointView } from './components/breakpoint-view';
 // import { BreakPointView } from './components/breakpoint-view';
 
 export default function Home() {
-  //cards de tecnologia serem clicados e abrem um modal com o projeto que eu utilizei e como eu utilizei
+  //instalar husky para pre-commit e executar o comando npx prettier src/ --write
   //meses project-data ... fazer enum
 
   //currículo: passar sessão projetos para cima ?
