@@ -49,92 +49,102 @@ export function Project({
                   ${position === Position.EVEN ? '' : 'md:flex-row-reverse'}`}
     >
       {!isMobile ? (
-        <>
-          <div className="space-y-7 w-full md:w-1/2 lg:w-3/5">
-            <div>
-              <h1 className="text-3xl lg:text-4xl font-medium">{data.title}</h1>
-              <h2 className="text-gray-400 mt-1">
-                {(data.start ? data.start + ' - ' : '') + data.end}
-              </h2>
-            </div>
-            <div>{data.description()}</div>
-            <div
-              className="flex flex-row justify-between items-center gap-4"
-              // ref={techAndButtons} //RESPONSIVIDADE DIV CARDS/BOTÕES
-            >
-              <div className="flex space-x-4 overflow-x-auto">
-                {data.tech.map((item: TechModel) => (
-                  <TooltipProvider key={item.src}>
-                    <Tooltip>
-                      <TooltipTrigger>
-                        <TechCard card={item} size="desktop" />
-                      </TooltipTrigger>
-                      <TooltipContent>{item.name}</TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                ))}
-              </div>
-              <div className="flex space-x-4">
-                {data.buttons?.map((button) => (
-                  <Button
-                    key={button.text}
-                    className="text-base"
-                    variant={'secondary'}
-                    // onClick={() => { //RESPONSIVIDADE DIV CARDS/BOTÕES
-                    //   console.log('client', client);
-                    //   console.log('offset', offset);
-                    // }}
-                  >
-                    <Link href={button.href} target="_blank">
-                      {button.text}
-                    </Link>
-                  </Button>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="w-full md:w-1/2 lg:w-2/5">
-            <Gif gifPath={data.gifPath} alt={data.alt} size="desktop" />
-          </div>
-        </>
+        <DesktopProject data={data} />
       ) : (
-        <>
-          <div>
-            <h1 className="text-2xl font-medium">{data.title}</h1>
-            <h2 className="text-gray-400 mt-1">
-              {(data.start ? data.start + ' - ' : '') + data.end}
-            </h2>
-          </div>
-          <div className="w-full">
-            <Gif gifPath={data.gifPath} alt={data.alt} size="mobile" />
-          </div>
-          <div className="space-y-4 w-full">
-            <div>{data.description()}</div>
-            {/* <div className="flex flex-row justify-between items-center gap-4"> //RESPONSIVIDADE DIV CARDS/BOTÕES */}
-            <div className="flex flex-col justify-between items-start gap-4 pt-4">
-              <div className="flex space-x-3 overflow-x-auto pb-2">
-                {data.tech.map((item: TechModel) => (
-                  <TechCard key={item.name} card={item} size="mobile" />
-                ))}
-              </div>
-              <div className="flex space-x-3">
-                {data.buttons?.map((button) => (
-                  <Button
-                    key={button.text}
-                    className="text-sm"
-                    variant={'secondary'}
-                  >
-                    <Link href={button.href} target="_blank">
-                      {button.text}
-                    </Link>
-                  </Button>
-                ))}
-              </div>
-            </div>
-          </div>
-        </>
+        <MobileProject data={data} />
       )}
     </div>
+  );
+}
+
+function DesktopProject({ data }: { data: ProjectCardModel }) {
+  return (
+    <>
+      <div className="space-y-7 w-full md:w-1/2 lg:w-3/5">
+        <div>
+          <h1 className="text-3xl lg:text-4xl font-medium">{data.title}</h1>
+          <h2 className="text-gray-400 mt-1">
+            {(data.start ? data.start + ' - ' : '') + data.end}
+          </h2>
+        </div>
+        <div>{data.description()}</div>
+        <div
+          className="flex flex-row justify-between items-center gap-4"
+          // ref={techAndButtons} //RESPONSIVIDADE DIV CARDS/BOTÕES
+        >
+          <div className="flex space-x-4 overflow-x-auto">
+            {data.tech.map((item: TechModel) => (
+              <TooltipProvider key={item.src}>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <TechCard card={item} size="desktop" />
+                  </TooltipTrigger>
+                  <TooltipContent>{item.name}</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            ))}
+          </div>
+          <div className="flex space-x-4">
+            {data.buttons?.map((button) => (
+              <Button
+                key={button.text}
+                className="text-base"
+                variant={'secondary'}
+                // onClick={() => { //RESPONSIVIDADE DIV CARDS/BOTÕES
+                //   console.log('client', client);
+                //   console.log('offset', offset);
+                // }}
+              >
+                <Link href={button.href} target="_blank">
+                  {button.text}
+                </Link>
+              </Button>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="w-full md:w-1/2 lg:w-2/5">
+        <Gif gifPath={data.gifPath} alt={data.alt} size="desktop" />
+      </div>
+    </>
+  );
+}
+function MobileProject({ data }: { data: ProjectCardModel }) {
+  return (
+    <>
+      <div>
+        <h1 className="text-2xl font-medium">{data.title}</h1>
+        <h2 className="text-gray-400 mt-1">
+          {(data.start ? data.start + ' - ' : '') + data.end}
+        </h2>
+      </div>
+      <div className="w-full">
+        <Gif gifPath={data.gifPath} alt={data.alt} size="mobile" />
+      </div>
+      <div className="space-y-4 w-full">
+        <div>{data.description()}</div>
+        <div className="flex flex-col justify-between items-start gap-4 pt-4">
+          <div className="flex space-x-3 overflow-x-auto pb-2">
+            {data.tech.map((item: TechModel) => (
+              <TechCard key={item.name} card={item} size="mobile" />
+            ))}
+          </div>
+          <div className="flex space-x-3">
+            {data.buttons?.map((button) => (
+              <Button
+                key={button.text}
+                className="text-sm"
+                variant={'secondary'}
+              >
+                <Link href={button.href} target="_blank">
+                  {button.text}
+                </Link>
+              </Button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 function Gif({

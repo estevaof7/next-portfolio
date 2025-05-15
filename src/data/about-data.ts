@@ -23,8 +23,8 @@ export const aboutData: AboutModel = {
     modal: {
       title: isPt ? 'Projetos em que usei...' : 'Projects I used...',
       description: isPt
-        ? 'Aqui estão alguns projetos em que eu utilizei a tecnologia'
-        : 'Here are some projects where I used the technology',
+        ? 'Aqui estão alguns projetos em que eu utilizei'
+        : 'Here are some projects where I used',
       buttonLabel: isPt ? 'Fechar' : 'Close'
     },
     cards: [

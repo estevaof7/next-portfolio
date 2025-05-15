@@ -7,6 +7,11 @@ export enum VideoStartsOn {
   LEFT = 'left'
 }
 
+export enum ProjectType {
+  PERSONAL = 'personal',
+  PROFESSIONAL = 'professional'
+}
+
 export type ProjectsModel = {
   videoStarts: VideoStartsOn;
   professional: {
@@ -28,4 +33,5 @@ export type ProjectCardModel = {
   start?: string;
   end: string;
   tech: TechModel[];
+  type: string;
 };

@@ -108,7 +108,7 @@ export const ProgressCircle = ({
           <TooltipContent>{card.name}</TooltipContent>
         </Tooltip>
       </TooltipProvider>
-      <DialogContent className="sm:max-w-[425px] md:min-w-2xl">
+      <DialogContent className="sm:max-w-[425px] md:min-w-2xl h-2/3 flex flex-col justify-between">
         <TechModal
           title={modal.title}
           description={modal.description}

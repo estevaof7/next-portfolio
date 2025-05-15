@@ -1,5 +1,9 @@
 import { isPt } from '@/language';
-import { ProjectsModel, VideoStartsOn } from '@/models/projects-model';
+import {
+  ProjectsModel,
+  ProjectType,
+  VideoStartsOn
+} from '@/models/projects-model';
 import { getTech, Tech2 } from './tech-data';
 
 const months: string[] = [
@@ -18,6 +22,13 @@ const months: string[] = [
 ];
 
 const currentDate = `${months[new Date().getMonth()]} ${new Date().getFullYear()}`;
+
+const typeLabel = (type: ProjectType): string => {
+  if (type === ProjectType.PERSONAL) {
+    return isPt ? 'Projeto pessoal' : 'Personal project';
+  }
+  return isPt ? 'Projeto profissional' : 'Professional project';
+};
 
 export const projectsData: ProjectsModel = {
   videoStarts: VideoStartsOn.RIGHT,
@@ -89,7 +100,8 @@ export const projectsData: ProjectsModel = {
           getTech(Tech2.REACT),
           getTech(Tech2.TS),
           getTech(Tech2.TAILWIND)
-        ]
+        ],
+        type: typeLabel(ProjectType.PROFESSIONAL)
       },
       {
         title: isPt
@@ -130,7 +142,8 @@ export const projectsData: ProjectsModel = {
           getTech(Tech2.ANGULAR),
           getTech(Tech2.TS),
           getTech(Tech2.BOOTSTRAP)
-        ]
+        ],
+        type: typeLabel(ProjectType.PROFESSIONAL)
       },
       {
         title: isPt ? 'Leitor QR Code SESC' : 'QR code reader for SESC',
@@ -174,7 +187,8 @@ export const projectsData: ProjectsModel = {
           getTech(Tech2.ANGULAR),
           getTech(Tech2.TS),
           getTech(Tech2.BOOTSTRAP)
-        ]
+        ],
+        type: typeLabel(ProjectType.PROFESSIONAL)
       }
     ]
   },
@@ -223,7 +237,8 @@ export const projectsData: ProjectsModel = {
           getTech(Tech2.JS),
           getTech(Tech2.CSS),
           getTech(Tech2.BOOTSTRAP)
-        ]
+        ],
+        type: typeLabel(ProjectType.PERSONAL)
       },
       {
         title: 'CineJava',
@@ -270,7 +285,8 @@ export const projectsData: ProjectsModel = {
           }
         ],
         end: (isPt ? 'dezembro' : 'december') + ' 2023',
-        tech: [getTech(Tech2.JAVA), getTech(Tech2.MYSQL)]
+        tech: [getTech(Tech2.JAVA), getTech(Tech2.MYSQL)],
+        type: typeLabel(ProjectType.PERSONAL)
       },
       {
         title: 'My first React project',
@@ -304,7 +320,8 @@ export const projectsData: ProjectsModel = {
           }
         ],
         end: (isPt ? 'dezembro' : 'december') + ' 2024',
-        tech: [getTech(Tech2.REACT), getTech(Tech2.JS), getTech(Tech2.CSS)]
+        tech: [getTech(Tech2.REACT), getTech(Tech2.JS), getTech(Tech2.CSS)],
+        type: typeLabel(ProjectType.PERSONAL)
       },
 
       {
@@ -347,7 +364,8 @@ export const projectsData: ProjectsModel = {
           getTech(Tech2.MONGODB),
           getTech(Tech2.JS),
           getTech(Tech2.BOOTSTRAP)
-        ]
+        ],
+        type: typeLabel(ProjectType.PERSONAL)
       },
       {
         title: 'Easy Carousel',
@@ -395,7 +413,8 @@ export const projectsData: ProjectsModel = {
           getTech(Tech2.CSS),
           getTech(Tech2.BOOTSTRAP),
           getTech(Tech2.HTML)
-        ]
+        ],
+        type: typeLabel(ProjectType.PERSONAL)
       },
       {
         title: 'My First Landing Page',
@@ -427,7 +446,8 @@ export const projectsData: ProjectsModel = {
           }
         ],
         end: (isPt ? 'março' : 'march') + ' 2023',
-        tech: [getTech(Tech2.HTML), getTech(Tech2.CSS), getTech(Tech2.JS)]
+        tech: [getTech(Tech2.HTML), getTech(Tech2.CSS), getTech(Tech2.JS)],
+        type: typeLabel(ProjectType.PERSONAL)
       },
       {
         title: isPt ? 'Equação do Segundo Grau' : 'Quadratic Equation',
@@ -470,7 +490,8 @@ export const projectsData: ProjectsModel = {
           }
         ],
         end: (isPt ? 'maio' : 'may') + ' 2023',
-        tech: [getTech(Tech2.JS), getTech(Tech2.HTML), getTech(Tech2.CSS)]
+        tech: [getTech(Tech2.JS), getTech(Tech2.HTML), getTech(Tech2.CSS)],
+        type: typeLabel(ProjectType.PERSONAL)
       },
       {
         title: 'Tabs CSS',
@@ -510,7 +531,8 @@ export const projectsData: ProjectsModel = {
           }
         ],
         end: (isPt ? 'julho' : 'july') + ' 2023',
-        tech: [getTech(Tech2.JS), getTech(Tech2.CSS), getTech(Tech2.HTML)]
+        tech: [getTech(Tech2.JS), getTech(Tech2.CSS), getTech(Tech2.HTML)],
+        type: typeLabel(ProjectType.PERSONAL)
       }
     ]
   }
