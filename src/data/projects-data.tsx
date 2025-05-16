@@ -165,6 +165,9 @@ export const projectsData: ProjectsModel = {
               <br />
               Os usuários podem acessar notícias, consultar eventos e se
               inscrever neles, com uma interface responsiva e acessível.
+              <br />
+              <br />
+              Atualmente, estamos utilizando dados mockados para testes.
             </>
           ) : (
             <>
@@ -180,6 +183,9 @@ export const projectsData: ProjectsModel = {
               <br />
               Users can access news, view events, and register for them through
               a responsive and accessible interface.
+              <br />
+              <br />
+              Currently, we are using mock data for testing.
             </>
           );
         },
