@@ -103,6 +103,7 @@ export const projectsData: ProjectsModel = {
         ],
         type: typeLabel(ProjectType.PROFESSIONAL)
       },
+
       {
         title: isPt
           ? 'Gerenciador de ingressos e eventos'
@@ -137,6 +138,54 @@ export const projectsData: ProjectsModel = {
         gifPath: '/img/project-gif/ingresso.gif',
         alt: isPt ? 'Projeto ingressos' : 'Ticket project',
         start: (isPt ? 'março' : 'march') + ' 2025',
+        end: currentDate,
+        tech: [
+          getTech(Tech2.ANGULAR),
+          getTech(Tech2.TS),
+          getTech(Tech2.BOOTSTRAP)
+        ],
+        type: typeLabel(ProjectType.PROFESSIONAL)
+      },
+      {
+        title: isPt
+          ? 'Versão web do app da PGFN (Procuradoria-Geral da Fazenda Nacional)'
+          : 'Web version of a Government Agency National Treasury app',
+        description: () => {
+          return isPt ? (
+            <>
+              Desenvolvi juntamente com outro desenvolvedor a versão web do
+              aplicativo da Procuradoria-Geral da Fazenda Nacional (PGFN),
+              originalmente criado em Flutter.
+              <br />
+              <br />
+              A aplicação foi construída com Angular 19, TypeScript e Angular
+              Material, mantendo a identidade visual e a experiência do app
+              mobile.
+              <br />
+              <br />
+              Os usuários podem acessar notícias, consultar eventos e se
+              inscrever neles, com uma interface responsiva e acessível.
+            </>
+          ) : (
+            <>
+              I co-developed the web version of the application for the Office
+              of the Attorney General of the National Treasury (PGFN),
+              originally built in Flutter.
+              <br />
+              <br />
+              The web app was developed using Angular 19, TypeScript, and
+              Angular Material, while maintaining the visual identity and user
+              experience of the mobile app.
+              <br />
+              <br />
+              Users can access news, view events, and register for them through
+              a responsive and accessible interface.
+            </>
+          );
+        },
+        gifPath: '/img/project-gif/pgfn.gif',
+        alt: isPt ? 'Projeto pgfn' : 'Pgfn project',
+        start: (isPt ? 'maio' : 'may') + ' 2025',
         end: currentDate,
         tech: [
           getTech(Tech2.ANGULAR),

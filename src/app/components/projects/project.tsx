@@ -158,7 +158,7 @@ function Gif({
 }) {
   return (
     <div
-      className={`relative w-full h-auto max-h-2/3 ${size === 'desktop' ? 'rounded-2xl' : 'rounded-lg'}  ${gifPath.includes('sesc') && 'border-2'}`}
+      className={`relative w-full h-auto max-h-2/3 ${size === 'desktop' ? 'rounded-2xl' : 'rounded-lg'}  ${(gifPath.includes('sesc') || gifPath.includes('pgfn')) && 'border-2 border-gray-400'}`}
     >
       <div
         className={`${size === 'desktop' ? 'rounded-2xl' : 'rounded-xl'} absolute w-full h-full animate-pulse bg-gray-200`}
