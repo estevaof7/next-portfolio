@@ -55,15 +55,11 @@ export const TechModal = ({
                       </h2>
                     </div>
                     <div className="w-full md:px-20 md:py-10 py-5">
-                      <Gif
-                        gifPath={project.gifPath}
-                        alt={project.alt}
-                        size="mobile"
-                      />
+                      <Gif gifPath={project.gifPath} alt={project.alt} />
                     </div>
                     <div className="space-y-4 w-full">
                       <div>{project.description()}</div>
-                      <div className="flex flex-col justify-between items-start gap-4 pt-4">
+                      <div className="flex flex-col md:flex-row justify-between items-start gap-4 pt-4 md:me-3">
                         <div className="flex space-x-3 overflow-x-auto pb-2">
                           {project.tech.map((item: TechModel) => (
                             <TechCard
@@ -78,7 +74,7 @@ export const TechModal = ({
                             <Button
                               key={button.text}
                               className="text-sm mb-5"
-                              variant={'secondary'}
+                              variant="default"
                             >
                               <Link href={button.href} target="_blank">
                                 {button.text}
@@ -107,29 +103,17 @@ export const TechModal = ({
   );
 };
 
-function Gif({
-  gifPath,
-  alt,
-  size
-}: {
-  gifPath: string;
-  alt: string;
-  size: 'mobile' | 'desktop';
-}) {
+function Gif({ gifPath, alt }: { gifPath: string; alt: string }) {
   return (
-    <div
-      className={`relative w-full h-auto max-h-2/3 ${size === 'desktop' ? 'rounded-2xl' : 'rounded-lg'}  ${gifPath.includes('sesc') && 'border-2'}`}
-    >
-      <div
-        className={`${size === 'desktop' ? 'rounded-2xl' : 'rounded-xl'} absolute w-full h-full animate-pulse bg-gray-200`}
-      ></div>
+    <div className="relative w-full h-auto max-h-2/3 rounded-lg border-2 border-gray-200">
+      <div className="rounded-xl absolute w-full h-full animate-pulse bg-gray-200"></div>
       <Image
         src={gifPath}
         alt={alt}
         width={500}
         height={500}
         unoptimized
-        className={`${size === 'desktop' ? 'rounded-xl' : 'rounded-lg'} w-full h-auto relative`}
+        className="rounded-lg  w-full h-auto relative"
       />
     </div>
   );
