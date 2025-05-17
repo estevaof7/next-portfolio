@@ -191,8 +191,7 @@ export const projectsData: ProjectsModel = {
         },
         gifPath: '/img/project-gif/pgfn.gif',
         alt: isPt ? 'Projeto pgfn' : 'Pgfn project',
-        start: (isPt ? 'maio' : 'may') + ' 2025',
-        end: currentDate,
+        end: (isPt ? 'maio' : 'may') + ' 2025',
         tech: [
           getTech(Tech2.ANGULAR),
           getTech(Tech2.TS),
