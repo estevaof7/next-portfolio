@@ -1,4 +1,4 @@
-import { isPt } from '@/language';
+import { isPt } from '@/constants/language';
 import {
   ProjectsModel,
   ProjectType,

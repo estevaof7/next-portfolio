@@ -1,4 +1,4 @@
-import { isPt } from '@/language';
+import { isPt } from '@/constants/language';
 import { AboutModel } from '@/models/about-model';
 import { getTech, Tech2 } from './tech-data';
 

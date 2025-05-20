@@ -1,4 +1,4 @@
-import { isPt } from '@/language';
+import { isPt } from '@/constants/language';
 import { NavModel } from '@/models/nav-model';
 
 export const navData: NavModel = {
