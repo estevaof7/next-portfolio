@@ -4,29 +4,18 @@ import { footerData } from '@/data/footer-data';
 import { FooterItemModel } from '@/models/footer-model';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { tailwindCompatibility } from '@/utils/tailwind-compatibility';
 
 export default function Footer() {
-  const footer = useRef(null);
-  const [textColor, setTextColor] = useState('');
-  const [backgroundColor, setbackgroundColor] = useState('');
-
-  useEffect(() => {
-    if (footer.current) {
-      // Obtém todos os estilos computados do elemento
-      const computed = window.getComputedStyle(footer.current);
-
-      // Agora você tem acesso a todas as propriedades CSS do elemento
-      setTextColor(computed.getPropertyValue('color'));
-      setbackgroundColor(computed.getPropertyValue('background-color'));
-
-      // console.log('Background color:', backgroundColor);
-      // console.log('textColor:', textColor);
-    }
-  }, []);
-
   return (
-    <footer id="contact" className="bg-black text-gray-300" ref={footer}>
+    <footer
+      id="contact"
+      className={`bg-black text-${tailwindCompatibility('gray-300')}`}
+    >
+      <p className={`text-${tailwindCompatibility('red-600')}`}>
+        teste {tailwindCompatibility('red-600')}
+      </p>
+      {/* TAILWIND COMPATIBILITY AQUI */}
       <div className="max-w-6xl mx-auto pt-10 md:pt-16 lg:pt-20 pb-8 md:pb-10 px-4 md:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-6 lg:gap-4">
           {footerData.map((item: FooterItemModel, index: number) => (
@@ -62,8 +51,6 @@ export default function Footer() {
           ))}
         </div>
       </div>
-      <div>COR DO TEXTO: {textColor}</div>
-      <div>COR DO BACKGROUND: {backgroundColor}</div>
     </footer>
   );
 }

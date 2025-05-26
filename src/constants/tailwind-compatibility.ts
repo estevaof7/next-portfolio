@@ -6,4 +6,6 @@ tempElement.className = 'bg-red-50';
 document.body.appendChild(tempElement);
 const computedBackgroundColor =
   window.getComputedStyle(tempElement).backgroundColor;
+
+// console.log('computedBackgroundColor', computedBackgroundColor);
 export const isTailwindCompatible = computedBackgroundColor.includes('oklch');

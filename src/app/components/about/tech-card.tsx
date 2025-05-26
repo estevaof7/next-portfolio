@@ -70,6 +70,7 @@ export const ProgressCircle = ({
         <Tooltip>
           <TooltipTrigger>
             <DialogTrigger asChild>
+              {/* TAILWIND COMPATIBILITY algum lugar AQUI */}
               <div className="relative aspect-square cursor-pointer hover:scale-110 transition-all">
                 <svg
                   role="progressbar"
