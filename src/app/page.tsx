@@ -1,7 +1,10 @@
+'use client';
+
 import NavBar from './components/nav-bar';
 import About from './components/about';
 import Projects from './components/projects';
 import Footer from './components/footer';
+import { TailwindProvider } from '@/providers/tailwind-compatibility';
 
 export default function Home() {
   //instalar husky para pre-commit e executar o comando npx prettier src/ --write
@@ -24,11 +27,13 @@ export default function Home() {
   //modal "projects I used..." talvez personalizar, tirar o x (porque já tem o botão de fechar) e no lugar dele, colocar a logo da tecnologia
   return (
     <main className="text-md">
-      <NavBar />
-      <About />
-      <Projects />
-      <Footer />
-      {/* <BreakPointView /> */}
+      <TailwindProvider>
+        <NavBar />
+        <About />
+        <Projects />
+        <Footer />
+        {/* <BreakPointView /> */}
+      </TailwindProvider>
     </main>
   );
 }
