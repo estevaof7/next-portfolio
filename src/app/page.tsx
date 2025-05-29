@@ -5,16 +5,21 @@ import About from './components/about';
 import Projects from './components/projects';
 import Footer from './components/footer';
 import { TailwindProvider } from '@/providers/tailwind-compatibility';
+import TailwindTester from './components/tailwind-tester';
 
 export default function Home() {
-  //instalar husky para pre-commit e executar o comando npx prettier src/ --write
-  //adicionar this.portfolio
-  //meses project-data ... fazer enum
+  //PENSAR SE COLOCA A FUNÇÃO DO UTILS NO PROVIDER ... VER O QUE FICA MELHOR ... DEU CERTO!!!
+  //PRECISO ARRUMAR A CONSTANDO DO TAILWIND COLORS PORQUE ESTÃO DIFERENTE DO QUE ESTÁ NA DOCUMENTAÇÃO
+
   //no meu celular...
   //    menu lateral
   //    cor do progress
   //    cor dos cards menores
   //    cor do texto do rodapé
+  //arrumar problema do navigator e esses erros de linha LF
+  //instalar husky para pre-commit e executar o comando npx prettier src/ --write
+  //adicionar this.portfolio
+  //meses project-data ... fazer enum
 
   //currículo: passar sessão projetos para cima ?
   //footer: campos input para enviar email
@@ -28,6 +33,7 @@ export default function Home() {
   return (
     <main className="text-md">
       <TailwindProvider>
+        <TailwindTester />
         <NavBar />
         <About />
         <Projects />
