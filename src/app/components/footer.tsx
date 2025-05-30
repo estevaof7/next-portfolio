@@ -2,15 +2,15 @@
 
 import { footerData } from '@/data/footer-data';
 import { FooterItemModel } from '@/models/footer-model';
-import { useTailwind } from '@/providers/tailwind-compatibility';
-import { tailwindCompatibility } from '@/utils/tailwind-compatibility';
+// import { useTailwind } from '@/providers/tailwind-compatibility';
+// import { tailwindCompatibility } from '@/utils/tailwind-compatibility';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Footer() {
-  const { isTailwindCompatible } = useTailwind();
-  const textGray300 =
-    'text-' + tailwindCompatibility(isTailwindCompatible, 'gray-300');
+  // const { isTailwindCompatible } = useTailwind();
+  // const textGray300 =
+  //   'text-' + tailwindCompatibility(isTailwindCompatible, 'gray-300');
 
   return (
     // <footer id="contact" className={`bg-black ${textGray300}`}>
