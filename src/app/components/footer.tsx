@@ -13,14 +13,7 @@ export default function Footer() {
     'text-' + tailwindCompatibility(isTailwindCompatible, 'gray-300');
 
   return (
-    <footer
-      id="contact"
-      // className={`bg-black text-${tailwindCompatibility(isTailwindCompatible, 'gray-300')}`}
-      className={`bg-black ${textGray300}`}
-    >
-      <p className="text-white">
-        teste: {tailwindCompatibility(isTailwindCompatible, 'gray-300')}
-      </p>
+    <footer id="contact" className={`bg-black ${textGray300}`}>
       <div className="max-w-6xl mx-auto pt-10 md:pt-16 lg:pt-20 pb-8 md:pb-10 px-4 md:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-6 lg:gap-4">
           {footerData.map((item: FooterItemModel, index: number) => (
