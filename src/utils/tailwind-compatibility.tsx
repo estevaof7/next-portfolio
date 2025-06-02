@@ -1,4 +1,6 @@
-import { tailwindColors } from '@/constants/tailwind-colors';
+const tailwindColors: { [key: string]: string } = {
+  'gray-300': '#d1d5db'
+};
 
 export const tailwindCompatibility = (
   isTailwindCompatible: boolean,

@@ -8,9 +8,6 @@ import { TailwindProvider } from '@/providers/tailwind-compatibility';
 import TailwindTester from './components/tailwind-tester';
 
 export default function Home() {
-  //PENSAR SE COLOCA A FUNÇÃO DO UTILS NO PROVIDER ... VER O QUE FICA MELHOR ... DEU CERTO!!!
-  //PRECISO ARRUMAR A CONSTANDO DO TAILWIND COLORS PORQUE ESTÃO DIFERENTE DO QUE ESTÁ NA DOCUMENTAÇÃO
-
   //no meu celular...
   //    menu lateral
   //    cor do progress

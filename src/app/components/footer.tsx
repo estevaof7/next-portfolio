@@ -2,19 +2,17 @@
 
 import { footerData } from '@/data/footer-data';
 import { FooterItemModel } from '@/models/footer-model';
-// import { useTailwind } from '@/providers/tailwind-compatibility';
-// import { tailwindCompatibility } from '@/utils/tailwind-compatibility';
+import { useTailwind } from '@/providers/tailwind-compatibility';
+import { tailwindCompatibility } from '@/utils/tailwind-compatibility';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Footer() {
-  // const { isTailwindCompatible } = useTailwind();
-  // const textGray300 =
-  //   'text-' + tailwindCompatibility(isTailwindCompatible, 'gray-300');
+  const { isTailwindCompatible } = useTailwind();
+  const gray300 = tailwindCompatibility(isTailwindCompatible, 'gray-300');
 
   return (
-    // <footer id="contact" className={`bg-black ${textGray300}`}>
-    <footer id="contact" className="bg-black text-gray-300">
+    <footer id="contact" className={`bg-black text-${gray300}`}>
       <div className="max-w-6xl mx-auto pt-10 md:pt-16 lg:pt-20 pb-8 md:pb-10 px-4 md:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-6 lg:gap-4">
           {footerData.map((item: FooterItemModel, index: number) => (
