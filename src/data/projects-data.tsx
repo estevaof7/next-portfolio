@@ -546,48 +546,48 @@ export const projectsData: ProjectsModel = {
         end: (isPt ? 'maio' : 'may') + ' 2023',
         tech: [getTech(Tech2.JS), getTech(Tech2.HTML), getTech(Tech2.CSS)],
         type: typeLabel(ProjectType.PERSONAL)
-      },
-      {
-        title: 'Tabs CSS',
-        description: () => {
-          return isPt ? (
-            <>
-              Projeto de abas interativas desenvolvido para praticar a
-              integração entre HTML, CSS e JavaScript no começo dos meus
-              estudos.
-              <br />
-              <br />A ideia foi explorar a manipulação do DOM e transições
-              visuais usando classes e eventos, fortalecendo minha compreensão
-              sobre a comunicação entre essas tecnologias.
-            </>
-          ) : (
-            <>
-              Interactive tabs project developed to practice the integration
-              between HTML, CSS, and JavaScript at the beginning of my studies.
-              <br />
-              <br />
-              The goal was to explore DOM manipulation and visual transitions
-              using classes and events, strengthening my understanding of how
-              these technologies communicate with each other.
-            </>
-          );
-        },
-        gifPath: '/img/project-gif/tabs.gif',
-        alt: isPt ? 'Projeto tabs' : 'Tabs project',
-        buttons: [
-          {
-            text: isPt ? 'Repositório' : 'Repository',
-            href: 'https://github.com/estevaof7/tabs'
-          },
-          {
-            text: 'Demo',
-            href: 'https://estevaof7.github.io/tabs/'
-          }
-        ],
-        end: (isPt ? 'julho' : 'july') + ' 2023',
-        tech: [getTech(Tech2.JS), getTech(Tech2.CSS), getTech(Tech2.HTML)],
-        type: typeLabel(ProjectType.PERSONAL)
       }
+      // {
+      //   title: 'Tabs CSS',
+      //   description: () => {
+      //     return isPt ? (
+      //       <>
+      //         Projeto de abas interativas desenvolvido para praticar a
+      //         integração entre HTML, CSS e JavaScript no começo dos meus
+      //         estudos.
+      //         <br />
+      //         <br />A ideia foi explorar a manipulação do DOM e transições
+      //         visuais usando classes e eventos, fortalecendo minha compreensão
+      //         sobre a comunicação entre essas tecnologias.
+      //       </>
+      //     ) : (
+      //       <>
+      //         Interactive tabs project developed to practice the integration
+      //         between HTML, CSS, and JavaScript at the beginning of my studies.
+      //         <br />
+      //         <br />
+      //         The goal was to explore DOM manipulation and visual transitions
+      //         using classes and events, strengthening my understanding of how
+      //         these technologies communicate with each other.
+      //       </>
+      //     );
+      //   },
+      //   gifPath: '/img/project-gif/tabs.gif',
+      //   alt: isPt ? 'Projeto tabs' : 'Tabs project',
+      //   buttons: [
+      //     {
+      //       text: isPt ? 'Repositório' : 'Repository',
+      //       href: 'https://github.com/estevaof7/tabs'
+      //     },
+      //     {
+      //       text: 'Demo',
+      //       href: 'https://estevaof7.github.io/tabs/'
+      //     }
+      //   ],
+      //   end: (isPt ? 'julho' : 'july') + ' 2023',
+      //   tech: [getTech(Tech2.JS), getTech(Tech2.CSS), getTech(Tech2.HTML)],
+      //   type: typeLabel(ProjectType.PERSONAL)
+      // }
     ]
   }
 };
