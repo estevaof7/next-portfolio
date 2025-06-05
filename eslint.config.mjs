@@ -26,7 +26,8 @@ const eslintConfig = [
         }
       ],
       quotes: ['error', 'single'],
-      'linebreak-style': ['error', 'unix']
+      // 'linebreak-style': ['error', 'unix']
+      'linebreak-style': 'off'
     },
     ignores: [
       'node_modules/',
