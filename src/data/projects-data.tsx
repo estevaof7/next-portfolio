@@ -106,6 +106,47 @@ export const projectsData: ProjectsModel = {
 
       {
         title: isPt
+          ? 'Sistema de Gerenciamento e Monitoramento Médico'
+          : 'Medical Management and Monitoring System',
+        description: () => {
+          return isPt ? (
+            <>
+              Participo do desenvolvimento de um sistema voltado para o
+              gerenciamento e monitoramento de informações médicas.
+              <br />
+              <br />
+              Minhas principais atividades incluem correção de bugs, manutenção
+              de funcionalidades existentes e a migração da aplicação do Angular
+              6 para Angular 18, visando maior performance, segurança e
+              compatibilidade com tecnologias mais modernas.
+            </>
+          ) : (
+            <>
+              I contribute to the development of a system focused on medical
+              information management and monitoring.
+              <br />
+              <br />
+              My main responsibilities include bug fixing, maintaining existing
+              features, and migrating the application from Angular 6 to Angular
+              18, aiming to improve performance, security, and compatibility
+              with modern technologies.
+            </>
+          );
+        },
+        gifPath: '/img/project-gif/mv.gif',
+        alt: isPt ? 'Projeto MV' : 'MV project',
+        start: (isPt ? 'maio' : 'may') + ' 2025',
+        end: currentDate,
+        tech: [
+          getTech(Tech2.ANGULAR),
+          getTech(Tech2.TS),
+          getTech(Tech2.BOOTSTRAP)
+        ],
+        type: typeLabel(ProjectType.PROFESSIONAL)
+      },
+
+      {
+        title: isPt
           ? 'Gerenciador de ingressos e eventos'
           : 'Ticket and event manager',
         description: () => {
@@ -138,7 +179,7 @@ export const projectsData: ProjectsModel = {
         gifPath: '/img/project-gif/ingresso.gif',
         alt: isPt ? 'Projeto ingressos' : 'Ticket project',
         start: (isPt ? 'março' : 'march') + ' 2025',
-        end: currentDate,
+        end: (isPt ? 'maio' : 'may') + ' 2025',
         tech: [
           getTech(Tech2.ANGULAR),
           getTech(Tech2.TS),

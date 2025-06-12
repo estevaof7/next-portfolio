@@ -35,7 +35,7 @@ export const TechModal = ({
       <DialogHeader className="border-b-2">
         <DialogTitle>{title}</DialogTitle>
         <DialogDescription>
-          {description} <b>{tech}</b>
+          {description} <b>{tech}:</b>
         </DialogDescription>
       </DialogHeader>
       <ScrollArea className="h-72 w-full rounded-md flex-1">
