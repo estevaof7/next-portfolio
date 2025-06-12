@@ -8,6 +8,7 @@ import { TailwindProvider } from '@/providers/tailwind-compatibility';
 import TailwindTester from './components/tailwind-tester';
 
 export default function Home() {
+  //teste
   //instalar husky para pre-commit e executar o comando npx prettier src/ --write
   //adicionar this.portfolio
   //meses project-data ... fazer enum
