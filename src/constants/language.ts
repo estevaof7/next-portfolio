@@ -1,4 +1,4 @@
-export const isPt: boolean =
-  typeof window !== 'undefined'
-    ? navigator.language.toLowerCase().startsWith('pt')
-    : false;
+export const isPt: boolean = navigator.language.toLowerCase().startsWith('pt');
+// typeof window !== 'undefined'
+//   ? navigator.language.toLowerCase().startsWith('pt')
+//   : false;

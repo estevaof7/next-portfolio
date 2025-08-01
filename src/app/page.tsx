@@ -4,13 +4,11 @@ import NavBar from './components/nav-bar';
 import About from './components/about';
 import Projects from './components/projects';
 import Footer from './components/footer';
-import { TailwindProvider } from '@/providers/tailwind-compatibility';
-import TailwindTester from './components/tailwind-tester';
 
 export default function Home() {
-  //teste
-  //instalar husky para pre-commit e executar o comando npx prettier src/ --write
   //adicionar this.portfolio
+
+  //instalar husky para pre-commit e executar o comando npx prettier src/ --write
   //meses project-data ... fazer enum
 
   //footer: campos input para enviar email
@@ -28,14 +26,11 @@ export default function Home() {
   //    cor do texto do rodapé
   return (
     <main className="text-md">
-      <TailwindProvider>
-        <TailwindTester />
-        <NavBar />
-        <About />
-        <Projects />
-        <Footer />
-        {/* <BreakPointView /> */}
-      </TailwindProvider>
+      <NavBar />
+      <About />
+      <Projects />
+      <Footer />
+      {/* <BreakPointView /> */}
     </main>
   );
 }

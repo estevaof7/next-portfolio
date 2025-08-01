@@ -6,22 +6,22 @@ import {
 } from '@/models/projects-model';
 import { getTech, Tech2 } from './tech-data';
 
-const months: string[] = [
-  isPt ? 'janeiro' : 'january',
-  isPt ? 'fevereiro' : 'february',
-  isPt ? 'março' : 'march',
-  isPt ? 'abril' : 'april',
-  isPt ? 'maio' : 'may',
-  isPt ? 'junho' : 'june',
-  isPt ? 'julho' : 'july',
-  isPt ? 'agosto' : 'august',
-  isPt ? 'setembro' : 'september',
-  isPt ? 'outubro' : 'october',
-  isPt ? 'novembro' : 'november',
-  isPt ? 'dezembro' : 'december'
-];
+// const months: string[] = [
+//   isPt ? 'janeiro' : 'january',
+//   isPt ? 'fevereiro' : 'february',
+//   isPt ? 'março' : 'march',
+//   isPt ? 'abril' : 'april',
+//   isPt ? 'maio' : 'may',
+//   isPt ? 'junho' : 'june',
+//   isPt ? 'julho' : 'july',
+//   isPt ? 'agosto' : 'august',
+//   isPt ? 'setembro' : 'september',
+//   isPt ? 'outubro' : 'october',
+//   isPt ? 'novembro' : 'november',
+//   isPt ? 'dezembro' : 'december'
+// ];
 
-const currentDate = `${months[new Date().getMonth()]} ${new Date().getFullYear()}`;
+// const currently = isPt ? 'atualmente' : 'currently';
 
 const typeLabel = (type: ProjectType): string => {
   if (type === ProjectType.PERSONAL) {
@@ -136,7 +136,7 @@ export const projectsData: ProjectsModel = {
         gifPath: '/img/project-gif/mv.gif',
         alt: isPt ? 'Projeto MV' : 'MV project',
         start: (isPt ? 'maio' : 'may') + ' 2025',
-        end: currentDate,
+        end: (isPt ? 'junho' : 'june') + ' 2025',
         tech: [
           getTech(Tech2.ANGULAR),
           getTech(Tech2.TS),
