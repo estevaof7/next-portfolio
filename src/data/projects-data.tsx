@@ -4,24 +4,10 @@ import {
   ProjectType,
   VideoStartsOn
 } from '@/models/projects-model';
-import { getTech, Tech2 } from './tech-data';
+import { getTech, Tech } from './tech-data';
+import { getDate, MONTH } from '@/utils/get-date';
 
-// const months: string[] = [
-//   isPt ? 'janeiro' : 'january',
-//   isPt ? 'fevereiro' : 'february',
-//   isPt ? 'março' : 'march',
-//   isPt ? 'abril' : 'april',
-//   isPt ? 'maio' : 'may',
-//   isPt ? 'junho' : 'june',
-//   isPt ? 'julho' : 'july',
-//   isPt ? 'agosto' : 'august',
-//   isPt ? 'setembro' : 'september',
-//   isPt ? 'outubro' : 'october',
-//   isPt ? 'novembro' : 'november',
-//   isPt ? 'dezembro' : 'december'
-// ];
-
-// const currently = isPt ? 'atualmente' : 'currently';
+const currently = isPt ? 'atualmente' : 'currently';
 
 const typeLabel = (type: ProjectType): string => {
   if (type === ProjectType.PERSONAL) {
@@ -35,6 +21,117 @@ export const projectsData: ProjectsModel = {
   professional: {
     title: isPt ? 'Projetos profissionais' : 'Professional projects',
     projects: [
+      {
+        title: isPt
+          ? 'Dietitian - Startup de nutrição'
+          : 'Dietitian - Nutri startup',
+        description: () => {
+          return isPt ? (
+            <>
+              Faço parte de uma startup que está desenvolvendo uma plataforma
+              com o objetivo de revolucionar o mundo da nutrição.
+              <br />
+              <br />O sistema auxilia nutricionistas na criação de planos
+              alimentares personalizados, no gerenciamento de gastos e na
+              análise precisa da ingestão nutricional de seus pacientes.
+              <br />
+              <br /> A plataforma conta com um extenso banco de dados de
+              alimentos (incluindo informações das tabelas TBCA, TACO e IBGE) e
+              realiza cálculos automáticos de macronutrientes, calorias e
+              micronutrientes ao criar ou editar refeições e planos alimentares.
+              <br />
+              <br />
+              O sucesso da empresa depende diretamente do empenho e dedicação da
+              equipe em entregar um produto de alta qualidade, dentro dos prazos
+              e alinhado às necessidades do mercado.
+              <br />
+              <br />
+              Como desenvolvedor frontend no projeto, fui responsável pela
+              implementação de módulos essenciais da aplicação, incluindo:
+              <br />
+              <br />
+              <ul className="list-disc pl-4">
+                <li>
+                  <b>Módulo de Refeições:</b> listagem, cadastro e visualização
+                  de refeições personalizadas
+                </li>
+                <li>
+                  <b>Módulo de Alimentos:</b> listagem de alimentos das tabelas
+                  TBCA, TACO e IBGE, além do cadastro de alimentos
+                  personalizados
+                </li>
+                <li>
+                  <b>Módulo Financeiro:</b> gerenciamento de gastos e lucros do
+                  nutricionista
+                </li>
+              </ul>
+              <br />
+              Esse projeto me proporcionou experiência no desenvolvimento de
+              interfaces complexas, integração de dados e criação de uma
+              experiência de usuário responsiva e intuitiva utilizando
+              tecnologias modernas de frontend.
+            </>
+          ) : (
+            <>
+              I am part of a startup that is developing a platform with the goal
+              of revolutionizing the nutrition world.
+              <br />
+              <br />
+              The system assists nutritionists in creating personalized meal
+              plans, managing expenses, and precise analysis of their
+              patients&apos; nutritional intake.
+              <br />
+              <br />
+              The platform has an extensive food database (including information
+              from TBCA, TACO, and IBGE tables) and performs automatic
+              calculations of macronutrients, calories, and micronutrients when
+              creating or editing meals and meal plans.
+              <br />
+              <br />
+              The company&apos;s success depends directly on the team&apos;s
+              commitment and dedication to delivering a high-quality product,
+              within deadlines and aligned with market needs.
+              <br />
+              <br />
+              As a frontend developer on the project, I was responsible for
+              implementing essential application modules, including:
+              <br />
+              <br />
+              <ul className="list-disc pl-4">
+                <li>
+                  <b>Meals Module:</b> listing, registration, and visualization
+                  of personalized meals
+                </li>
+                <li>
+                  <b>Foods Module:</b> listing of foods from TBCA, TACO, and
+                  IBGE tables, in addition to registering personalized foods
+                </li>
+                <li>
+                  <b>Financial Module:</b> management of nutritionist expenses
+                  and profits
+                </li>
+              </ul>
+              <br />
+              This project provided me with experience in developing complex
+              interfaces, data integration, and creating a responsive and
+              intuitive user experience using modern frontend technologies.
+            </>
+          );
+        },
+        gifPath: '/img/project-gif/dietitian.gif',
+        alt: isPt ? 'Projeto tribanco' : 'Banking project',
+        start: getDate(MONTH.JULY, 2025),
+        end: currently,
+        tech: [
+          getTech(Tech.NEXT),
+          getTech(Tech.REACT),
+          getTech(Tech.TS),
+          getTech(Tech.TAILWIND)
+        ],
+        techPosition: 'image',
+        type: typeLabel(ProjectType.PROFESSIONAL)
+      },
+
       {
         title: isPt ? 'Tribanco' : 'Banking website',
         description: () => {
@@ -93,14 +190,15 @@ export const projectsData: ProjectsModel = {
         },
         gifPath: '/img/project-gif/tribanco.gif',
         alt: isPt ? 'Projeto tribanco' : 'Banking project',
-        start: (isPt ? 'janeiro' : 'january') + ' 2025',
-        end: (isPt ? 'março' : 'march') + ' 2025',
+        start: getDate(MONTH.JANUARY, 2025),
+        end: getDate(MONTH.MARCH, 2025),
         tech: [
-          getTech(Tech2.NEXT),
-          getTech(Tech2.REACT),
-          getTech(Tech2.TS),
-          getTech(Tech2.TAILWIND)
+          getTech(Tech.NEXT),
+          getTech(Tech.REACT),
+          getTech(Tech.TS),
+          getTech(Tech.TAILWIND)
         ],
+        techPosition: 'image',
         type: typeLabel(ProjectType.PROFESSIONAL)
       },
 
@@ -111,22 +209,22 @@ export const projectsData: ProjectsModel = {
         description: () => {
           return isPt ? (
             <>
-              Participo do desenvolvimento de um sistema voltado para o
+              Participei do desenvolvimento de um sistema voltado para o
               gerenciamento e monitoramento de informações médicas.
               <br />
               <br />
-              Minhas principais atividades incluem correção de bugs, manutenção
-              de funcionalidades existentes e a migração da aplicação do Angular
-              6 para Angular 18, visando maior performance, segurança e
-              compatibilidade com tecnologias mais modernas.
+              Minhas principais atividades incluíram correção de bugs,
+              manutenção de funcionalidades existentes e a migração da aplicação
+              do Angular 6 para Angular 18, visando maior performance, segurança
+              e compatibilidade com tecnologias mais modernas.
             </>
           ) : (
             <>
-              I contribute to the development of a system focused on medical
+              I contributed to the development of a system focused on medical
               information management and monitoring.
               <br />
               <br />
-              My main responsibilities include bug fixing, maintaining existing
+              My main responsibilities included bug fixing, maintaining existing
               features, and migrating the application from Angular 6 to Angular
               18, aiming to improve performance, security, and compatibility
               with modern technologies.
@@ -135,13 +233,14 @@ export const projectsData: ProjectsModel = {
         },
         gifPath: '/img/project-gif/mv.gif',
         alt: isPt ? 'Projeto MV' : 'MV project',
-        start: (isPt ? 'maio' : 'may') + ' 2025',
-        end: (isPt ? 'junho' : 'june') + ' 2025',
+        start: getDate(MONTH.MAY, 2025),
+        end: getDate(MONTH.JUNE, 2025),
         tech: [
-          getTech(Tech2.ANGULAR),
-          getTech(Tech2.TS),
-          getTech(Tech2.BOOTSTRAP)
+          getTech(Tech.ANGULAR),
+          getTech(Tech.TS),
+          getTech(Tech.BOOTSTRAP)
         ],
+        techPosition: 'image',
         type: typeLabel(ProjectType.PROFESSIONAL)
       },
 
@@ -178,15 +277,17 @@ export const projectsData: ProjectsModel = {
         },
         gifPath: '/img/project-gif/ingresso.gif',
         alt: isPt ? 'Projeto ingressos' : 'Ticket project',
-        start: (isPt ? 'março' : 'march') + ' 2025',
-        end: (isPt ? 'maio' : 'may') + ' 2025',
+        start: getDate(MONTH.MARCH, 2025),
+        end: getDate(MONTH.MAY, 2025),
+        techPosition: 'image',
         tech: [
-          getTech(Tech2.ANGULAR),
-          getTech(Tech2.TS),
-          getTech(Tech2.BOOTSTRAP)
+          getTech(Tech.ANGULAR),
+          getTech(Tech.TS),
+          getTech(Tech.BOOTSTRAP)
         ],
         type: typeLabel(ProjectType.PROFESSIONAL)
       },
+
       {
         title: isPt
           ? 'Versão web do app da PGFN (Procuradoria-Geral da Fazenda Nacional)'
@@ -232,14 +333,16 @@ export const projectsData: ProjectsModel = {
         },
         gifPath: '/img/project-gif/pgfn.gif',
         alt: isPt ? 'Projeto pgfn' : 'Pgfn project',
-        end: (isPt ? 'maio' : 'may') + ' 2025',
+        end: getDate(MONTH.MAY, 2025),
         tech: [
-          getTech(Tech2.ANGULAR),
-          getTech(Tech2.TS),
-          getTech(Tech2.BOOTSTRAP)
+          getTech(Tech.ANGULAR),
+          getTech(Tech.TS),
+          getTech(Tech.BOOTSTRAP)
         ],
+        techPosition: 'image',
         type: typeLabel(ProjectType.PROFESSIONAL)
       },
+
       {
         title: isPt ? 'Leitor QR Code SESC' : 'QR code reader for SESC',
         description: () => {
@@ -276,13 +379,14 @@ export const projectsData: ProjectsModel = {
         },
         gifPath: '/img/project-gif/sesc.gif',
         alt: isPt ? 'Projeto sesc' : 'Ticket sesc',
-        start: (isPt ? 'março' : 'march') + ' 2025',
-        end: (isPt ? 'abril' : 'april') + ' 2025',
+        start: getDate(MONTH.MARCH, 2025),
+        end: getDate(MONTH.APRIL, 2025),
         tech: [
-          getTech(Tech2.ANGULAR),
-          getTech(Tech2.TS),
-          getTech(Tech2.BOOTSTRAP)
+          getTech(Tech.ANGULAR),
+          getTech(Tech.TS),
+          getTech(Tech.BOOTSTRAP)
         ],
+        techPosition: 'image',
         type: typeLabel(ProjectType.PROFESSIONAL)
       }
     ]
@@ -326,13 +430,14 @@ export const projectsData: ProjectsModel = {
             href: 'https://coffee-shopf7.netlify.app/'
           }
         ],
-        end: (isPt ? 'janeiro' : 'january') + ' 2025',
+        end: getDate(MONTH.JANUARY, 2025),
         tech: [
-          getTech(Tech2.REACT),
-          getTech(Tech2.JS),
-          getTech(Tech2.CSS),
-          getTech(Tech2.BOOTSTRAP)
+          getTech(Tech.REACT),
+          getTech(Tech.JS),
+          getTech(Tech.CSS),
+          getTech(Tech.BOOTSTRAP)
         ],
+        techPosition: 'text',
         type: typeLabel(ProjectType.PERSONAL)
       },
       {
@@ -379,8 +484,9 @@ export const projectsData: ProjectsModel = {
             href: 'https://www.youtube.com/watch?v=DiwVSQ6t_Ps&feature=youtu.be'
           }
         ],
-        end: (isPt ? 'dezembro' : 'december') + ' 2023',
-        tech: [getTech(Tech2.JAVA), getTech(Tech2.MYSQL)],
+        end: getDate(MONTH.DECEMBER, 2023),
+        tech: [getTech(Tech.JAVA), getTech(Tech.MYSQL)],
+        techPosition: 'text',
         type: typeLabel(ProjectType.PERSONAL)
       },
       {
@@ -414,8 +520,9 @@ export const projectsData: ProjectsModel = {
             href: 'https://spectacular-daifuku-50a414.netlify.app/'
           }
         ],
-        end: (isPt ? 'dezembro' : 'december') + ' 2024',
-        tech: [getTech(Tech2.REACT), getTech(Tech2.JS), getTech(Tech2.CSS)],
+        end: getDate(MONTH.DECEMBER, 2024),
+        tech: [getTech(Tech.REACT), getTech(Tech.JS), getTech(Tech.CSS)],
+        techPosition: 'text',
         type: typeLabel(ProjectType.PERSONAL)
       },
 
@@ -453,13 +560,14 @@ export const projectsData: ProjectsModel = {
             href: 'https://www.youtube.com/watch?v=aG6yPrYZAs4'
           }
         ],
-        end: (isPt ? 'maio' : 'may') + ' 2024',
+        end: getDate(MONTH.MAY, 2024),
         tech: [
-          getTech(Tech2.NODE),
-          getTech(Tech2.MONGODB),
-          getTech(Tech2.JS),
-          getTech(Tech2.BOOTSTRAP)
+          getTech(Tech.NODE),
+          getTech(Tech.MONGODB),
+          getTech(Tech.JS),
+          getTech(Tech.BOOTSTRAP)
         ],
+        techPosition: 'text',
         type: typeLabel(ProjectType.PERSONAL)
       },
       {
@@ -502,13 +610,14 @@ export const projectsData: ProjectsModel = {
             href: 'https://www.youtube.com/watch?v=twr7BSXEBL8'
           }
         ],
-        end: (isPt ? 'outubro' : 'october') + ' 2024',
+        end: getDate(MONTH.OCTOBER, 2024),
         tech: [
-          getTech(Tech2.JS),
-          getTech(Tech2.CSS),
-          getTech(Tech2.BOOTSTRAP),
-          getTech(Tech2.HTML)
+          getTech(Tech.JS),
+          getTech(Tech.CSS),
+          getTech(Tech.BOOTSTRAP),
+          getTech(Tech.HTML)
         ],
+        techPosition: 'text',
         type: typeLabel(ProjectType.PERSONAL)
       },
       {
@@ -540,8 +649,9 @@ export const projectsData: ProjectsModel = {
             href: 'https://estevaof7.github.io/my-first-landing-page/'
           }
         ],
-        end: (isPt ? 'março' : 'march') + ' 2023',
-        tech: [getTech(Tech2.HTML), getTech(Tech2.CSS), getTech(Tech2.JS)],
+        end: getDate(MONTH.MARCH, 2024),
+        tech: [getTech(Tech.HTML), getTech(Tech.CSS), getTech(Tech.JS)],
+        techPosition: 'text',
         type: typeLabel(ProjectType.PERSONAL)
       },
       {
@@ -584,8 +694,9 @@ export const projectsData: ProjectsModel = {
             href: 'https://estevaof7.github.io/equacao2grau/'
           }
         ],
-        end: (isPt ? 'maio' : 'may') + ' 2023',
-        tech: [getTech(Tech2.JS), getTech(Tech2.HTML), getTech(Tech2.CSS)],
+        end: getDate(MONTH.MAY, 2023),
+        tech: [getTech(Tech.JS), getTech(Tech.HTML), getTech(Tech.CSS)],
+        techPosition: 'text',
         type: typeLabel(ProjectType.PERSONAL)
       }
       // {
@@ -625,7 +736,7 @@ export const projectsData: ProjectsModel = {
       //       href: 'https://estevaof7.github.io/tabs/'
       //     }
       //   ],
-      //   end: (isPt ? 'julho' : 'july') + ' 2023',
+      //   end: getDate(MONTH.JULY, 2023),
       //   tech: [getTech(Tech2.JS), getTech(Tech2.CSS), getTech(Tech2.HTML)],
       //   type: typeLabel(ProjectType.PERSONAL)
       // }

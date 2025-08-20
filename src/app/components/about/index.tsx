@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { aboutData } from '@/data/about-data';
 import { ProgressCircle } from './tech-card';
 import { TechModel } from '@/models/tech-model';
-import { Tech2 } from '@/data/tech-data';
+import { Tech } from '@/data/tech-data';
 import { Progress } from '@/models/about-model';
 
 export default function About() {
@@ -48,7 +48,7 @@ export default function About() {
                   <ProgressCircle
                     key={card.src}
                     card={card}
-                    tech={card.name as Tech2}
+                    tech={card.name as Tech}
                     className="w-full h-full"
                     startAngle={aboutData.techStack.startAngle}
                     clockWise={aboutData.techStack.clockWise}

@@ -33,5 +33,6 @@ export type ProjectCardModel = {
   start?: string;
   end: string;
   tech: TechModel[];
+  techPosition?: 'text' | 'image';
   type: string;
 };

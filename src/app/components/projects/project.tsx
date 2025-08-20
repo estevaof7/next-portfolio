@@ -10,6 +10,7 @@ import {
   TooltipProvider,
   TooltipTrigger
 } from '@/components/ui/tooltip';
+import { cn } from '@/lib/utils';
 // import { useEffect, useRef, useState } from 'react'; //RESPONSIVIDADE DIV CARDS/BOTÕES
 
 enum Position {
@@ -49,7 +50,7 @@ export function Project({
                   ${position === Position.EVEN ? '' : 'md:flex-row-reverse'}`}
     >
       {!isMobile ? (
-        <DesktopProject data={data} />
+        <DesktopProject data={data} position={position} />
       ) : (
         <MobileProject data={data} />
       )}
@@ -57,7 +58,13 @@ export function Project({
   );
 }
 
-function DesktopProject({ data }: { data: ProjectCardModel }) {
+function DesktopProject({
+  data,
+  position
+}: {
+  data: ProjectCardModel;
+  position: Position;
+}) {
   return (
     <>
       <div className="space-y-7 w-full md:w-1/2 lg:w-3/5">
@@ -68,45 +75,66 @@ function DesktopProject({ data }: { data: ProjectCardModel }) {
           </h2>
         </div>
         <div>{data.description()}</div>
-        <div
-          className="flex flex-row justify-between items-center gap-4"
-          // ref={techAndButtons} //RESPONSIVIDADE DIV CARDS/BOTÕES
-        >
-          <div className="flex space-x-4 overflow-x-auto">
-            {data.tech.map((item: TechModel) => (
-              <TooltipProvider key={item.src}>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <TechCard card={item} size="desktop" />
-                  </TooltipTrigger>
-                  <TooltipContent>{item.name}</TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-            ))}
-          </div>
-          <div className="flex space-x-4">
-            {data.buttons?.map((button) => (
-              <Button
-                key={button.text}
-                className="text-base"
-                variant={'secondary'}
-                // onClick={() => { //RESPONSIVIDADE DIV CARDS/BOTÕES
-                //   console.log('client', client);
-                //   console.log('offset', offset);
-                // }}
-              >
-                <Link href={button.href} target="_blank">
-                  {button.text}
-                </Link>
-              </Button>
-            ))}
-          </div>
-        </div>
+        {data.techPosition === 'text' && (
+          <TechAndButtons data={data} position={position} />
+        )}
       </div>
-      <div className="w-full md:w-1/2 lg:w-2/5">
+      <div className="w-full md:w-1/2 lg:w-2/5 space-y-5 h-full">
         <Gif gifPath={data.gifPath} alt={data.alt} size="desktop" />
+        {data.techPosition === 'image' && (
+          <TechAndButtons data={data} position={position} />
+        )}
       </div>
     </>
+  );
+}
+function TechAndButtons({
+  data,
+  position
+}: {
+  data: ProjectCardModel;
+  position: Position;
+}) {
+  return (
+    <div
+      className={cn(
+        'flex flex-row justify-between items-center gap-4',
+        position === Position.EVEN &&
+          data.techPosition === 'image' &&
+          'justify-end'
+      )}
+      // ref={techAndButtons} //RESPONSIVIDADE DIV CARDS/BOTÕES
+    >
+      <div className="flex space-x-4 overflow-x-auto">
+        {data.tech.map((item: TechModel) => (
+          <TooltipProvider key={item.src}>
+            <Tooltip>
+              <TooltipTrigger>
+                <TechCard card={item} size="desktop" />
+              </TooltipTrigger>
+              <TooltipContent>{item.name}</TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        ))}
+      </div>
+      <div className="flex space-x-4">
+        {data.buttons?.map((button) => (
+          <Button
+            key={button.text}
+            className="text-base"
+            variant={'secondary'}
+            // onClick={() => { //RESPONSIVIDADE DIV CARDS/BOTÕES
+            //   console.log('client', client);
+            //   console.log('offset', offset);
+            // }}
+          >
+            <Link href={button.href} target="_blank">
+              {button.text}
+            </Link>
+          </Button>
+        ))}
+      </div>
+    </div>
   );
 }
 function MobileProject({ data }: { data: ProjectCardModel }) {

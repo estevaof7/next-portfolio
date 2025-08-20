@@ -6,7 +6,7 @@ import {
   DialogHeader
 } from '@/components/ui/dialog';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Tech2 } from '@/data/tech-data';
+import { Tech } from '@/data/tech-data';
 import { DialogTitle } from '@radix-ui/react-dialog';
 import { projectsData } from '@/data/projects-data';
 import { ProjectCardModel } from '@/models/projects-model';
@@ -23,7 +23,7 @@ export const TechModal = ({
   title: string;
   description: string;
   buttonLabel: string;
-  tech: Tech2;
+  tech: Tech;
 }) => {
   const projects: ProjectCardModel[] = [
     ...projectsData.professional.projects,
