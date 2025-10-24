@@ -64,12 +64,19 @@ export const projectsData: ProjectsModel = {
                   <b>Módulo Financeiro:</b> gerenciamento de gastos e lucros do
                   nutricionista
                 </li>
+                <li>
+                  <b>Módulo Daily:</b> Postagens no formato do instagram com comentários e likes para o nutricionista acompanhar seus pacientes
+                </li>
+                <li>
+                  <b>Módulo de Configurações:</b> Gerenciamento da conta do nutricionista
+                </li>
+                <li>
+                  <b>Módulo de Integração com o WhatsApp:</b> Integração com o WhatsApp para envio de mensagens e notificações
+                </li>
+                <li>
+                  <b>Módulo de Prontuário:</b> Gerenciamento de prontuários de pacientes
+                </li>
               </ul>
-              <br />
-              Esse projeto me proporcionou experiência no desenvolvimento de
-              interfaces complexas, integração de dados e criação de uma
-              experiência de usuário responsiva e intuitiva utilizando
-              tecnologias modernas de frontend.
             </>
           ) : (
             <>

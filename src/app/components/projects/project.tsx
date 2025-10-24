@@ -11,7 +11,12 @@ import {
   TooltipTrigger
 } from '@/components/ui/tooltip';
 import { cn } from '@/lib/utils';
-// import { useEffect, useRef, useState } from 'react'; //RESPONSIVIDADE DIV CARDS/BOTÕES
+import { useRef } from 'react';
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
 enum Position {
   EVEN = 'even',
@@ -28,23 +33,29 @@ export function Project({
   const position = index % 2 === 0 ? Position.EVEN : Position.ODD;
   const isMobile = useIsMobile();
 
-  //RESPONSIVIDADE DIV CARDS/BOTÕES
-  // const techAndButtons = useRef<HTMLDivElement>(null);
-  // const [client, setClient] = useState<number>(0);
-  // const [offset, setOffset] = useState<number>(0);
+  const cardRef = useRef<HTMLDivElement>(null);
 
-  // useEffect(() => {
-  //   if (techAndButtons.current) {
-  //     setClient(techAndButtons.current.clientWidth);
-  //     setOffset(techAndButtons.current.offsetWidth);
-  //   }
-  //   // console.log('useEffect');
-  //   // console.log('client', client);
-  //   // console.log('offset', offset);
-  // }, [techAndButtons.current?.clientWidth]);
+  useGSAP(() => {
+    gsap.from([cardRef.current], {
+      scrollTrigger: {
+        trigger: cardRef.current,
+        start: `-${100 * index}px bottom`,
+        // gambiarra: não sabia mas parece que o y:80 faz o top de todos os elementos ficarem para baixo
+        // a cada elemento que você desce, o top vai ficando mais embaixo ainda
+        toggleActions: "play none none none",
+        markers: index === 5 ? true : false,
+      },
+      y: 80,
+      opacity: 0,
+      duration: 2,
+      ease: "power3.out",
+      stagger: 0.2,
+    });
+  });
 
   return (
     <div
+      ref={cardRef}
       className={`flex flex-col gap-6 md:gap-8 lg:gap-14
                   md:flex-row md:justify-between
                   ${position === Position.EVEN ? '' : 'md:flex-row-reverse'}`}
@@ -213,7 +224,7 @@ function TechCard({
 }) {
   return (
     <div
-      className={`rounded-full ${size === 'desktop' ? 'w-12 h-12' : 'w-10 h-10'} bg-secondary relative flex-shrink-0`}
+      className={`rounded-full ${size === 'desktop' ? 'w-12 h-12' : 'w-10 h-10'} bg-secondary relative shrink-0`}
     >
       <Image
         src={card.src}

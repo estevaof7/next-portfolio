@@ -12,8 +12,8 @@ export default function Projects() {
   const videoStarts = projectsData.videoStarts;
 
   return (
-    <section className="min-h-screen bg-black text-white">
-      <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-10 sm:py-16 lg:py-20 space-y-10 sm:space-y-16 lg:space-y-20 animate-slide-from-bottom">
+    <section className="min-h-screen bg-[#101113] text-[#ececec]">
+      <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-10 sm:py-16 lg:py-20 space-y-10 sm:space-y-16 lg:space-y-20">
         <div
           id="professional-projects"
           className="space-y-10 sm:space-y-16 lg:space-y-20"
@@ -45,8 +45,9 @@ export default function Projects() {
               index={
                 (videoStarts === VideoStartsOn.RIGHT && !profLengthIsOdd) ||
                 (videoStarts === VideoStartsOn.LEFT && profLengthIsOdd)
-                  ? index
-                  : index + 1
+                  ? index + professionalLength
+                  : index + 1 + professionalLength
+                  // para que cada um tenha um index associado à sua posição no array
               }
             />
           ))}

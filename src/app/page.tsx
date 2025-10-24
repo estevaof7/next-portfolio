@@ -17,13 +17,8 @@ export default function Home() {
   //melhorar visual... pegar referências
   //problema hidratação
   //elementos carregar e disparar animação a medida que for fazendo o scroll?
-  //soft skills em baixo do tech stack em um acordeon ? elton disse que seria legal ter as soft skills no postfólio
+  //soft skills em baixo do tech stack em um acordeon ? elton disse que seria legal ter as soft skills no portfólio
   //modal "projects I used..." talvez personalizar, tirar o x (porque já tem o botão de fechar) e no lugar dele, colocar a logo da tecnologia
-  //no meu celular...
-  //    menu lateral
-  //    cor do progress
-  //    cor dos cards menores
-  //    cor do texto do rodapé
   return (
     <main className="text-md">
       <NavBar />
