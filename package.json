@@ -12,6 +12,7 @@
     "test:ci": "jest --runInBand"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@radix-ui/react-dialog": "^1.1.13",
     "@radix-ui/react-navigation-menu": "^1.2.5",
     "@radix-ui/react-progress": "^1.1.2",
@@ -21,6 +22,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "eslint-plugin-prettier": "^5.2.3",
+    "gsap": "^3.13.0",
     "lucide-react": "^0.482.0",
     "next": "15.2.2",
     "react": "^19.0.0",
