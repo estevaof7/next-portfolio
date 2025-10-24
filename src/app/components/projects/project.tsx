@@ -43,7 +43,6 @@ export function Project({
         // gambiarra: não sabia mas parece que o y:80 faz o top de todos os elementos ficarem para baixo
         // a cada elemento que você desce, o top vai ficando mais embaixo ainda
         toggleActions: "play none none none",
-        markers: index === 5 ? true : false,
       },
       y: 80,
       opacity: 0,

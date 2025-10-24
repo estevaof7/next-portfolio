@@ -117,11 +117,19 @@ export const projectsData: ProjectsModel = {
                   <b>Financial Module:</b> management of nutritionist expenses
                   and profits
                 </li>
+                <li>
+                  <b>Daily Module:</b> Posts in the format of the instagram with comments and likes for the nutritionist to track their patients
+                </li>
+                <li>
+                  <b>Settings Module:</b> Management of the nutritionist's account
+                </li>
+                <li>
+                  <b>WhatsApp Integration Module:</b> Integration with WhatsApp for sending messages and notifications
+                </li>
+                <li>
+                  <b>Medical Record Module:</b> Management of patients' medical records
+                </li>
               </ul>
-              <br />
-              This project provided me with experience in developing complex
-              interfaces, data integration, and creating a responsive and
-              intuitive user experience using modern frontend technologies.
             </>
           );
         },
