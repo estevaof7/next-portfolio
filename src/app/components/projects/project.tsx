@@ -39,7 +39,7 @@ export function Project({
     gsap.from([cardRef.current], {
       scrollTrigger: {
         trigger: cardRef.current,
-        start: `-${100 * index}px bottom`,
+        start: `-${120 * index}px bottom`,
         // gambiarra: não sabia mas parece que o y:80 faz o top de todos os elementos ficarem para baixo
         // a cada elemento que você desce, o top vai ficando mais embaixo ainda
         toggleActions: "play none none none",
