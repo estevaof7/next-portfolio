@@ -1,11 +1,14 @@
-'use client';
+"use client";
 
-import NavBar from './components/nav-bar';
-import About from './components/about';
-import Projects from './components/projects';
-import Footer from './components/footer';
+import NavBar from "./components/nav-bar";
+import About from "./components/about";
+import Projects from "./components/projects";
+import Footer from "./components/footer";
+import { useLanguageStore } from "@/stores/language.store";
+import { useEffect } from "react";
 
 export default function Home() {
+  const { setLanguage } = useLanguageStore();
   //adicionar this.portfolio
 
   //instalar husky para pre-commit e executar o comando npx prettier src/ --write
@@ -19,6 +22,11 @@ export default function Home() {
   //elementos carregar e disparar animação a medida que for fazendo o scroll?
   //soft skills em baixo do tech stack em um acordeon ? elton disse que seria legal ter as soft skills no portfólio
   //modal "projects I used..." talvez personalizar, tirar o x (porque já tem o botão de fechar) e no lugar dele, colocar a logo da tecnologia
+
+  useEffect(() => {
+    setLanguage();
+  }, [setLanguage]);
+
   return (
     <main className="text-md">
       <NavBar />

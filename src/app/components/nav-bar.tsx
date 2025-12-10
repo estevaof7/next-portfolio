@@ -1,31 +1,27 @@
-import { Button } from '@/components/ui/button';
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetTitle,
-  SheetTrigger
-} from '@/components/ui/sheet';
-import { navData } from '@/data/nav-data';
-import { LinkModel } from '@/models/link-model';
-import { Menu } from 'lucide-react';
-import Link from 'next/link';
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { useNavData } from "@/data/nav-data";
+// import { navData } from '@/data/nav-data';
+import { LinkModel } from "@/models/link-model";
+import { Menu } from "lucide-react";
+import Link from "next/link";
 
 export default function NavBar() {
+  const navData = useNavData();
   return (
-    <nav className="w-full bg-white border-b fixed z-10">
-      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+    <nav className="fixed z-10 w-full border-b bg-white">
+      <div className="container mx-auto flex items-center justify-between px-4 py-3">
         <Link href={navData.logo.href} className="text-xl font-bold">
           {navData.logo.text}
         </Link>
 
         {/* Menu para Desktop */}
-        <div className="hidden md:flex space-x-6">
+        <div className="hidden space-x-6 md:flex">
           {navData.links.map((link: LinkModel) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-gray-600 hover:text-gray-900 transition-colors"
+              className="text-gray-600 transition-colors hover:text-gray-900"
             >
               {link.text}
             </Link>
@@ -43,12 +39,12 @@ export default function NavBar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[250px] sm:w-[300px]">
               <SheetTitle></SheetTitle>
-              <nav className="flex flex-col gap-4 mt-8">
+              <nav className="mt-8 flex flex-col gap-4">
                 {navData.links.map((link: LinkModel) => (
                   <SheetClose key={link.href} asChild>
                     <Link
                       href={link.href}
-                      className="text-lg px-2 py-1 hover:bg-gray-100 rounded-md transition-colors"
+                      className="rounded-md px-2 py-1 text-lg transition-colors hover:bg-gray-100"
                     >
                       {link.text}
                     </Link>

@@ -1,4 +1,4 @@
-import { isPt } from '@/constants/language';
+import { useLanguageStore } from "@/stores/language.store";
 
 export enum MONTH {
   JANUARY,
@@ -12,47 +12,52 @@ export enum MONTH {
   SEPTEMBER,
   OCTOBER,
   NOVEMBER,
-  DECEMBER
+  DECEMBER,
 }
 
-export const getDate = (month: MONTH, year: number): string => {
-  let monthLabel = '';
+export const useGetDate = (month: MONTH, year: number): string => {
+  const { isPt } = useLanguageStore();
+  return getDate(month, year, isPt);
+};
+
+export const getDate = (month: MONTH, year: number, isPt: boolean): string => {
+  let monthLabel = "";
   switch (month) {
     case MONTH.JANUARY:
-      monthLabel = isPt ? 'janeiro' : 'january';
+      monthLabel = isPt ? "janeiro" : "january";
       break;
     case MONTH.FEBRUARY:
-      monthLabel = isPt ? 'fevereiro' : 'february';
+      monthLabel = isPt ? "fevereiro" : "february";
       break;
     case MONTH.MARCH:
-      monthLabel = isPt ? 'março' : 'march';
+      monthLabel = isPt ? "março" : "march";
       break;
     case MONTH.APRIL:
-      monthLabel = isPt ? 'abril' : 'april';
+      monthLabel = isPt ? "abril" : "april";
       break;
     case MONTH.MAY:
-      monthLabel = isPt ? 'maio' : 'may';
+      monthLabel = isPt ? "maio" : "may";
       break;
     case MONTH.JUNE:
-      monthLabel = isPt ? 'junho' : 'june';
+      monthLabel = isPt ? "junho" : "june";
       break;
     case MONTH.JULY:
-      monthLabel = isPt ? 'julho' : 'july';
+      monthLabel = isPt ? "julho" : "july";
       break;
     case MONTH.AUGUST:
-      monthLabel = isPt ? 'agosto' : 'august';
+      monthLabel = isPt ? "agosto" : "august";
       break;
     case MONTH.SEPTEMBER:
-      monthLabel = isPt ? 'setembro' : 'september';
+      monthLabel = isPt ? "setembro" : "september";
       break;
     case MONTH.OCTOBER:
-      monthLabel = isPt ? 'outubro' : 'october';
+      monthLabel = isPt ? "outubro" : "october";
       break;
     case MONTH.NOVEMBER:
-      monthLabel = isPt ? 'novembro' : 'november';
+      monthLabel = isPt ? "novembro" : "november";
       break;
     case MONTH.DECEMBER:
-      monthLabel = isPt ? 'dezembro' : 'december';
+      monthLabel = isPt ? "dezembro" : "december";
       break;
   }
 
