@@ -51,9 +51,9 @@ export const Content = () => {
                   const deltaX = e.touches[0].clientX - (window as any).__touchStartX;
                   if (Math.abs(deltaX) > 60) {
                     if (deltaX < 0) {
-                      setActiveTab("projects");
-                    } else {
                       setActiveTab("story");
+                    } else {
+                      setActiveTab("projects");
                     }
                     (window as any).__touchStartX = null;
                   }
