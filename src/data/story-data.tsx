@@ -236,7 +236,7 @@ export const useStoryData = (): StorySectionModel => {
         },
         images: [
           {
-            src: "/img/story/programming-1.jpEg",
+            src: "/img/story/programming-1.jpeg",
             alt: "Programming",
           },
         ],
