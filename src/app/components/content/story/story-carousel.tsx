@@ -18,7 +18,12 @@ export interface CarouselPicturesProps {
 export const StoryCarousel = ({ pictures, aspectRatio }: CarouselPicturesProps) => {
   return (
     <div className="relative w-full overflow-hidden rounded-lg">
-      <Carousel className="w-full">
+      <Carousel
+        className="w-full"
+        onTouchMove={(e) => {
+          e.stopPropagation();
+        }}
+      >
         <CarouselContent parentClassName="h-full" className="h-full">
           {pictures.map((picture, index) => (
             <CarouselItem key={index} className="h-full overflow-hidden">
