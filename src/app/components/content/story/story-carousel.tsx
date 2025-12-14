@@ -62,15 +62,15 @@ export const CarouselImage = ({
       height={0}
       fill={false}
       sizes={"100%"}
-      className={cn("h-full w-full object-cover", objectFit && `object-${objectFit}`)}
+      className="h-full w-full object-cover"
       onError={() => setHasError(true)}
       onLoad={onLoad}
       // unoptimized
-      style={style}
+      style={{ ...style, objectFit: objectFit ?? "cover" }}
     />
   ) : (
     <div className="flex h-full min-h-52 w-full items-center justify-center rounded-lg border border-neutral-200 text-sm text-neutral-500">
-      Erro ao carregar imagem
+      Error loading image
     </div>
   );
 };
