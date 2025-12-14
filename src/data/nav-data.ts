@@ -9,16 +9,18 @@ export const useNavData = (): NavModel => {
       text: "Estêvão Ferreira",
     },
     links: [
-      { href: "#about", text: isPt ? "Sobre" : "About" },
+      { href: "#about", text: isPt ? "Sobre" : "About", id: "about" },
       {
-        href: "#professional-projects",
-        text: isPt ? "Projetos profissionais" : "Professional projects",
+        href: "#content",
+        text: isPt ? "Meus projetos" : "My projects",
+        id: "projects",
       },
       {
-        href: "#personal-projects",
-        text: isPt ? "Projetos pessoais" : "Personal projects",
+        href: "#content",
+        text: isPt ? "Minha história" : "My story",
+        id: "story",
       },
-      { href: "#contact", text: isPt ? "Contato" : "Contact" },
+      { href: "#contact", text: isPt ? "Contato" : "Contact", id: "contact" },
     ],
   };
 };

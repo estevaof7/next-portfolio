@@ -2,10 +2,10 @@
 
 import NavBar from "./components/nav-bar";
 import About from "./components/about";
-import Projects from "./components/projects";
 import Footer from "./components/footer";
 import { useLanguageStore } from "@/stores/language.store";
 import { useEffect } from "react";
+import { Content } from "./components/content";
 
 export default function Home() {
   const { setLanguage } = useLanguageStore();
@@ -31,7 +31,7 @@ export default function Home() {
     <main className="text-md">
       <NavBar />
       <About />
-      <Projects />
+      <Content />
       <Footer />
       {/* <BreakPointView /> */}
     </main>

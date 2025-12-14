@@ -1,15 +1,26 @@
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { useNavData } from "@/data/nav-data";
-// import { navData } from '@/data/nav-data';
 import { LinkModel } from "@/models/link-model";
+import { useTabStore } from "@/stores/tab.store";
 import { Menu } from "lucide-react";
 import Link from "next/link";
 
 export default function NavBar() {
   const navData = useNavData();
+  const { setActiveTab } = useTabStore();
+
+  const handleClick = (id: string) => {
+    if (id === "projects") {
+      setActiveTab("projects");
+    }
+    if (id === "story") {
+      setActiveTab("story");
+    }
+  };
+
   return (
-    <nav className="fixed z-10 w-full border-b bg-white">
+    <nav className="fixed z-20 w-full border-b bg-white">
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         <Link href={navData.logo.href} className="text-xl font-bold">
           {navData.logo.text}
@@ -17,11 +28,12 @@ export default function NavBar() {
 
         {/* Menu para Desktop */}
         <div className="hidden space-x-6 md:flex">
-          {navData.links.map((link: LinkModel) => (
+          {navData.links.map((link: LinkModel & { id: string }) => (
             <Link
-              key={link.href}
+              key={link.id}
               href={link.href}
               className="text-gray-600 transition-colors hover:text-gray-900"
+              onClick={() => handleClick(link.id)}
             >
               {link.text}
             </Link>
@@ -40,11 +52,12 @@ export default function NavBar() {
             <SheetContent side="right" className="w-[250px] sm:w-[300px]">
               <SheetTitle></SheetTitle>
               <nav className="mt-8 flex flex-col gap-4">
-                {navData.links.map((link: LinkModel) => (
-                  <SheetClose key={link.href} asChild>
+                {navData.links.map((link: LinkModel & { id: string }) => (
+                  <SheetClose key={link.id} asChild>
                     <Link
                       href={link.href}
                       className="rounded-md px-2 py-1 text-lg transition-colors hover:bg-gray-100"
+                      onClick={() => handleClick(link.id)}
                     >
                       {link.text}
                     </Link>

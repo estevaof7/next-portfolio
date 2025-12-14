@@ -73,6 +73,9 @@ export const useProjectsData = (): ProjectsModel => {
                   <li>
                     <b>Módulo de Prontuário:</b> Gerenciamento de prontuários de pacientes
                   </li>
+                  <li>
+                    <b>Módulo de Questionário:</b> Gerador de formulários interativos
+                  </li>
                 </ul>
               </>
             ) : (
@@ -124,6 +127,9 @@ export const useProjectsData = (): ProjectsModel => {
                   </li>
                   <li>
                     <b>Medical Record Module:</b> Management of patients' medical records
+                  </li>
+                  <li>
+                    <b>Questionnaire Module:</b> Interactive form generator
                   </li>
                 </ul>
               </>
