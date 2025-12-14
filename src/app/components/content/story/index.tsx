@@ -7,7 +7,7 @@ export const StoryView = () => {
 
   return (
     <section>
-      <div className="space-y-10 sm:space-y-16 lg:space-y-20">
+      <div className="space-y-10 pl-0.5 sm:space-y-16 lg:space-y-20">
         <div className="space-y-10 sm:space-y-16 lg:space-y-20">
           <h1 className="border-b-2 pb-2 text-3xl sm:pb-4 sm:text-4xl md:text-5xl lg:text-6xl">
             {storyData.title}

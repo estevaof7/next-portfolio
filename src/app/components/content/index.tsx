@@ -43,6 +43,26 @@ export const Content = () => {
               "flex w-[200%] transition-transform duration-500 ease-in-out",
               activeTab === "projects" ? "translate-x-0" : "translate-x-[-50%]",
             )}
+            onTouchMove={(e) => {
+              if (e.touches.length === 1) {
+                if (!(window as any).__touchStartX) {
+                  (window as any).__touchStartX = e.touches[0].clientX;
+                } else {
+                  const deltaX = e.touches[0].clientX - (window as any).__touchStartX;
+                  if (Math.abs(deltaX) > 60) {
+                    if (deltaX < 0) {
+                      setActiveTab("projects");
+                    } else {
+                      setActiveTab("story");
+                    }
+                    (window as any).__touchStartX = null;
+                  }
+                }
+              }
+              e.currentTarget.ontouchend = () => {
+                (window as any).__touchStartX = null;
+              };
+            }}
           >
             <div className="w-1/2 shrink-0">
               <Projects />
